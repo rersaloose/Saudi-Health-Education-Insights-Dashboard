@@ -1,0 +1,42 @@
+  <section class="card drill-card">
+      <div class="card-header-row">
+        <h2 class="section-title">Drill-Down Analysis</h2>
+        <div class="drill-controls">
+          <div class="filter-group">
+            <label class="filter-label">Campus</label>
+            <select class="select-sm" [ngModel]="selectedCampus()" (ngModelChange)="selectedCampus.set($event)">
+              @for (entry of campusOptions; track entry.key) {
+                <option [value]="entry.key">{{ entry.label }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="drill-chart-wrap">
+        <canvas #drillCanvas></canvas>
+      </div>
+
+      <div class="drill-table-wrap">
+        <table class="drill-table">
+          <thead>
+            <tr>
+              <th>College</th>
+              <th class="num-col">Students ({{ svc.selectedYear() }})</th>
+              <th class="num-col">% Share</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (row of drillData(); track row.key) {
+              <tr>
+                <td>{{ row.college }}</td>
+                <td class="num-col">{{ row.value | numberFormat }}</td>
+                <td class="num-col">{{ row.pct }}%</td>
+              </tr>
+            } @empty {
+              <tr><td colspan="3" class="empty-row">No data for this campus/year</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
