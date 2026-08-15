@@ -1,5 +1,5 @@
  <div class="kpi-grid">
-      <div class="kpi-card">
+      <!-- <div class="kpi-card">
         <div class="kpi-header">
           <span class="kpi-label">Total Students</span>
           <span class="kpi-icon icon-graduation"></span>
@@ -8,7 +8,7 @@
         <div class="kpi-sub">{{ kpis().totalStudents | numberFormat }} | {{ selectedYear() }}</div>
       </div>
 
-      <div class="kpi-card kpi-growth">
+      <div class="kpi-card ">
         <div class="kpi-header">
           <span class="kpi-label">Growth Rate</span>
           <span class="kpi-icon icon-trend"></span>
@@ -42,12 +42,115 @@
         <div class="kpi-sub">{{ kpis().postgraduate | numberFormat }} ({{ kpis().postgraduatePercent }}%)</div>
       </div>
 
-      <div class="kpi-card kpi-campus">
+      <div class="kpi-card ">
         <div class="kpi-header">
           <span class="kpi-label">Largest Campus</span>
           <span class="kpi-icon icon-location"></span>
         </div>
         <div class="kpi-value campus-name">{{ kpis().largestCampus }}</div>
         <div class="kpi-sub">{{ kpis().largestCampusPercent }}% ({{ kpis().largestCampusPercent }}%)</div>
-      </div>
+      </div> -->
+      <div class="kpi-card">
+  <div class="kpi-content">
+    <div class="kpi-label">Total Students</div>
+
+    <div class="kpi-value">
+      {{ kpis().totalStudents | numberFormat }}
+    </div>
+
+    <div class="kpi-sub">
+      {{ kpis().totalStudents | numberFormat }} | {{ selectedYear() }}
+    </div>
+  </div>
+
+  <div class="kpi-icon">
+    <img src="assets/Images/graduation-cap.svg" alt="" />
+  </div>
+</div>
+
+
+<div class="kpi-card">
+  <div class="kpi-content">
+    <div class="kpi-label">Growth Rate</div>
+
+    <div
+      class="kpi-value"
+      [class.positive]="kpis().growthRate > 0"
+      [class.negative]="kpis().growthRate < 0"
+    >
+      {{ kpis().growthRate > 0 ? '+' : '' }}{{ kpis().growthRate }}%
+    </div>
+
+    <div class="kpi-sub">
+      vs&nbsp; last year
+    </div>
+  </div>
+
+  <div class="kpi-icon">
+    <img src="assets/Images/growth-rate.svg" alt="" />
+  </div>
+</div>
+
+
+<div class="kpi-card">
+  <div class="kpi-content">
+    <div class="kpi-label">Female</div>
+
+    <div class="kpi-value">
+      {{ kpis().female | numberFormat }}
+
+      <span class="kpi-badge">
+        {{ kpis().femalePercent }}%
+      </span>
+    </div>
+
+    <div class="kpi-sub">
+      Female Students
+    </div>
+  </div>
+
+  <div class="kpi-icon">
+    <img src="assets/Images/female-student.svg" alt="" />
+  </div>
+</div>
+
+
+<div class="kpi-card">
+  <div class="kpi-content">
+    <div class="kpi-label">Postgraduate</div>
+
+    <div class="kpi-value">
+      {{ kpis().postgraduate | numberFormat }}
+    </div>
+
+    <div class="kpi-sub">
+      {{ kpis().postgraduate | numberFormat }}
+      ({{ kpis().postgraduatePercent }}%)
+    </div>
+  </div>
+
+  <div class="kpi-icon">
+    <img src="assets/Images/graduation-cap.svg" alt="" />
+  </div>
+</div>
+
+
+<div class="kpi-card">
+  <div class="kpi-content">
+    <div class="kpi-label">Largest Campus</div>
+
+    <div class="kpi-value campus-name">
+      {{ kpis().largestCampus }}
+    </div>
+
+    <div class="kpi-sub">
+      {{ kpis().largestCampusPercent }}%
+      ({{ kpis().largestCampusPercent }}%)
+    </div>
+  </div>
+
+  <div class="kpi-icon kpi-icon-location">
+    <img src="assets/Images/largest-campus.svg" alt="" />
+  </div>
+</div>
     </div>
