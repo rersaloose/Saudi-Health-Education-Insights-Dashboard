@@ -46,27 +46,180 @@
     },
     "branchCollege": {
       "riyadh": {
-        "com":   [{"academicYear":"2016/2017","totalNumber":1135},{"academicYear":"2017/2018","totalNumber":1317},{"academicYear":"2018/2019","totalNumber":1396},{"academicYear":"2019/2020","totalNumber":1546},{"academicYear":"2020/2021","totalNumber":1563},{"academicYear":"2021/2022","totalNumber":1567},{"academicYear":"2022/2023","totalNumber":1566},{"academicYear":"2023/2024","totalNumber":1487}],
-        "cod":   [{"academicYear":"2016/2017","totalNumber":226},{"academicYear":"2017/2018","totalNumber":309},{"academicYear":"2018/2019","totalNumber":396},{"academicYear":"2019/2020","totalNumber":465},{"academicYear":"2020/2021","totalNumber":477},{"academicYear":"2021/2022","totalNumber":448},{"academicYear":"2022/2023","totalNumber":424},{"academicYear":"2023/2024","totalNumber":366}],
-        "cop":   [{"academicYear":"2016/2017","totalNumber":131},{"academicYear":"2017/2018","totalNumber":202},{"academicYear":"2018/2019","totalNumber":269},{"academicYear":"2019/2020","totalNumber":369},{"academicYear":"2020/2021","totalNumber":366},{"academicYear":"2021/2022","totalNumber":333},{"academicYear":"2022/2023","totalNumber":306},{"academicYear":"2023/2024","totalNumber":256}],
-        "con":   [{"academicYear":"2016/2017","totalNumber":254},{"academicYear":"2017/2018","totalNumber":285},{"academicYear":"2018/2019","totalNumber":414},{"academicYear":"2019/2020","totalNumber":435},{"academicYear":"2020/2021","totalNumber":471},{"academicYear":"2021/2022","totalNumber":492},{"academicYear":"2022/2023","totalNumber":448},{"academicYear":"2023/2024","totalNumber":451}],
-        "cphhi": [{"academicYear":"2016/2017","totalNumber":78},{"academicYear":"2017/2018","totalNumber":124},{"academicYear":"2018/2019","totalNumber":143},{"academicYear":"2019/2020","totalNumber":166},{"academicYear":"2020/2021","totalNumber":201},{"academicYear":"2021/2022","totalNumber":220},{"academicYear":"2022/2023","totalNumber":237},{"academicYear":"2023/2024","totalNumber":256}],
-        "cams":  [{"academicYear":"2016/2017","totalNumber":447},{"academicYear":"2017/2018","totalNumber":639},{"academicYear":"2018/2019","totalNumber":816},{"academicYear":"2019/2020","totalNumber":986},{"academicYear":"2020/2021","totalNumber":1037},{"academicYear":"2021/2022","totalNumber":895},{"academicYear":"2022/2023","totalNumber":693},{"academicYear":"2023/2024","totalNumber":563}],
-        "coshp": [{"academicYear":"2016/2017","totalNumber":2276},{"academicYear":"2017/2018","totalNumber":2821},{"academicYear":"2018/2019","totalNumber":2587},{"academicYear":"2019/2020","totalNumber":2176},{"academicYear":"2020/2021","totalNumber":2076},{"academicYear":"2021/2022","totalNumber":2083},{"academicYear":"2022/2023","totalNumber":1937},{"academicYear":"2023/2024","totalNumber":2072}],
-        "pme":   [{"academicYear":"2016/2017","totalNumber":1007},{"academicYear":"2017/2018","totalNumber":880},{"academicYear":"2018/2019","totalNumber":1044},{"academicYear":"2019/2020","totalNumber":1399},{"academicYear":"2020/2021","totalNumber":1229},{"academicYear":"2021/2022","totalNumber":1506},{"academicYear":"2022/2023","totalNumber":1508},{"academicYear":"2023/2024","totalNumber":1513}]
+        "com": [
+          { "academicYear": "2016/2017", "totalNumber": 1135 },
+          { "academicYear": "2017/2018", "totalNumber": 1317 },
+          { "academicYear": "2018/2019", "totalNumber": 1396 },
+          { "academicYear": "2019/2020", "totalNumber": 1546 },
+          { "academicYear": "2020/2021", "totalNumber": 1563 },
+          { "academicYear": "2021/2022", "totalNumber": 1567 },
+          { "academicYear": "2022/2023", "totalNumber": 1566 },
+          { "academicYear": "2023/2024", "totalNumber": 1487 }
+        ],
+        "cod": [
+          { "academicYear": "2016/2017", "totalNumber": 226 },
+          { "academicYear": "2017/2018", "totalNumber": 309 },
+          { "academicYear": "2018/2019", "totalNumber": 396 },
+          { "academicYear": "2019/2020", "totalNumber": 465 },
+          { "academicYear": "2020/2021", "totalNumber": 477 },
+          { "academicYear": "2021/2022", "totalNumber": 448 },
+          { "academicYear": "2022/2023", "totalNumber": 424 },
+          { "academicYear": "2023/2024", "totalNumber": 366 }
+        ],
+        "cop": [
+          { "academicYear": "2016/2017", "totalNumber": 131 },
+          { "academicYear": "2017/2018", "totalNumber": 202 },
+          { "academicYear": "2018/2019", "totalNumber": 269 },
+          { "academicYear": "2019/2020", "totalNumber": 369 },
+          { "academicYear": "2020/2021", "totalNumber": 366 },
+          { "academicYear": "2021/2022", "totalNumber": 333 },
+          { "academicYear": "2022/2023", "totalNumber": 306 },
+          { "academicYear": "2023/2024", "totalNumber": 256 }
+        ],
+        "con": [
+          { "academicYear": "2016/2017", "totalNumber": 254 },
+          { "academicYear": "2017/2018", "totalNumber": 285 },
+          { "academicYear": "2018/2019", "totalNumber": 414 },
+          { "academicYear": "2019/2020", "totalNumber": 435 },
+          { "academicYear": "2020/2021", "totalNumber": 471 },
+          { "academicYear": "2021/2022", "totalNumber": 492 },
+          { "academicYear": "2022/2023", "totalNumber": 448 },
+          { "academicYear": "2023/2024", "totalNumber": 451 }
+        ],
+        "cphhi": [
+          { "academicYear": "2016/2017", "totalNumber": 78 },
+          { "academicYear": "2017/2018", "totalNumber": 124 },
+          { "academicYear": "2018/2019", "totalNumber": 143 },
+          { "academicYear": "2019/2020", "totalNumber": 166 },
+          { "academicYear": "2020/2021", "totalNumber": 201 },
+          { "academicYear": "2021/2022", "totalNumber": 220 },
+          { "academicYear": "2022/2023", "totalNumber": 237 },
+          { "academicYear": "2023/2024", "totalNumber": 256 }
+        ],
+        "cams": [
+          { "academicYear": "2016/2017", "totalNumber": 447 },
+          { "academicYear": "2017/2018", "totalNumber": 639 },
+          { "academicYear": "2018/2019", "totalNumber": 816 },
+          { "academicYear": "2019/2020", "totalNumber": 986 },
+          { "academicYear": "2020/2021", "totalNumber": 1037 },
+          { "academicYear": "2021/2022", "totalNumber": 895 },
+          { "academicYear": "2022/2023", "totalNumber": 693 },
+          { "academicYear": "2023/2024", "totalNumber": 563 }
+        ],
+        "coshp": [
+          { "academicYear": "2016/2017", "totalNumber": 2276 },
+          { "academicYear": "2017/2018", "totalNumber": 2821 },
+          { "academicYear": "2018/2019", "totalNumber": 2587 },
+          { "academicYear": "2019/2020", "totalNumber": 2176 },
+          { "academicYear": "2020/2021", "totalNumber": 2076 },
+          { "academicYear": "2021/2022", "totalNumber": 2083 },
+          { "academicYear": "2022/2023", "totalNumber": 1937 },
+          { "academicYear": "2023/2024", "totalNumber": 2072 }
+        ],
+        "pme": [
+          { "academicYear": "2016/2017", "totalNumber": 1007 },
+          { "academicYear": "2017/2018", "totalNumber": 880 },
+          { "academicYear": "2018/2019", "totalNumber": 1044 },
+          { "academicYear": "2019/2020", "totalNumber": 1399 },
+          { "academicYear": "2020/2021", "totalNumber": 1229 },
+          { "academicYear": "2021/2022", "totalNumber": 1506 },
+          { "academicYear": "2022/2023", "totalNumber": 1508 },
+          { "academicYear": "2023/2024", "totalNumber": 1513 }
+        ]
       },
       "jeddah": {
-        "com":   [{"academicYear":"2016/2017","totalNumber":331},{"academicYear":"2017/2018","totalNumber":550},{"academicYear":"2018/2019","totalNumber":667},{"academicYear":"2019/2020","totalNumber":846},{"academicYear":"2020/2021","totalNumber":1008},{"academicYear":"2021/2022","totalNumber":1041},{"academicYear":"2022/2023","totalNumber":1069},{"academicYear":"2023/2024","totalNumber":1108}],
-        "con":   [{"academicYear":"2016/2017","totalNumber":632},{"academicYear":"2017/2018","totalNumber":308},{"academicYear":"2018/2019","totalNumber":335},{"academicYear":"2019/2020","totalNumber":403},{"academicYear":"2020/2021","totalNumber":482},{"academicYear":"2021/2022","totalNumber":728},{"academicYear":"2022/2023","totalNumber":604},{"academicYear":"2023/2024","totalNumber":439}],
-        "cams":  [{"academicYear":"2016/2017","totalNumber":77},{"academicYear":"2017/2018","totalNumber":221},{"academicYear":"2018/2019","totalNumber":382},{"academicYear":"2019/2020","totalNumber":449},{"academicYear":"2020/2021","totalNumber":514},{"academicYear":"2021/2022","totalNumber":483},{"academicYear":"2022/2023","totalNumber":455},{"academicYear":"2023/2024","totalNumber":377}],
-        "coshp": [{"academicYear":"2016/2017","totalNumber":1341},{"academicYear":"2017/2018","totalNumber":1433},{"academicYear":"2018/2019","totalNumber":1372},{"academicYear":"2019/2020","totalNumber":1293},{"academicYear":"2020/2021","totalNumber":1259},{"academicYear":"2021/2022","totalNumber":1290},{"academicYear":"2022/2023","totalNumber":1251},{"academicYear":"2023/2024","totalNumber":1334}],
-        "pme":   [{"academicYear":"2016/2017","totalNumber":699},{"academicYear":"2017/2018","totalNumber":930},{"academicYear":"2018/2019","totalNumber":757},{"academicYear":"2019/2020","totalNumber":822},{"academicYear":"2020/2021","totalNumber":907},{"academicYear":"2021/2022","totalNumber":773},{"academicYear":"2022/2023","totalNumber":895},{"academicYear":"2023/2024","totalNumber":1091}]
+        "com": [
+          { "academicYear": "2016/2017", "totalNumber": 331 },
+          { "academicYear": "2017/2018", "totalNumber": 550 },
+          { "academicYear": "2018/2019", "totalNumber": 667 },
+          { "academicYear": "2019/2020", "totalNumber": 846 },
+          { "academicYear": "2020/2021", "totalNumber": 1008 },
+          { "academicYear": "2021/2022", "totalNumber": 1041 },
+          { "academicYear": "2022/2023", "totalNumber": 1069 },
+          { "academicYear": "2023/2024", "totalNumber": 1108 }
+        ],
+        "con": [
+          { "academicYear": "2016/2017", "totalNumber": 632 },
+          { "academicYear": "2017/2018", "totalNumber": 308 },
+          { "academicYear": "2018/2019", "totalNumber": 335 },
+          { "academicYear": "2019/2020", "totalNumber": 403 },
+          { "academicYear": "2020/2021", "totalNumber": 482 },
+          { "academicYear": "2021/2022", "totalNumber": 728 },
+          { "academicYear": "2022/2023", "totalNumber": 604 },
+          { "academicYear": "2023/2024", "totalNumber": 439 }
+        ],
+        "cams": [
+          { "academicYear": "2016/2017", "totalNumber": 77 },
+          { "academicYear": "2017/2018", "totalNumber": 221 },
+          { "academicYear": "2018/2019", "totalNumber": 382 },
+          { "academicYear": "2019/2020", "totalNumber": 449 },
+          { "academicYear": "2020/2021", "totalNumber": 514 },
+          { "academicYear": "2021/2022", "totalNumber": 483 },
+          { "academicYear": "2022/2023", "totalNumber": 455 },
+          { "academicYear": "2023/2024", "totalNumber": 377 }
+        ],
+        "coshp": [
+          { "academicYear": "2016/2017", "totalNumber": 1341 },
+          { "academicYear": "2017/2018", "totalNumber": 1433 },
+          { "academicYear": "2018/2019", "totalNumber": 1372 },
+          { "academicYear": "2019/2020", "totalNumber": 1293 },
+          { "academicYear": "2020/2021", "totalNumber": 1259 },
+          { "academicYear": "2021/2022", "totalNumber": 1290 },
+          { "academicYear": "2022/2023", "totalNumber": 1251 },
+          { "academicYear": "2023/2024", "totalNumber": 1334 }
+        ],
+        "pme": [
+          { "academicYear": "2016/2017", "totalNumber": 699 },
+          { "academicYear": "2017/2018", "totalNumber": 930 },
+          { "academicYear": "2018/2019", "totalNumber": 757 },
+          { "academicYear": "2019/2020", "totalNumber": 822 },
+          { "academicYear": "2020/2021", "totalNumber": 907 },
+          { "academicYear": "2021/2022", "totalNumber": 773 },
+          { "academicYear": "2022/2023", "totalNumber": 895 },
+          { "academicYear": "2023/2024", "totalNumber": 1091 }
+        ]
       },
       "alAhasa": {
-        "con":   [{"academicYear":"2016/2017","totalNumber":576},{"academicYear":"2017/2018","totalNumber":508},{"academicYear":"2018/2019","totalNumber":344},{"academicYear":"2019/2020","totalNumber":303},{"academicYear":"2020/2021","totalNumber":401},{"academicYear":"2021/2022","totalNumber":215},{"academicYear":"2022/2023","totalNumber":427},{"academicYear":"2023/2024","totalNumber":409}],
-        "cams":  [{"academicYear":"2016/2017","totalNumber":458},{"academicYear":"2017/2018","totalNumber":286},{"academicYear":"2018/2019","totalNumber":388},{"academicYear":"2019/2020","totalNumber":431},{"academicYear":"2020/2021","totalNumber":409},{"academicYear":"2021/2022","totalNumber":416},{"academicYear":"2022/2023","totalNumber":424},{"academicYear":"2023/2024","totalNumber":446}],
-        "coshp": [{"academicYear":"2016/2017","totalNumber":0},{"academicYear":"2017/2018","totalNumber":686},{"academicYear":"2018/2019","totalNumber":694},{"academicYear":"2019/2020","totalNumber":693},{"academicYear":"2020/2021","totalNumber":726},{"academicYear":"2021/2022","totalNumber":730},{"academicYear":"2022/2023","totalNumber":707},{"academicYear":"2023/2024","totalNumber":751}],
-        "pme":   [{"academicYear":"2016/2017","totalNumber":209},{"academicYear":"2017/2018","totalNumber":209},{"academicYear":"2018/2019","totalNumber":234},{"academicYear":"2019/2020","totalNumber":234},{"academicYear":"2020/2021","totalNumber":254},{"academicYear":"2021/2022","totalNumber":228},{"academicYear":"2022/2023","totalNumber":174},{"academicYear":"2023/2024","totalNumber":242}]
+        "con": [
+          { "academicYear": "2016/2017", "totalNumber": 576 },
+          { "academicYear": "2017/2018", "totalNumber": 508 },
+          { "academicYear": "2018/2019", "totalNumber": 344 },
+          { "academicYear": "2019/2020", "totalNumber": 303 },
+          { "academicYear": "2020/2021", "totalNumber": 401 },
+          { "academicYear": "2021/2022", "totalNumber": 215 },
+          { "academicYear": "2022/2023", "totalNumber": 427 },
+          { "academicYear": "2023/2024", "totalNumber": 409 }
+        ],
+        "cams": [
+          { "academicYear": "2016/2017", "totalNumber": 458 },
+          { "academicYear": "2017/2018", "totalNumber": 286 },
+          { "academicYear": "2018/2019", "totalNumber": 388 },
+          { "academicYear": "2019/2020", "totalNumber": 431 },
+          { "academicYear": "2020/2021", "totalNumber": 409 },
+          { "academicYear": "2021/2022", "totalNumber": 416 },
+          { "academicYear": "2022/2023", "totalNumber": 424 },
+          { "academicYear": "2023/2024", "totalNumber": 446 }
+        ],
+        "coshp": [
+          { "academicYear": "2016/2017", "totalNumber": 0 },
+          { "academicYear": "2017/2018", "totalNumber": 686 },
+          { "academicYear": "2018/2019", "totalNumber": 694 },
+          { "academicYear": "2019/2020", "totalNumber": 693 },
+          { "academicYear": "2020/2021", "totalNumber": 726 },
+          { "academicYear": "2021/2022", "totalNumber": 730 },
+          { "academicYear": "2022/2023", "totalNumber": 707 },
+          { "academicYear": "2023/2024", "totalNumber": 751 }
+        ],
+        "pme": [
+          { "academicYear": "2016/2017", "totalNumber": 209 },
+          { "academicYear": "2017/2018", "totalNumber": 209 },
+          { "academicYear": "2018/2019", "totalNumber": 234 },
+          { "academicYear": "2019/2020", "totalNumber": 234 },
+          { "academicYear": "2020/2021", "totalNumber": 254 },
+          { "academicYear": "2021/2022", "totalNumber": 228 },
+          { "academicYear": "2022/2023", "totalNumber": 174 },
+          { "academicYear": "2023/2024", "totalNumber": 242 }
+        ]
       }
     }
   }

@@ -1,17 +1,21 @@
 <section class="card insights-card">
-      <div class="card-header-row">
-        <h2 class="section-title">Insights &amp; Highlights</h2>
+  <h2 class="section-title">Insights &amp; Highlights</h2>
+  <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
+    <div class="card-header-row">
+      @if (hasData()) {
         <span class="insights-count">{{ insights().length }}</span>
-      </div>
-      <ul class="insights-list">
-        @for (item of insights(); track item.text) {
-          <li class="insight-item">
-            <span class="insight-icon {{ item.icon }}"></span>
-            <span class="insight-body" [innerHTML]="item.text"></span>
-            @if (item.tag) {
-              <span class="insight-tag {{ item.tagClass }}">{{ item.tag }}</span>
-            }
-          </li>
-        }
-      </ul>
-    </section>
+      }
+    </div>
+    <ul class="insights-list">
+      @for (item of insights(); track item.text) {
+        <li class="insight-item">
+          <span class="insight-icon {{ item.icon }}"></span>
+          <span class="insight-body" [innerHTML]="item.text"></span>
+          @if (item.tag) {
+            <span class="insight-tag {{ item.tagClass }}">{{ item.tag }}</span>
+          }
+        </li>
+      }
+    </ul>
+  </app-card-state>
+</section>

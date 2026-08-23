@@ -1,5 +1,5 @@
  <div class="dashboard">
-      <header class="dashboard-header">
+   <header class="dashboard-header">
         <div class="header-left">
           <div class="logo-mark">KSAU-HS</div>
           <div class="header-titles">
@@ -8,6 +8,7 @@
           </div>
         </div>
         <div class="header-right">
+          <a routerLink="/about" class="nav-link">About</a>
           <div class="year-selector">
             <label>Academic Year</label>
             <select [(ngModel)]="selected" (ngModelChange)="onYearChange($event)">

@@ -1,21 +1,23 @@
-import {
-  Component, computed, inject, signal,
-} from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CampusKey } from '../../../../core/models/student-data.model';
 import { StudentDataService } from '../../../../core/services/student-service';
 import { NumberFormatPipe } from '../../../../shared/pipes/number-formate.pipe';
+import { CardState } from '../../../../shared/components/card-state/card-state';
 
 @Component({
   selector: 'app-advanced-analytics',
-  imports: [CommonModule, FormsModule, NumberFormatPipe],
+  imports: [CommonModule, FormsModule, NumberFormatPipe, CardState],
   templateUrl: './advanced-analytics.html',
   styleUrl: './advanced-analytics.css',
 })
 export class AdvancedAnalytics {
- readonly svc = inject(StudentDataService);
+  readonly svc = inject(StudentDataService);
 
+  readonly loading = this.svc.loading;
+  readonly hasError = () => this.svc.error() !== null;
+  readonly hasData = this.svc.hasData;
   readonly selectedCampus = signal<CampusKey | 'all'>('all');
 
   readonly campusOptions = [
@@ -28,9 +30,13 @@ export class AdvancedAnalytics {
   readonly heatYears = computed(() => this.svc.getYears());
 
   readonly topColleges = computed(() => {
-    const list = this.svc.getTopCollegesForCampus(this.selectedCampus(), this.svc.selectedYear(), 5);
-    const max = list.length > 0 ? Math.max(...list.map(l => l.value)) : 1;
-    return list.map(l => ({ ...l, pct: max > 0 ? (l.value / max) * 100 : 0 }));
+    const list = this.svc.getTopCollegesForCampus(
+      this.selectedCampus(),
+      this.svc.selectedYear(),
+      5,
+    );
+    const max = list.length > 0 ? Math.max(...list.map((l) => l.value)) : 1;
+    return list.map((l) => ({ ...l, pct: max > 0 ? (l.value / max) * 100 : 0 }));
   });
 
   readonly heatmapRows = computed(() => this.svc.getCollegeHeatmapMatrix(this.selectedCampus()));

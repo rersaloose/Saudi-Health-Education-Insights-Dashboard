@@ -1,0 +1,20 @@
+@if (loading()) {
+  <div class="card-state loading-state">
+    <div class="state-spinner"></div>
+    <p class="state-msg">Loading data...</p>
+  </div>
+} @else if (hasError()) {
+  <div class="card-state error-state">
+    <div class="state-icon error-icon">!</div>
+    <p class="state-msg">Unable to load data</p>
+    <p class="state-sub">Please try again later</p>
+  </div>
+} @else if (!hasData()) {
+  <div class="card-state empty-state">
+    <div class="state-icon empty-icon"></div>
+    <p class="state-msg">No data available</p>
+    <p class="state-sub">No records found for the selected filters</p>
+  </div>
+} @else {
+  <ng-content></ng-content>
+}

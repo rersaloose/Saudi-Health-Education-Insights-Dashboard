@@ -1,16 +1,18 @@
- <section class="card gender-card">
-      <h2 class="section-title">Enrollment Distribution</h2>
-      <p class="section-subtitle">By college — {{ svc.selectedYear() }}</p>
-      <div class="gender-chart-wrap">
-        <canvas #donutCanvas></canvas>
-      </div>
-      <div class="gender-legend">
-        @for (item of distribution(); track item.key) {
-          <div class="gl-item">
-            <span class="gl-dot" [style.background]="item.color"></span>
-            <span class="gl-name">{{ item.college }}</span>
-            <span class="gl-pct">{{ item.pct }}%</span>
-          </div>
-        }
-      </div>
-    </section>
+<section class="card gender-card">
+  <h2 class="section-title">Enrollment Distribution</h2>
+  <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
+    <p class="section-subtitle">By college — {{ svc.selectedYear() }}</p>
+    <div class="gender-chart-wrap">
+      <canvas #donutCanvas></canvas>
+    </div>
+    <div class="gender-legend">
+      @for (item of distribution(); track item.key) {
+        <div class="gl-item">
+          <span class="gl-dot" [style.background]="item.color"></span>
+          <span class="gl-name">{{ item.college }}</span>
+          <span class="gl-pct">{{ item.pct }}%</span>
+        </div>
+      }
+    </div>
+  </app-card-state>
+</section>

@@ -1,33 +1,46 @@
- <section class="card campus-card">
-      <div class="card-header-row">
-        <h2 class="section-title">Campus Enrollment Breakdown</h2>
-        <div class="year-badge">{{ svc.selectedYear() }}</div>
-      </div>
+<section class="card campus-card">
+  <div class="card-header-row">
+    <h2 class="section-title">Campus Enrollment Breakdown</h2>
+    @if (hasData()) {
+      <div class="year-badge">{{ svc.selectedYear() }}</div>
+    }
+  </div>
+  <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
+    <div class="campus-layout">
+      <div class="campus-bars">
+        <div class="campus-selector-row">
+          <span class="field-label">Campus</span>
+          <select
+            class="select-sm"
+            [ngModel]="selectedCampus()"
+            (ngModelChange)="selectedCampus.set($event)"
+          >
+            @for (entry of campusOptions; track entry.key) {
+              <option [value]="entry.key">{{ entry.label }}</option>
+            }
+          </select>
+        </div>
 
-      <div class="campus-layout">
-        <div class="campus-bars">
-          <div class="campus-selector-row">
-            <span class="field-label">Campus</span>
-            <select class="select-sm" [ngModel]="selectedCampus()" (ngModelChange)="selectedCampus.set($event)">
-              @for (entry of campusOptions; track entry.key) {
-                <option [value]="entry.key">{{ entry.label }}</option>
-              }
-            </select>
-          </div>
-
-          @for (campus of campusList(); track campus.key) {
-            <div class="campus-bar-row">
-              <span class="campus-bar-label" [class.active]="campus.key === selectedCampus()">{{ campus.label }}</span>
-              <div class="bar-track">
-                <div class="bar-fill" [style.width.%]="campus.pct" [class.active]="campus.key === selectedCampus()"></div>
-              </div>
-              <span class="bar-value">{{ campus.total | numberFormat }}</span>
+        @for (campus of campusList(); track campus.key) {
+          <div class="campus-bar-row">
+            <span class="campus-bar-label" [class.active]="campus.key === selectedCampus()">{{
+              campus.label
+            }}</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                [style.width.%]="campus.pct"
+                [class.active]="campus.key === selectedCampus()"
+              ></div>
             </div>
-          }
-        </div>
-
-        <div class="campus-chart-wrap">
-          <canvas #campusCanvas></canvas>
-        </div>
+            <span class="bar-value">{{ campus.total | numberFormat }}</span>
+          </div>
+        }
       </div>
-    </section>
+
+      <div class="campus-chart-wrap">
+        <canvas #campusCanvas></canvas>
+      </div>
+    </div>
+  </app-card-state>
+</section>

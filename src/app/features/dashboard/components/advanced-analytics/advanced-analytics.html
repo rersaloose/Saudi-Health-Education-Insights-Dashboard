@@ -1,36 +1,48 @@
-  <section class="card advanced-card">
-      <div class="card-header-row">
-        <h2 class="section-title">Advanced Analytics</h2>
-        <div class="filter-group">
-          <label class="filter-label">Campus</label>
-          <select class="select-sm" [ngModel]="selectedCampus()" (ngModelChange)="selectedCampus.set($event)">
-            @for (entry of campusOptions; track entry.key) {
-              <option [value]="entry.key">{{ entry.label }}</option>
-            }
-          </select>
-        </div>
-      </div>
-
-      <div class="adv-section">
-        <h3 class="block-title">Top Colleges by Enrollment — {{ svc.selectedYear() }}</h3>
-        <div class="top-colleges-list">
-          @for (c of topColleges(); track c.key) {
-            <div class="top-college-row">
-              <span class="tc-rank">{{ $index + 1 }}</span>
-              <span class="tc-dot" [style.background]="c.color"></span>
-              <span class="tc-name">{{ c.college }}</span>
-              <div class="tc-bar-track">
-                <div class="tc-bar-fill" [style.width.%]="c.pct" [style.background]="c.color"></div>
-              </div>
-              <span class="tc-value">{{ c.value | numberFormat }}</span>
-            </div>
+<section class="card advanced-card">
+  <div class="card-header-row">
+    <h2 class="section-title">Advanced Analytics</h2>
+    @if (hasData()) {
+      <div class="filter-group">
+        <label class="filter-label">Campus</label>
+        <select
+          class="select-sm"
+          [ngModel]="selectedCampus()"
+          (ngModelChange)="selectedCampus.set($event)"
+        >
+          @for (entry of campusOptions; track entry.key) {
+            <option [value]="entry.key">{{ entry.label }}</option>
           }
-        </div>
+        </select>
       </div>
+    }
+  </div>
+  <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
+    <div class="adv-section">
+      <h3 class="block-title">Top Colleges by Enrollment — {{ svc.selectedYear() }}</h3>
+      <div class="top-colleges-list">
+        @for (c of topColleges(); track c.key) {
+          <div class="top-college-row">
+            <span class="tc-rank">{{ $index + 1 }}</span>
+            <span class="tc-dot" [style.background]="c.color"></span>
+            <span class="tc-name">{{ c.college }}</span>
+            <div class="tc-bar-track">
+              <div class="tc-bar-fill" [style.width.%]="c.pct" [style.background]="c.color"></div>
+            </div>
+            <span class="tc-value">{{ c.value | numberFormat }}</span>
+          </div>
+        } @empty {
+          <p class="empty-inline">No college data available</p>
+        }
+      </div>
+    </div>
 
-      <div class="adv-section">
-        <h3 class="block-title">Enrollment Heatmap — Colleges × Years</h3>
-        <div class="heatmap-grid" [style.grid-template-columns]="'120px repeat(' + heatYears().length + ', 1fr)'">
+    <div class="adv-section">
+      <h3 class="block-title">Enrollment Heatmap — Colleges × Years</h3>
+      @if (heatmapRows().length > 0) {
+        <div
+          class="heatmap-grid"
+          [style.grid-template-columns]="'120px repeat(' + heatYears().length + ', 1fr)'"
+        >
           <div class="hm-corner"></div>
           @for (year of heatYears(); track year) {
             <div class="hm-year">{{ year.split('/')[0] }}</div>
@@ -38,11 +50,19 @@
           @for (row of heatmapRows(); track row.collegeKey) {
             <div class="hm-label">{{ row.college }}</div>
             @for (val of row.values; track $index) {
-              <div class="hm-cell" [style.background]="heatColor(val)" [style.color]="heatTextColor(val)">
+              <div
+                class="hm-cell"
+                [style.background]="heatColor(val)"
+                [style.color]="heatTextColor(val)"
+              >
                 {{ val | numberFormat }}
               </div>
             }
           }
         </div>
-      </div>
-    </section>
+      } @else {
+        <p class="empty-inline">No heatmap data available</p>
+      }
+    </div>
+  </app-card-state>
+</section>

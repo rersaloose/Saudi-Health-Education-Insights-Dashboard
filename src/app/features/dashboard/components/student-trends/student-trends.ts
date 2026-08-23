@@ -1,36 +1,55 @@
-
 import {
-  Component, inject, ViewChild, ElementRef, AfterViewInit, effect, Injector,
+  Component,
+  inject,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  effect,
+  Injector,
+  computed,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Chart, registerables } from 'chart.js';
 import { StudentDataService } from '../../../../core/services/student-service';
+import { CardState } from '../../../../shared/components/card-state/card-state';
 @Component({
   selector: 'app-student-trends',
-   imports: [CommonModule],
+  imports: [CommonModule, CardState],
   templateUrl: './student-trends.html',
   styleUrl: './student-trends.css',
 })
-export class StudentTrends  implements AfterViewInit {
-@ViewChild('totalCanvas') totalCanvas!: ElementRef<HTMLCanvasElement>;
+export class StudentTrends implements AfterViewInit {
+  @ViewChild('totalCanvas') totalCanvas!: ElementRef<HTMLCanvasElement>;
   @ViewChild('genderCanvas') genderCanvas!: ElementRef<HTMLCanvasElement>;
 
   private svc = inject(StudentDataService);
   private injector = inject(Injector);
   private totalChart: Chart | null = null;
   private genderChart: Chart | null = null;
+  readonly loading = this.svc.loading;
+  readonly hasError = () => this.svc.error() !== null;
+  readonly series = computed(() => this.svc.getTrendSeries());
 
+  readonly hasData = () => this.series() !== null && (this.series()?.labels.length ?? 0) > 0;
   ngAfterViewInit(): void {
-    effect(() => {
-      const series = this.svc.getTrendSeries();
-      if (series.labels.length && this.totalCanvas && this.genderCanvas) {
-        this.renderTotalChart(series);
-        this.renderGenderChart(series);
-      }
-    }, { injector: this.injector });
+    effect(
+      () => {
+        const series = this.svc.getTrendSeries();
+        if (series.labels.length && this.totalCanvas && this.genderCanvas) {
+          this.renderTotalChart(series);
+          this.renderGenderChart(series);
+        }
+      },
+      { injector: this.injector },
+    );
   }
 
-  private renderTotalChart(series: { labels: string[]; male: number[]; female: number[]; total: number[] }): void {
+  private renderTotalChart(series: {
+    labels: string[];
+    male: number[];
+    female: number[];
+    total: number[];
+  }): void {
     this.totalChart?.destroy();
     const ctx = this.totalCanvas.nativeElement.getContext('2d')!;
     const gradient = ctx.createLinearGradient(0, 0, 0, 200);
@@ -40,16 +59,18 @@ export class StudentTrends  implements AfterViewInit {
       type: 'line',
       data: {
         labels: series.labels,
-        datasets: [{
-          label: 'Total',
-          data: series.total,
-          borderColor: '#006B6B',
-          backgroundColor: gradient,
-          fill: true,
-          tension: 0.4,
-          pointRadius: 4,
-          pointBackgroundColor: '#006B6B',
-        }],
+        datasets: [
+          {
+            label: 'Total',
+            data: series.total,
+            borderColor: '#006B6B',
+            backgroundColor: gradient,
+            fill: true,
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#006B6B',
+          },
+        ],
       },
       options: {
         responsive: true,
@@ -66,7 +87,12 @@ export class StudentTrends  implements AfterViewInit {
     });
   }
 
-  private renderGenderChart(series: { labels: string[]; male: number[]; female: number[]; total: number[] }): void {
+  private renderGenderChart(series: {
+    labels: string[];
+    male: number[];
+    female: number[];
+    total: number[];
+  }): void {
     this.genderChart?.destroy();
     this.genderChart = new Chart(this.genderCanvas.nativeElement, {
       type: 'line',

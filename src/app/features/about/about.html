@@ -1,0 +1,242 @@
+<div class="about-page">
+  <header class="about-header">
+    <div class="about-header-left">
+      <div class="logo-mark">KSAU-HS</div>
+      <div>
+        <h1>About This Dashboard</h1>
+        <p>Student Analytics Dashboard — King Saud bin Abdulaziz University for Health Sciences</p>
+      </div>
+    </div>
+    <a routerLink="/" class="back-link">Back to Dashboard</a>
+  </header>
+
+  <section class="card about-section">
+    <h2 class="section-title">Overview</h2>
+    <p class="about-text">
+      This dashboard provides a comprehensive view of student enrollment statistics at King Saud bin
+      Abdulaziz University for Health Sciences (KSAU-HS) across all campuses, colleges, and academic
+      years from 2016/2017 to 2023/2024. It enables administrators and stakeholders to explore
+      trends, compare campuses, drill into college-level data, and gain actionable insights through
+      interactive visualizations.
+    </p>
+  </section>
+
+  <section class="card about-section">
+    <h2 class="section-title">Data Source</h2>
+    <p class="about-text">
+      All data displayed is sourced from the publicly available KSAU-HS student enrollment dataset
+      (<code>GetStudentsDataPublic.json</code>). The dataset covers three main categories:
+    </p>
+    <ul class="about-list">
+      <li><strong>Gender</strong> — Male and female enrollment per academic year</li>
+      <li><strong>Academic Degree</strong> — Bachelor's and postgraduate enrollment per year</li>
+      <li>
+        <strong>Branch &amp; College</strong> — Enrollment broken down by campus (Riyadh, Jeddah,
+        Al-Ahsa) and college
+      </li>
+    </ul>
+  </section>
+
+  <section class="card about-section">
+    <h2 class="section-title">Dashboard Features</h2>
+    <div class="features-grid">
+      @for (f of features; track f.title) {
+        <div class="feature-card">
+          <div class="feature-icon">
+            @switch (f.icon) {
+              @case ('kpi') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="7" height="7" rx="1" />
+                  <rect x="14" y="3" width="7" height="7" rx="1" />
+                  <rect x="3" y="14" width="7" height="7" rx="1" />
+                  <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg>
+              }
+
+              @case ('trends') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="3 17 9 11 13 15 21 7" />
+                  <polyline points="14 7 21 7 21 14" />
+                </svg>
+              }
+
+              @case ('campus') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              }
+              @case ('drill') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="15" y2="12" />
+                  <line x1="3" y1="18" x2="11" y2="18" />
+                </svg>
+              }
+              @case ('heat') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="7" height="7" />
+                  <rect x="14" y="3" width="7" height="7" />
+                  <rect x="3" y="14" width="7" height="7" />
+                  <rect x="14" y="14" width="7" height="7" />
+                </svg>
+              }
+              @case ('distribution') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                  <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                </svg>
+              }
+              @case ('insights') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              }
+              @case ('filters') {
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                </svg>
+              }
+            }
+          </div>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.desc }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="card about-section">
+    <h2 class="section-title">Technology Stack</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <span class="tech-label">Framework</span><span class="tech-value">Angular 21</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Architecture</span><span class="tech-value">Feature-Based</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Charts</span><span class="tech-value">Chart.js 4</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">State Management</span
+        ><span class="tech-value">Angular Signals</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Styling</span><span class="tech-value">Custom CSS</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Data Format</span><span class="tech-value">JSON (static)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card about-section">
+    <h2 class="section-title">Campuses &amp; Colleges</h2>
+    <div class="campus-info-grid">
+      <div class="campus-info-card">
+        <h3>Riyadh</h3>
+        <p>
+          8 colleges: Medicine, Dentistry, Pharmacy, Nursing, Public Health &amp; Health
+          Informatics, Applied Medical Sciences, Science &amp; Health Professions, Postgraduate
+          Medical Education
+        </p>
+      </div>
+      <div class="campus-info-card">
+        <h3>Jeddah</h3>
+        <p>
+          5 colleges: Medicine, Nursing, Applied Medical Sciences, Science &amp; Health Professions,
+          Postgraduate Medical Education
+        </p>
+      </div>
+      <div class="campus-info-card">
+        <h3>Al-Ahsa</h3>
+        <p>
+          4 colleges: Nursing, Applied Medical Sciences, Science &amp; Health Professions,
+          Postgraduate Medical Education
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card about-section">
+    <h2 class="section-title">Loading &amp; Error Handling</h2>
+    <p class="about-text">Each card independently handles three states:</p>
+    <ul class="about-list">
+      <li>
+        <strong>Loading</strong> — A spinner with "Loading data..." appears while data is being
+        fetched
+      </li>
+      <li>
+        <strong>Error</strong> — If data fails to load, an error message is shown instead of zeros
+      </li>
+      <li>
+        <strong>Empty</strong> — If no data exists for the selected filters, a "No data available"
+        message is displayed rather than showing zeros
+      </li>
+    </ul>
+  </section>
+
+  <footer class="dashboard-footer about-footer">
+    <span>Data source: KSAU-HS Public Student Enrollment Statistics</span>
+    <span>Academic Years 2016/2017 - 2023/2024</span>
+  </footer>
+</div>

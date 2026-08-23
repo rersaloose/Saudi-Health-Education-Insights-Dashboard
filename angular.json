@@ -15,12 +15,11 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-          "assets": [
-  "src/assets"
-],
-            "styles": [
-              "src/styles.css"
-            ]
+             "assets": ["src/assets"],
+
+
+             
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -65,12 +64,8 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "tsconfig.spec.json",
-           "assets": [
-  "src/assets"
-],
-            "styles": [
-              "src/styles.css"
-            ]
+            "assets": ["src/assets"],
+            "styles": ["src/styles.css"]
           }
         }
       }
