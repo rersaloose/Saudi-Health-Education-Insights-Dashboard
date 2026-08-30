@@ -3,113 +3,239 @@
     <div class="about-header-left">
       <div class="logo-mark">KSAU-HS</div>
       <div>
-        <h1>About This Dashboard</h1>
-        <p>Student Analytics Dashboard — King Saud bin Abdulaziz University for Health Sciences</p>
+        <h1>{{ 'ABOUT_PAGE.HERO.TITLE' | translate }}</h1>
+        <p>{{ 'ABOUT_PAGE.HERO.SUBTITLE' | translate }}</p>
       </div>
     </div>
-    <a routerLink="/" class="back-link">Back to Dashboard</a>
+
+    <a routerLink="/" class="back-link">{{ 'ABOUT_PAGE.HERO.BACK_BTN' | translate }}</a>
   </header>
 
+  <!-- Value Proposition -->
   <section class="card about-section">
-    <h2 class="section-title">Overview</h2>
-    <p class="about-text">
-      This dashboard provides a comprehensive view of student enrollment statistics at King Saud bin
-      Abdulaziz University for Health Sciences (KSAU-HS) across all campuses, colleges, and academic
-      years from 2016/2017 to 2023/2024. It enables administrators and stakeholders to explore
-      trends, compare campuses, drill into college-level data, and gain actionable insights through
-      interactive visualizations.
-    </p>
+    <h2 class="section-title">{{ 'ABOUT_PAGE.VALUE.TITLE' | translate }}</h2>
+    <p class="about-text">{{ 'ABOUT_PAGE.VALUE.P1' | translate }}</p>
+    <p class="about-text">{{ 'ABOUT_PAGE.VALUE.P2' | translate }}</p>
   </section>
 
+  <!-- The Problem -->
   <section class="card about-section">
-    <h2 class="section-title">Data Source</h2>
-    <p class="about-text">
-      All data displayed is sourced from the publicly available KSAU-HS student enrollment dataset
-      (<code>GetStudentsDataPublic.json</code>). The dataset covers three main categories:
-    </p>
-    <ul class="about-list">
-      <li><strong>Gender</strong> — Male and female enrollment per academic year</li>
-      <li><strong>Academic Degree</strong> — Bachelor's and postgraduate enrollment per year</li>
-      <li>
-        <strong>Branch &amp; College</strong> — Enrollment broken down by campus (Riyadh, Jeddah,
-        Al-Ahsa) and college
-      </li>
-    </ul>
+    <h2 class="section-title">{{ 'ABOUT_PAGE.CHALLENGE.TITLE' | translate }}</h2>
+    <p class="about-text">{{ 'ABOUT_PAGE.CHALLENGE.P1' | translate }}</p>
+
+    <div class="insight-flow">
+      <div class="flow-item">
+        <span>01</span>
+        <strong>{{ 'ABOUT_PAGE.CHALLENGE.STEP1_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.CHALLENGE.STEP1_DESC' | translate }}</p>
+      </div>
+
+      <div class="flow-item">
+        <span>02</span>
+        <strong>{{ 'ABOUT_PAGE.CHALLENGE.STEP2_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.CHALLENGE.STEP2_DESC' | translate }}</p>
+      </div>
+
+      <div class="flow-item">
+        <span>03</span>
+        <strong>{{ 'ABOUT_PAGE.CHALLENGE.STEP3_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.CHALLENGE.STEP3_DESC' | translate }}</p>
+      </div>
+
+      <div class="flow-item">
+        <span>04</span>
+        <strong>{{ 'ABOUT_PAGE.CHALLENGE.STEP4_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.CHALLENGE.STEP4_DESC' | translate }}</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Solution -->
   <section class="card about-section">
-    <h2 class="section-title">Dashboard Features</h2>
+    <h2 class="section-title">{{ 'ABOUT_PAGE.SOLUTION.TITLE' | translate }}</h2>
+    <p class="about-text">{{ 'ABOUT_PAGE.SOLUTION.P1' | translate }}</p>
+
+    <div class="solution-flow">
+      <div class="solution-step">
+        <strong>{{ 'ABOUT_PAGE.SOLUTION.STEP1_TITLE' | translate }}</strong>
+        <span>{{ 'ABOUT_PAGE.SOLUTION.STEP1_DESC' | translate }}</span>
+      </div>
+
+      <div class="solution-arrow">→</div>
+
+      <div class="solution-step">
+        <strong>{{ 'ABOUT_PAGE.SOLUTION.STEP2_TITLE' | translate }}</strong>
+        <span>{{ 'ABOUT_PAGE.SOLUTION.STEP2_DESC' | translate }}</span>
+      </div>
+
+      <div class="solution-arrow">→</div>
+
+      <div class="solution-step">
+        <strong>{{ 'ABOUT_PAGE.SOLUTION.STEP3_TITLE' | translate }}</strong>
+        <span>{{ 'ABOUT_PAGE.SOLUTION.STEP3_DESC' | translate }}</span>
+      </div>
+
+      <div class="solution-arrow">→</div>
+
+      <div class="solution-step">
+        <strong>{{ 'ABOUT_PAGE.SOLUTION.STEP4_TITLE' | translate }}</strong>
+        <span>{{ 'ABOUT_PAGE.SOLUTION.STEP4_DESC' | translate }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Value -->
+  <section class="card about-section">
+    <h2 class="section-title">{{ 'ABOUT_PAGE.WHY_MATTERS.TITLE' | translate }}</h2>
+    <p class="about-text">{{ 'ABOUT_PAGE.WHY_MATTERS.P1' | translate }}</p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <strong>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD1_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD1_DESC' | translate }}</p>
+      </div>
+
+      <div class="value-card">
+        <strong>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD2_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD2_DESC' | translate }}</p>
+      </div>
+
+      <div class="value-card">
+        <strong>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD3_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD3_DESC' | translate }}</p>
+      </div>
+
+      <div class="value-card">
+        <strong>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD4_TITLE' | translate }}</strong>
+        <p>{{ 'ABOUT_PAGE.WHY_MATTERS.CARD4_DESC' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Can Discover -->
+  <section class="card about-section">
+    <h2 class="section-title">{{ 'ABOUT_PAGE.DISCOVER.TITLE' | translate }}</h2>
+
+    <div class="discover-grid">
+      <div class="discover-card">
+        <h3>{{ 'ABOUT_PAGE.DISCOVER.Q1_TITLE' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.DISCOVER.Q1_DESC' | translate }}</p>
+      </div>
+
+      <div class="discover-card">
+        <h3>{{ 'ABOUT_PAGE.DISCOVER.Q2_TITLE' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.DISCOVER.Q2_DESC' | translate }}</p>
+      </div>
+
+      <div class="discover-card">
+        <h3>{{ 'ABOUT_PAGE.DISCOVER.Q3_TITLE' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.DISCOVER.Q3_DESC' | translate }}</p>
+      </div>
+
+      <div class="discover-card">
+        <h3>{{ 'ABOUT_PAGE.DISCOVER.Q4_TITLE' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.DISCOVER.Q4_DESC' | translate }}</p>
+      </div>
+
+      <div class="discover-card">
+        <h3>{{ 'ABOUT_PAGE.DISCOVER.Q5_TITLE' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.DISCOVER.Q5_DESC' | translate }}</p>
+      </div>
+
+      <div class="discover-card">
+        <h3>{{ 'ABOUT_PAGE.DISCOVER.Q6_TITLE' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.DISCOVER.Q6_DESC' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Time -->
+  <section class="card about-section">
+    <h2 class="section-title">{{ 'ABOUT_PAGE.RESEARCH_VS.TITLE' | translate }}</h2>
+    <p class="about-text">{{ 'ABOUT_PAGE.RESEARCH_VS.P1' | translate }}</p>
+
+    <div class="research-comparison">
+      <div class="research-column">
+        <h3>{{ 'ABOUT_PAGE.RESEARCH_VS.TRADITIONAL' | translate }}</h3>
+        <div class="research-step">
+          <span>01</span>{{ 'ABOUT_PAGE.RESEARCH_VS.TRAD_1' | translate }}
+        </div>
+        <div class="research-step">
+          <span>02</span>{{ 'ABOUT_PAGE.RESEARCH_VS.TRAD_2' | translate }}
+        </div>
+        <div class="research-step">
+          <span>03</span>{{ 'ABOUT_PAGE.RESEARCH_VS.TRAD_3' | translate }}
+        </div>
+        <div class="research-step">
+          <span>04</span>{{ 'ABOUT_PAGE.RESEARCH_VS.TRAD_4' | translate }}
+        </div>
+        <div class="research-step">
+          <span>05</span>{{ 'ABOUT_PAGE.RESEARCH_VS.TRAD_5' | translate }}
+        </div>
+      </div>
+
+      <div class="research-divider">VS</div>
+
+      <div class="research-column">
+        <h3>{{ 'ABOUT_PAGE.RESEARCH_VS.MODERN' | translate }}</h3>
+        <div class="research-step">
+          <span>01</span>{{ 'ABOUT_PAGE.RESEARCH_VS.MOD_1' | translate }}
+        </div>
+        <div class="research-step">
+          <span>02</span>{{ 'ABOUT_PAGE.RESEARCH_VS.MOD_2' | translate }}
+        </div>
+        <div class="research-step">
+          <span>03</span>{{ 'ABOUT_PAGE.RESEARCH_VS.MOD_3' | translate }}
+        </div>
+        <div class="research-step">
+          <span>04</span>{{ 'ABOUT_PAGE.RESEARCH_VS.MOD_4' | translate }}
+        </div>
+        <div class="research-step">
+          <span>05</span>{{ 'ABOUT_PAGE.RESEARCH_VS.MOD_5' | translate }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Features -->
+  <section class="card about-section">
+    <h2 class="section-title">{{ 'ABOUT_PAGE.CAPABILITIES.TITLE' | translate }}</h2>
+    <p class="about-text">{{ 'ABOUT_PAGE.CAPABILITIES.SUB' | translate }}</p>
+
     <div class="features-grid">
-      @for (f of features; track f.title) {
+      @for (f of featureKeys; track f.title) {
         <div class="feature-card">
           <div class="feature-icon">
             @switch (f.icon) {
               @case ('kpi') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="3" width="7" height="7" rx="1" />
                   <rect x="14" y="3" width="7" height="7" rx="1" />
                   <rect x="3" y="14" width="7" height="7" rx="1" />
                   <rect x="14" y="14" width="7" height="7" rx="1" />
                 </svg>
               }
-
               @case ('trends') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="3 17 9 11 13 15 21 7" />
                   <polyline points="14 7 21 7 21 14" />
                 </svg>
               }
-
               @case ('campus') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               }
               @case ('drill') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="3" y1="6" x2="21" y2="6" />
                   <line x1="3" y1="12" x2="15" y2="12" />
                   <line x1="3" y1="18" x2="11" y2="18" />
                 </svg>
               }
               @case ('heat') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="3" width="7" height="7" />
                   <rect x="14" y="3" width="7" height="7" />
                   <rect x="3" y="14" width="7" height="7" />
@@ -117,126 +243,123 @@
                 </svg>
               }
               @case ('distribution') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
                   <path d="M22 12A10 10 0 0 0 12 2v10z" />
                 </svg>
               }
               @case ('insights') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10" />
                   <line x1="12" y1="8" x2="12" y2="12" />
                   <line x1="12" y1="16" x2="12.01" y2="16" />
                 </svg>
               }
               @case ('filters') {
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
                 </svg>
               }
             }
           </div>
-          <h3>{{ f.title }}</h3>
-          <p>{{ f.desc }}</p>
+
+          <h3>{{ f.title | translate }}</h3>
+          <p>{{ f.desc | translate }}</p>
         </div>
       }
     </div>
   </section>
 
+  <!-- Data Coverage -->
   <section class="card about-section">
-    <h2 class="section-title">Technology Stack</h2>
-    <div class="tech-grid">
-      <div class="tech-item">
-        <span class="tech-label">Framework</span><span class="tech-value">Angular 21</span>
-      </div>
-      <div class="tech-item">
-        <span class="tech-label">Architecture</span><span class="tech-value">Feature-Based</span>
-      </div>
-      <div class="tech-item">
-        <span class="tech-label">Charts</span><span class="tech-value">Chart.js 4</span>
-      </div>
-      <div class="tech-item">
-        <span class="tech-label">State Management</span
-        ><span class="tech-value">Angular Signals</span>
-      </div>
-      <div class="tech-item">
-        <span class="tech-label">Styling</span><span class="tech-value">Custom CSS</span>
-      </div>
-      <div class="tech-item">
-        <span class="tech-label">Data Format</span><span class="tech-value">JSON (static)</span>
-      </div>
-    </div>
-  </section>
+    <h2 class="section-title">{{ 'ABOUT_PAGE.COVERAGE.TITLE' | translate }}</h2>
+    <p class="about-text">{{ 'ABOUT_PAGE.COVERAGE.P1' | translate }}</p>
 
-  <section class="card about-section">
-    <h2 class="section-title">Campuses &amp; Colleges</h2>
-    <div class="campus-info-grid">
-      <div class="campus-info-card">
-        <h3>Riyadh</h3>
-        <p>
-          8 colleges: Medicine, Dentistry, Pharmacy, Nursing, Public Health &amp; Health
-          Informatics, Applied Medical Sciences, Science &amp; Health Professions, Postgraduate
-          Medical Education
-        </p>
-      </div>
-      <div class="campus-info-card">
-        <h3>Jeddah</h3>
-        <p>
-          5 colleges: Medicine, Nursing, Applied Medical Sciences, Science &amp; Health Professions,
-          Postgraduate Medical Education
-        </p>
-      </div>
-      <div class="campus-info-card">
-        <h3>Al-Ahsa</h3>
-        <p>
-          4 colleges: Nursing, Applied Medical Sciences, Science &amp; Health Professions,
-          Postgraduate Medical Education
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="card about-section">
-    <h2 class="section-title">Loading &amp; Error Handling</h2>
-    <p class="about-text">Each card independently handles three states:</p>
     <ul class="about-list">
       <li>
-        <strong>Loading</strong> — A spinner with "Loading data..." appears while data is being
-        fetched
+        <strong>{{ 'ABOUT_PAGE.COVERAGE.YEARS' | translate }}</strong> —
+        {{ 'ABOUT_PAGE.COVERAGE.YEARS_VAL' | translate }}
       </li>
       <li>
-        <strong>Error</strong> — If data fails to load, an error message is shown instead of zeros
+        <strong>{{ 'ABOUT_PAGE.COVERAGE.CAMPUSES' | translate }}</strong> —
+        {{ 'ABOUT_PAGE.COVERAGE.CAMPUSES_VAL' | translate }}
       </li>
       <li>
-        <strong>Empty</strong> — If no data exists for the selected filters, a "No data available"
-        message is displayed rather than showing zeros
+        <strong>{{ 'ABOUT_PAGE.COVERAGE.GENDER' | translate }}</strong> —
+        {{ 'ABOUT_PAGE.COVERAGE.GENDER_VAL' | translate }}
+      </li>
+      <li>
+        <strong>{{ 'ABOUT_PAGE.COVERAGE.DEGREE' | translate }}</strong> —
+        {{ 'ABOUT_PAGE.COVERAGE.DEGREE_VAL' | translate }}
+      </li>
+      <li>
+        <strong>{{ 'ABOUT_PAGE.COVERAGE.COLLEGES' | translate }}</strong> —
+        {{ 'ABOUT_PAGE.COVERAGE.COLLEGES_VAL' | translate }}
       </li>
     </ul>
   </section>
 
+  <!-- Campuses -->
+  <section class="card about-section">
+    <h2 class="section-title">{{ 'ABOUT_PAGE.CAMPUSES_DETAILS.TITLE' | translate }}</h2>
+
+    <div class="campus-info-grid">
+      <div class="campus-info-card">
+        <h3>{{ 'ABOUT_PAGE.COVERAGE.CAMPUSES_VAL' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.CAMPUSES_DETAILS.RIYADH_DESC' | translate }}</p>
+      </div>
+
+      <div class="campus-info-card">
+        <h3>{{ 'ABOUT_PAGE.COVERAGE.CAMPUSES_VAL' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.CAMPUSES_DETAILS.JEDDAH_DESC' | translate }}</p>
+      </div>
+
+      <div class="campus-info-card">
+        <h3>{{ 'ABOUT_PAGE.COVERAGE.CAMPUSES_VAL' | translate }}</h3>
+        <p>{{ 'ABOUT_PAGE.CAMPUSES_DETAILS.AHA_DESC' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Overview -->
+  <!-- <section class="card about-section technical-section">
+    <h2 class="section-title">{{ 'ABOUT_PAGE.TECH.TITLE' | translate }}</h2>
+
+    <div class="tech-grid">
+      <div class="tech-item">
+        <span class="tech-label">{{ 'ABOUT_PAGE.TECH.FRAMEWORK' | translate }}</span>
+        <span class="tech-value">Angular 21</span>
+      </div>
+
+      <div class="tech-item">
+        <span class="tech-label">{{ 'ABOUT_PAGE.TECH.ARCH' | translate }}</span>
+        <span class="tech-value">Feature-Based</span>
+      </div>
+
+      <div class="tech-item">
+        <span class="tech-label">{{ 'ABOUT_PAGE.TECH.CHARTS' | translate }}</span>
+        <span class="tech-value">Chart.js 4</span>
+      </div>
+
+      <div class="tech-item">
+        <span class="tech-label">{{ 'ABOUT_PAGE.TECH.STATE' | translate }}</span>
+        <span class="tech-value">Angular Signals</span>
+      </div>
+
+      <div class="tech-item">
+        <span class="tech-label">{{ 'ABOUT_PAGE.TECH.STYLING' | translate }}</span>
+        <span class="tech-value">Custom CSS</span>
+      </div>
+
+      <div class="tech-item">
+        <span class="tech-label">{{ 'ABOUT_PAGE.TECH.DATA' | translate }}</span>
+        <span class="tech-value">JSON</span>
+      </div>
+    </div>
+  </section> -->
+
   <footer class="dashboard-footer about-footer">
-    <span>Data source: KSAU-HS Public Student Enrollment Statistics</span>
-    <span>Academic Years 2016/2017 - 2023/2024</span>
+    <span>{{ 'FOOTER.SOURCE' | translate }}</span>
+    <span>{{ 'FOOTER.YEARS' | translate }}</span>
   </footer>
 </div>

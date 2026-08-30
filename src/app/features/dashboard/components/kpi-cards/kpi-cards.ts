@@ -3,6 +3,8 @@ import { Component, computed, inject } from '@angular/core';
 import { NumberFormatPipe } from '../../../../shared/pipes/number-formate.pipe';
 import { StudentDataService } from '../../../../core/services/student-service';
 import { CardState } from '../../../../shared/components/card-state/card-state';
+import { TranslationService } from '../../../../core/services/TranslationService';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-kpi-cards',
@@ -11,14 +13,15 @@ import { CardState } from '../../../../shared/components/card-state/card-state';
   styleUrl: './kpi-cards.css',
 })
 export class KpiCards {
-  private svc = inject(StudentDataService);
+  private studentDataService = inject(StudentDataService);
+  readonly transSvc = inject(TranslationService);
+  private readonly translate = inject(TranslateService);
+  readonly selectedYear = this.studentDataService.selectedYear;
+  readonly globalLoading = this.studentDataService.loading;
+  readonly globalError = this.studentDataService.error;
+  readonly hasData = this.studentDataService.hasData;
 
-  readonly selectedYear = this.svc.selectedYear;
-  readonly globalLoading = this.svc.loading;
-  readonly globalError = this.svc.error;
-  readonly hasData = this.svc.hasData;
-
-  readonly kpis = computed(() => this.svc.getKpis());
+  readonly kpis = computed(() => this.studentDataService.getKpis());
 
   private readonly icons = {
     graduation: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
@@ -28,6 +31,8 @@ export class KpiCards {
   };
 
   readonly cards = computed(() => {
+    const lang = this.transSvc.currentLang();
+
     const loading = this.globalLoading;
     const hasError = this.globalError;
     const k = this.kpis();
@@ -35,65 +40,69 @@ export class KpiCards {
     const hasData = () => this.hasData() && k !== null;
     const errFn = () => hasError() !== null;
 
-    const fmt = (v: number | null | undefined) => (v != null ? v.toLocaleString('en-US') : '--');
+    const locale = lang === 'ar' ? 'ar-SA' : lang === 'de' ? 'de-DE' : 'en-US';
+    const fmt = (v: number | null | undefined) => (v != null ? v.toLocaleString(locale) : '--');
+
+    const awaiting = this.translate.instant('KPI.AWAITING_DATA');
+    const shareText = this.translate.instant('KPI.SHARE');
+
+    const campusName = k?.largestCampus
+      ? this.translate.instant(`CAMPUSES.${k.largestCampus.toUpperCase()}`) || k.largestCampus
+      : '--';
 
     return [
       {
-        label: 'Total Students',
+        label: this.translate.instant('KPI.TOTAL_STUDENTS'),
         icon: 'assets/Images/graduation-cap.svg',
         cssClass: '',
         value: k ? fmt(k.totalStudents) : '--',
         valueClass: '',
-        sub: k ? `${fmt(k.totalStudents)} | ${this.selectedYear()}` : 'Awaiting data',
+        sub: k ? `${fmt(k.totalStudents)} | ${this.selectedYear()}` : awaiting,
         loading,
         hasData,
         hasError: errFn,
       },
-
       {
-        label: 'Growth Rate',
+        label: this.translate.instant('KPI.GROWTH_RATE'),
         icon: 'assets/Images/growth-rate.svg',
         cssClass: 'kpi-growth',
         value: k ? `${k.growthRate > 0 ? '+' : ''}${k.growthRate}%` : '--',
         valueClass: k ? (k.growthRate > 0 ? 'positive' : k.growthRate < 0 ? 'negative' : '') : '',
-        sub: 'vs last year',
+        sub: this.translate.instant('KPI.VS_LAST_YEAR'),
         loading,
         hasData,
         hasError: errFn,
       },
-
       {
-        label: 'Female',
+        label: this.translate.instant('KPI.FEMALE'),
         icon: 'assets/Images/female-student.svg',
         cssClass: '',
         value: k ? fmt(k.female) : '--',
         badge: k ? `${k.femalePercent}%` : '',
         valueClass: '',
-        sub: 'Female Students',
+        sub: this.translate.instant('KPI.FEMALE_SUB'),
         loading,
         hasData,
         hasError: errFn,
       },
-
       {
-        label: 'Postgraduate',
+        label: this.translate.instant('KPI.POSTGRADUATE'),
         icon: 'assets/Images/graduation-cap.svg',
         cssClass: '',
         value: k ? fmt(k.postgraduate) : '--',
         valueClass: '',
-        sub: k ? `${fmt(k.postgraduate)} (${k.postgraduatePercent}%)` : 'Awaiting data',
+        sub: k ? `${fmt(k.postgraduate)} (${k.postgraduatePercent}%)` : awaiting,
         loading,
         hasData,
         hasError: errFn,
       },
-
       {
-        label: 'Largest Campus',
+        label: this.translate.instant('KPI.LARGEST_CAMPUS'),
         icon: 'assets/Images/largest-campus.svg',
         cssClass: 'kpi-campus',
-        value: k?.largestCampus || '--',
+        value: campusName,
         valueClass: 'campus-name',
-        sub: k?.largestCampus ? `${k.largestCampusPercent}% share` : 'Awaiting data',
+        sub: k?.largestCampus ? `${k.largestCampusPercent}% ${shareText}` : awaiting,
         loading,
         hasData,
         hasError: errFn,

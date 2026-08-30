@@ -1,0 +1,341 @@
+{
+  "app": {
+    "title": "Studenten-Analyse-Dashboard",
+    "subtitle": "König Saud bin Abdulaziz Universität für Gesundheitswissenschaften"
+  },
+  "nav": {
+    "about": "Über",
+    "back": "Zurück zum Dashboard"
+  },
+  "filter": {
+    "academicYear": "Studienjahr",
+    "campus": "Campus"
+  },
+  "campus": {
+    "all": "Alle Campus",
+    "riyadh": "Riad",
+    "jeddah": "Dschidda",
+    "alAhasa": "Al-Ahsa"
+  },
+  "kpi": {
+    "totalStudents": "Studierende gesamt",
+    "growthRate": "Wachstumsrate",
+    "female": "Weiblich",
+    "postgraduate": "Postgraduiert",
+    "largestCampus": "Größter Campus",
+    "vsLastYear": "im Vgl. zum Vorjahr",
+    "femaleStudents": "Studentinnen",
+    "share": "Anteil",
+    "awaitingData": "Daten werden geladen"
+  },
+  "card": {
+    "studentTrends": "Studententrends im Zeitverlauf",
+    "trends": {
+      "total": "Studierende gesamt",
+      "male": "Männlich",
+      "female": "Weiblich"
+    },
+    "insights": "Erkenntnisse & Highlights",
+    "campusEnrollment": "Campus-Einschreibung Aufschlüsselung",
+    "drillDown": "Detailanalyse",
+    "advancedAnalytics": "Erweiterte Analysen",
+    "enrollmentDistribution": "Einschreibungsverteilung",
+    "byCollege": "Nach Fakultät"
+  },
+  "drill": {
+    "college": "Fakultät",
+    "students": "Studierende",
+    "share": "% Anteil",
+    "noData": "Keine Daten für diesen Campus/dieses Jahr"
+  },
+  "adv": {
+    "topColleges": "Top-Fakultäten nach Einschreibung",
+    "heatmap": "Einschreibungs-Heatmap — Fakultäten × Jahre",
+    "noCollegeData": "Keine Fakultätsdaten verfügbar",
+    "noHeatmapData": "Keine Heatmap-Daten verfügbar"
+  },
+  "state": {
+    "loading": "Daten werden geladen...",
+    "error": "Daten konnten nicht geladen werden",
+    "errorSub": "Bitte versuchen Sie es später erneut",
+    "empty": "Keine Daten verfügbar",
+    "emptySub": "Keine Einträge für die ausgewählten Filter"
+  },
+  "footer": {
+    "dataSource": "Datenquelle: KSAU-HS öffentliche Studenteneinschreibungsstatistik",
+    "years": "Studienjahre 2016/2017 - 2023/2024"
+  },
+  "insight": {
+    "jeddah": "Der <strong>Campus Dschidda</strong> zeigt das <strong>höchste Wachstum</strong> in den letzten 3 Jahren mit <strong>{{val}}%</strong>.",
+    "female": "<strong>Studentinnen</strong> machen nun <strong>{{val}}%</strong> der Gesamtzahl aus, gegenüber <strong>{{prev}}%</strong> im Jahr {{year}}.",
+    "postgrad": "Die <strong>Postgraduierten-Einschreibung</strong> ist auf <strong>{{val}}</strong> Studierende in diesem Jahr gestiegen."
+  },
+  "about": {
+    "title": "Über dieses Dashboard",
+    "subtitle": "Studenten-Analyse-Dashboard — König Saud bin Abdulaziz Universität für Gesundheitswissenschaften",
+    "overview": "Übersicht",
+    "overviewText": "Dieses Dashboard bietet einen umfassenden Überblick über die Studenteneinschreibungsstatistik der König Saud bin Abdulaziz Universität für Gesundheitswissenschaften (KSAU-HS) über alle Campus, Fakultäten und Studienjahre von 2016/2017 bis 2023/2024. Es ermöglicht Administratoren und Interessengruppen, Trends zu erkunden, Campus zu vergleichen, Fakultätsdaten zu analysieren und handlungsrelevante Erkenntnisse durch interaktive Visualisierungen zu gewinnen.",
+    "dataSource": "Datenquelle",
+    "dataSourceText": "Alle angezeigten Daten stammen aus dem öffentlich verfügbaren KSAU-HS-Datensatz zur Studenteneinschreibung",
+    "dataSourceSuffix": "Der Datensatz umfasst drei Hauptkategorien:",
+    "catGender": "Geschlecht — Männliche und weibliche Einschreibung pro Studienjahr",
+    "catDegree": "Akademischer Grad — Bachelor- und Postgraduierten-Einschreibung pro Jahr",
+    "catBranch": "Zweig & Fakultät — Einschreibung aufgeschlüsselt nach Campus (Riad, Dschidda, Al-Ahsa) und Fakultät",
+    "features": "Dashboard-Funktionen",
+    "techStack": "Technologie-Stack",
+    "campusesColleges": "Campus & Fakultäten",
+    "loadingError": "Laden & Fehlerbehandlung",
+    "loadingErrorIntro": "Jede Karte behandelt unabhängig drei Zustände:",
+    "loadingDesc": "Laden — Ein Spinner mit \"Daten werden geladen...\" erscheint während des Ladens",
+    "errorDesc": "Fehler — Wenn Daten nicht geladen werden können, wird eine Fehlermeldung statt Nullen angezeigt",
+    "emptyDesc": "Leer — Wenn keine Daten für die ausgewählten Filter vorhanden sind, wird \"Keine Daten verfügbar\" statt Nullen angezeigt",
+    "feat": {
+      "kpi": {
+        "title": "KPI-Karten",
+        "desc": "Key Performance Indicators showing total students, growth rate, female percentage, postgraduate count, and largest campus — all updating in real time with the selected academic year."
+      },
+      "trends": {
+        "title": "Studententrends",
+        "desc": "Liniendiagramme visualisieren die Gesamteinschreibung und Geschlechteraufteilung über 8 Studienjahre mit Verläufen und interaktiven Tooltips."
+      },
+      "campus": {
+        "title": "Campus-Einschreibung",
+        "desc": "Horizontaler Balkenvergleich aller drei Campus sowie ein Trenddiagramm für den ausgewählten Campus, mit Campus-Auswahlfilter."
+      },
+      "drill": {
+        "title": "Detailanalyse",
+        "desc": "Horizontales Balkendiagramm und detaillierte Tabelle zeigen die Einschreibung pro Fakultät für einen ausgewählten Campus, mit prozentualen Anteilsberechnungen."
+      },
+      "heat": {
+        "title": "Erweiterte Analysen",
+        "desc": "Top-Fakultäten-Ranking mit Mini-Balkendiagrammen und einer farbcodierten Einschreibungs-Heatmap über Fakultäten und Studienjahre, nach Campus filterbar."
+      },
+      "dist": {
+        "title": "Einschreibungsverteilung",
+        "desc": "Donut-Diagramm zeigt den proportionalen Anteil jeder Fakultät an der gesamten Universitätseinschreibung, mit einer farbcodierten Legende."
+      },
+      "insights": {
+        "title": "Erkenntnisse & Highlights",
+        "desc": "Automatisch generierte textuelle Erkenntnisse, die Wachstumstrends, Geschlechterveränderungen und Postgraduierten-Meilensteine hervorheben."
+      },
+      "filters": {
+        "title": "Interaktive Filter",
+        "desc": "Studienjahresauswahl im Header und Campus-Auswahlen in einzelnen Karten — alle reaktiv mit Angular Signals für sofortige Aktualisierungen."
+      }
+    },
+    "tech": {
+      "framework": "Framework",
+      "architecture": "Architektur",
+      "charts": "Diagramme",
+      "state": "Zustandsverwaltung",
+      "styling": "Styling",
+      "data": "Datenformat"
+    },
+    "riyadhDesc": "8 Fakultäten: Medizin, Zahnmedizin, Pharmazie, Pflege, Öffentliche Gesundheit & Gesundheitsinformatik, Angewandte Medizinische Wissenschaften, Gesundheitsberufe, Postgraduierte Medizinische Ausbildung",
+    "jeddahDesc": "5 Fakultäten: Medizin, Pflege, Angewandte Medizinische Wissenschaften, Gesundheitsberufe, Postgraduierte Medizinische Ausbildung",
+    "alAhsaDesc": "4 Fakultäten: Pflege, Angewandte Medizinische Wissenschaften, Gesundheitsberufe, Postgraduierte Medizinische Ausbildung"
+  },
+  "college": {
+    "com": "Medizin",
+    "cod": "Zahnmedizin",
+    "cop": "Pharmazie",
+    "con": "Pflege",
+    "cphhi": "Öffentliche Gesundheit",
+    "cams": "Angewandte Wissenschaften",
+    "coshp": "Gesundheitswissenschaften",
+    "pme": "Postgraduierte Medizin"
+  },
+  "HEADER": {
+    "TITLE": "Studierenden-Analyse-Dashboard",
+    "SUBTITLE": "King Saud bin Abdulaziz Universität für Gesundheitswissenschaften",
+    "ABOUT": "Über uns",
+    "ACADEMIC_YEAR": "Studienjahr",
+    "THEME_LIGHT": "Heller Modus",
+    "THEME_DARK": "Dunkler Modus"
+  },
+  "KPIS": {
+    "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
+    "MALE_STUDENTS": "Männliche Studierende",
+    "FEMALE_STUDENTS": "Weibliche Studierende",
+    "GROWTH_RATE": "Jährliche Wachstumsrate",
+    "CAMPUSES_COUNT": "Standorte"
+  },
+  "CHARTS": {
+    "STUDENT_TRENDS": "Einschreibungsentwicklung",
+    "INSIGHTS": "Wichtige Erkenntnisse",
+    "CAMPUS_ENROLLMENT": "Verteilung nach Campus",
+    "GENDER_RATIO": "Geschlechterverteilung",
+    "DRILL_DOWN": "Detailanalyse",
+    "ADVANCED_ANALYTICS": "Erweiterte Analysen"
+  },
+  "FOOTER": {
+    "SOURCE": "Datenquelle: KSAU-HS Offizielle Studierenden-Einschreibungsstatistik",
+    "YEARS": "Studienjahre 2016/2017 - 2023/2024"
+  },
+  "ABOUT_PAGE": {
+    "HERO": {
+      "TITLE": "Von Daten zu Entscheidungen",
+      "SUBTITLE": "Studenten-Analyse-Dashboard — Komplexe Einschreibungsdaten in klare, handlungsorientierte Erkenntnisse für bessere Entscheidungen verwandeln.",
+      "BACK_BTN": "Zurück zum Dashboard"
+    },
+    "VALUE": {
+      "TITLE": "Evidenzbasierte Entscheidungen",
+      "P1": "Diese Plattform verwandelt Einschreibungsdaten von Studierenden in ein interaktives Analyse-Erlebnis. Sie hilft Entscheidungsträgern zu verstehen, was aktuell geschieht, wo Wachstum stattfindet und wo zukünftige Chancen liegen.",
+      "P2": "Statt Stunden mit der manuellen Durchsicht von Berichten, Tabellen und historischen Daten zu verbringen, können Sie die wichtigsten Informationen zentral über ein einziges Dashboard analysieren."
+    },
+    "CHALLENGE": {
+      "TITLE": "Die betriebliche Herausforderung",
+      "P1": "Akademische und strategische Entscheidungen erfordern die Analyse großer Mengen historischer und demografischer Daten. Das manuelle Erkennen von Mustern ist zeitintensiv und erfordert wiederholtes Extrahieren von Berichten und Berechnungen.",
+      "STEP1_TITLE": "Suchen",
+      "STEP1_DESC": "Daten aus verschiedenen Berichten und Quellen zusammentragen.",
+      "STEP2_TITLE": "Sammeln",
+      "STEP2_DESC": "Relevante Zahlen und historische Datensätze erfassen.",
+      "STEP3_TITLE": "Berechnen",
+      "STEP3_DESC": "Wachstumsraten und Vergleiche manuell berechnen.",
+      "STEP4_TITLE": "Analysieren",
+      "STEP4_DESC": "Standorte, Fakultäten und demografische Trends vergleichen."
+    },
+    "SOLUTION": {
+      "TITLE": "Die intelligente Lösung",
+      "P1": "Das Dashboard führt diese Analyseschritte auf einer zentralen Plattform zusammen. Es strukturiert verfügbare Daten automatisch, berechnet Kennzahlen und visualisiert historische Trends.",
+      "STEP1_TITLE": "Zentrale Plattform",
+      "STEP1_DESC": "Alle relevanten Einschreibungsdaten auf einen Blick.",
+      "STEP2_TITLE": "Exploration",
+      "STEP2_DESC": "Daten einfach filtern und tiefere Einblicke gewinnen.",
+      "STEP3_TITLE": "Erkenntnis",
+      "STEP3_DESC": "Wachstumstrends und wesentliche Unterschiede erkennen.",
+      "STEP4_TITLE": "Entscheidung",
+      "STEP4_DESC": "Fundierte strategische Entscheidungen auf Faktenbasis treffen."
+    },
+    "WHY_MATTERS": {
+      "TITLE": "Der Mehrwert",
+      "P1": "Der Wert der Plattform liegt nicht nur in der Darstellung von Zahlen. Sie reduziert den Aufwand für die Datenanalyse erheblich und wandelt Rohdaten in strategisches Wissen um.",
+      "CARD1_TITLE": "Recherchezeit sparen",
+      "CARD1_DESC": "Reduziert den manuellen Aufwand beim Suchen in mehreren Berichten.",
+      "CARD2_TITLE": "Wachstumspotenziale erkennen",
+      "CARD2_DESC": "Schnelles Identifizieren von Standorten und Fakultäten mit starkem Nachfragezuwachs.",
+      "CARD3_TITLE": "Chancen vergleichen",
+      "CARD3_DESC": "Standorte, Fakultäten, Studienjahre und Zielgruppen in einer Oberfläche vergleichen.",
+      "CARD4_TITLE": "Entscheidungen unterstützen",
+      "CARD4_DESC": "Komplexe historische Daten in klare, leicht verständliche Erkenntnisse umwandeln."
+    },
+    "DISCOVER": {
+      "TITLE": "Was können Sie entdecken?",
+      "Q1_TITLE": "Wo konzentriert sich die Nachfrage?",
+      "Q1_DESC": "Erkennen, welche Standorte und Fakultäten die höchsten Studierendenzahlen aufweisen.",
+      "Q2_TITLE": "Wo findet Wachstum statt?",
+      "Q2_DESC": "Historische Trends verfolgen und Standorte mit starkem Zuwachs identifizieren.",
+      "Q3_TITLE": "Welche Fakultäten führen bei den Einschreibungen?",
+      "Q3_DESC": "Vergleich der Studierendenzahlen auf Fakultätsebene zur Ermittlung von Schwerpunkten.",
+      "Q4_TITLE": "Wie verändert sich die Studierendenstruktur?",
+      "Q4_DESC": "Verteilung nach Geschlecht, Postgraduiertenstudien und Veränderung über die Jahre analysieren.",
+      "Q5_TITLE": "Wie schneiden die Standorte im Vergleich ab?",
+      "Q5_DESC": "Vergleich von Riad, Dschidda und Al-Ahsa anhand einheitlicher Kennzahlen.",
+      "Q6_TITLE": "Welche Muster erfordern Aufmerksamkeiten?",
+      "Q6_DESC": "Visuelle Analysen nutzen, um wesentliche Veränderungen in den Daten schnell zu erfassen."
+    },
+    "RESEARCH_VS": {
+      "TITLE": "Weniger Recherche. Schnellere Erkenntnisse.",
+      "P1": "Traditionelle Analysen erfordern viele Schritte bis zum Ergebnis. Dieses Dashboard komprimiert den gesamten Prozess in eine interaktive Anwendung.",
+      "TRADITIONAL": "Traditionelle Recherche",
+      "TRAD_1": "Durchsuchen mehrerer Berichte",
+      "TRAD_2": "Manuelles Sammeln historischer Daten",
+      "TRAD_3": "Manuelle Berechnung von Prozenten & Wachstum",
+      "TRAD_4": "Erstellen eigener Diagramme und Vergleiche",
+      "TRAD_5": "Interpretation der Ergebnisse",
+      "MODERN": "Mit diesem Dashboard",
+      "MOD_1": "Dashboard öffnen",
+      "MOD_2": "Gewünschte Filter auswählen",
+      "MOD_3": "Trends und Vergleiche sofort visualisieren",
+      "MOD_4": "Wichtige Erkenntnisse direkt ablesen",
+      "MOD_5": "Schnelle und fundierte Entscheidungen treffen"
+    },
+    "KPI": {
+      "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
+      "AWAITING_DATA": "Warten auf Daten",
+      "GROWTH_RATE": "Wachstumsrate",
+      "VS_LAST_YEAR": "im Vergleich zum Vorjahr",
+      "FEMALE": "Studentinnen",
+      "FEMALE_SUB": "Weibliche Studierende",
+      "POSTGRADUATE": "Postgraduierte",
+      "LARGEST_CAMPUS": "Größter Standort",
+      "SHARE": "Anteil"
+    },
+
+    "CAPABILITIES": {
+      "TITLE": "Funktionen des Dashboards",
+      "SUB": "Jede Funktion ist darauf ausgelegt, spezifische analytische Fragen direkt zu beantworten.",
+      "KPI_TITLE": "KPI-Karten",
+      "KPI_DESC": "Wichtigste Kennzahlen wie Gesamtzahl der Studierenden, Wachstumsrate, Frauenquote und größter Standort — aktualisiert in Echtzeit.",
+      "TRENDS_TITLE": "Entwicklung der Studierendenzahlen",
+      "TRENDS_DESC": "Linien-Diagramme zur Visualisierung der Gesamteinschreibungen und Geschlechterverteilung über 8 akademische Jahre.",
+      "CAMPUS_TITLE": "Einschreibungen nach Standort",
+      "CAMPUS_DESC": "Horizontaler Balkenvergleich aller drei Standorte sowie Trenddiagramm für den ausgewählten Standort.",
+      "DRILL_TITLE": "Detailanalyse der Fakultäten",
+      "DRILL_DESC": "Detaillierte Darstellung der Einschreibungen pro Fakultät für einen ausgewählten Standort mit prozentualen Anteilen.",
+      "HEAT_TITLE": "Erweiterte Analysen & Heatmap",
+      "HEAT_DESC": "Ranking der Top-Fakultäten und farbkodierte Heatmap über Fakultäten und Studienjahre hinweg.",
+      "DIST_TITLE": "Verteilung der Einschreibungen",
+      "DIST_DESC": "Donut-Diagramm zeigt den prozentualen Anteil jeder Fakultät an den Gesamteinschreibungen der Universität.",
+      "INSIGHTS_TITLE": "Automatisierte Erkenntnisse",
+      "INSIGHTS_DESC": "Automatisch generierte Berichte zu Wachstumstrends, Geschlechterverhältnissen und Meilensteinen.",
+      "FILTERS_TITLE": "Interaktive Filter",
+      "FILTERS_DESC": "Auswahl des Studienjahres im Header und Standortfilter in den Karten — reagiert sofort dank Angular Signals."
+    },
+    "COVERAGE": {
+      "TITLE": "Datenumfang",
+      "P1": "Das Dashboard analysiert die verfügbaren Einschreibungsdaten der KSAU-HS über mehrere akademische Jahre, Standorte, Fakultäten und Abschlüsse hinweg.",
+      "YEARS": "Studienjahre",
+      "YEARS_VAL": "2016/2017 bis 2023/2024",
+      "CAMPUSES": "Standorte",
+      "CAMPUSES_VAL": "Riad, Dschidda und Al-Ahsa",
+      "GENDER": "Geschlechterverteilung",
+      "GENDER_VAL": "Männliche und weibliche Studierende",
+      "DEGREE": "Abschlussart",
+      "DEGREE_VAL": "Bachelor und Postgraduiertenstudien",
+      "COLLEGES": "Fakultäten",
+      "COLLEGES_VAL": "Einschreibungsverteilung über alle verfügbaren Fakultäten"
+    },
+    "COLLEGES": {
+      "COSHP": "Fakultät für Natur- und Gesundheitswissenschaften",
+      "PME": "Vorbereitungsjahr",
+      "COM": "Medizinische Fakultät",
+      "cams": "Fakultät für Angewandte Medizinische Wissenschaften",
+      "CON": "Fakultät für Pflegewissenschaften",
+      "COD": "Zahnmedizinische Fakultät",
+      "COP": "Pharmazeutische Fakultät",
+      "CPHHI": "Fakultät für Öffentliche Gesundheit und Gesundheitsinformatik"
+    },
+    "CAMPUSES_DETAILS": {
+      "TITLE": "Standorte & Fakultäten",
+      "RIYADH_DESC": "8 Fakultäten: Medizin, Zahnmedizin, Pharmazie, Pflegewissenschaften, Public Health & Gesundheitsinformatik, Angewandte Medizinische Wissenschaften, Naturwissenschaften & Gesundheitsberufe sowie Postgraduale Medizinische Ausbildung.",
+      "JEDDAH_DESC": "5 Fakultäten: Medizin, Pflegewissenschaften, Angewandte Medizinische Wissenschaften, Naturwissenschaften & Gesundheitsberufe sowie Postgraduale Medizinische Ausbildung.",
+      "AHA_DESC": "4 Fakultäten: Pflegewissenschaften, Angewandte Medizinische Wissenschaften, Naturwissenschaften & Gesundheitsberufe sowie Postgraduale Medizinische Ausbildung."
+    },
+    "TECH": {
+      "TITLE": "Technischer Überblick",
+      "FRAMEWORK": "Framework",
+      "ARCH": "Architektur",
+      "CHARTS": "Diagramme",
+      "STATE": "State Management",
+      "STYLING": "Styling",
+      "DATA": "Datenformat"
+    }
+  },
+  "DISTRIBUTION": {
+    "TITLE": "Verteilung der Einschreibungen",
+    "BY_COLLEGE": "Nach Fakultät — {{year}}"
+  },
+  "TRENDS": {
+    "TITLE": "Entwicklung der Studierendenzahlen",
+    "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
+    "MALE": "Männlich",
+    "FEMALE": "Weiblich"
+  },
+  "INSIGHTS": {
+    "TITLE": "Erkenntnisse & Highlights",
+    "JEDDAH_GROWTH": "Der <strong>Campus Jeddah</strong> verzeichnete mit <strong>{{value}}%</strong> das <strong>höchste Wachstum</strong> in den letzten 3 Jahren.",
+    "FEMALE_RATIO": "<strong>Studentinnen</strong> machen nun <strong>{{current}}%</strong> der Gesamtzahl aus, verglichen mit <strong>{{first}}%</strong> im Jahr {{year}}.",
+    "POSTGRAD_INCREASE": "Die Einschreibungen für <strong>Postgraduierte Studiengänge</strong> sind in diesem Jahr auf <strong>{{total}}</strong> Studierende gestiegen."
+  }
+}

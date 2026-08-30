@@ -10,7 +10,9 @@ import { DrillDown } from './components/drill-down/drill-down';
 import { InsightsComponent } from './components/insights/insights';
 import { CampusEnrollment } from './components/campus-enrollment/campus-enrollment';
 import { AdvancedAnalytics } from './components/advanced-analytics/advanced-analytics';
-
+import { ThemeService } from '../../core/services/theme.service';
+import { LanguageCode, TranslationService } from '../../core/services/TranslationService';
+import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-dashboard',
   imports: [
@@ -25,6 +27,7 @@ import { AdvancedAnalytics } from './components/advanced-analytics/advanced-anal
     CampusEnrollment,
     GenderRatio,
     KpiCards,
+    TranslatePipe,
     GenderRatio,
     DrillDown,
   ],
@@ -33,6 +36,12 @@ import { AdvancedAnalytics } from './components/advanced-analytics/advanced-anal
 })
 export class Dashboard {
   private svc = inject(StudentDataService);
+  readonly themeSvc = inject(ThemeService);
+  readonly transSvc = inject(TranslationService);
+  onLangChange(event: Event) {
+    const lang = (event.target as HTMLSelectElement).value as LanguageCode;
+    this.transSvc.changeLang(lang);
+  }
   readonly years = computed(() => this.svc.getYears());
   selected = this.svc.selectedYear();
 

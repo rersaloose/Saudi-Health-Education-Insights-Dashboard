@@ -1,5 +1,5 @@
 <section class="card trends-card">
-  <h2 class="section-title">Student Trends Over Time</h2>
+  <h2 class="section-title">{{ 'TRENDS.TITLE' | translate }}</h2>
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <div class="trends-charts">
       <div class="trend-total">
@@ -7,9 +7,9 @@
       </div>
       <div class="trend-gender">
         <div class="legend-row">
-          <span class="legend-dot total-dot"></span>Total Students
-          <span class="legend-dot male-dot ml"></span>Male
-          <span class="legend-dot female-dot ml"></span>Female
+          <span class="legend-dot total-dot"></span> {{ 'TRENDS.TOTAL_STUDENTS' | translate }}
+          <span class="legend-dot male-dot ml"></span> {{ 'TRENDS.MALE' | translate }}
+          <span class="legend-dot female-dot ml"></span> {{ 'TRENDS.FEMALE' | translate }}
         </div>
         <canvas #genderCanvas></canvas>
       </div>

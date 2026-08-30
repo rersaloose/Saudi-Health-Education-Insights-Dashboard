@@ -2,6 +2,8 @@ import { Component, computed, inject } from '@angular/core';
 import { StudentDataService } from '../../../../core/services/student-service';
 import { CommonModule } from '@angular/common';
 import { CardState } from '../../../../shared/components/card-state/card-state';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { TranslationService } from '../../../../core/services/TranslationService';
 
 interface Insight {
   icon: string;
@@ -11,18 +13,22 @@ interface Insight {
 }
 @Component({
   selector: 'app-insights',
-  imports: [CommonModule, CardState],
+  imports: [CommonModule, CardState, TranslatePipe],
   templateUrl: './insights.html',
   styleUrl: './insights.css',
 })
 export class InsightsComponent {
   private studentDataService = inject(StudentDataService);
+  private transSvc = inject(TranslationService);
+  private translate = inject(TranslateService);
 
   readonly loading = this.studentDataService.loading;
   readonly hasError = () => this.studentDataService.error() !== null;
   hasData = () => this.studentDataService.data() !== null;
 
   readonly insights = computed<Insight[]>(() => {
+    const lang = this.transSvc.currentLang();
+
     const kpis = this.studentDataService.getKpis();
     if (!kpis) return [];
     const year = this.studentDataService.selectedYear();
@@ -48,20 +54,28 @@ export class InsightsComponent {
         ? ((femaleFirst / femaleFirstTotal) * 100).toFixed(0)
         : '0';
 
+    const locale = lang === 'ar' ? 'ar-SA' : lang === 'de' ? 'de-DE' : 'en-US';
+    const formattedPostgrad = kpis.postgraduate.toLocaleString(locale);
+    const startYear = years[0]?.split('/')[0] ?? '2016';
+
     return [
       {
         icon: 'icon-campus',
-        text: `<strong>Jeddah Campus</strong> shows the <strong>highest growth</strong> over the last 3 years at <strong>${jeddah3yr}%</strong>.`,
+        text: this.translate.instant('INSIGHTS.JEDDAH_GROWTH', { value: jeddah3yr }),
         tag: 'AR',
         tagClass: 'tag-blue',
       },
       {
         icon: 'icon-female-insight',
-        text: `<strong>Female Students</strong> now make up <strong>${kpis.femalePercent}%</strong> of the total, up from <strong>${femaleFirstPct}%</strong> in ${years[0]?.split('/')[0] ?? '2016'}.`,
+        text: this.translate.instant('INSIGHTS.FEMALE_RATIO', {
+          current: kpis.femalePercent,
+          first: femaleFirstPct,
+          year: startYear,
+        }),
       },
       {
         icon: 'icon-graduation-insight',
-        text: `<strong>Postgraduate Enrollment</strong> has increased to reach <strong>${kpis.postgraduate.toLocaleString()}</strong> students this year.`,
+        text: this.translate.instant('INSIGHTS.POSTGRAD_INCREASE', { total: formattedPostgrad }),
       },
     ];
   });
