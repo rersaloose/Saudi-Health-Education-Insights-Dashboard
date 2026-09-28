@@ -13,6 +13,7 @@ import { AdvancedAnalytics } from './components/advanced-analytics/advanced-anal
 import { ThemeService } from '../../core/services/theme.service';
 import { LanguageCode, TranslationService } from '../../core/services/TranslationService';
 import { TranslatePipe } from '@ngx-translate/core';
+import { HeaderService } from '../../core/services/header.services';
 @Component({
   selector: 'app-dashboard',
   imports: [
@@ -38,14 +39,12 @@ export class Dashboard {
   private svc = inject(StudentDataService);
   readonly themeSvc = inject(ThemeService);
   readonly transSvc = inject(TranslationService);
-  onLangChange(event: Event) {
-    const lang = (event.target as HTMLSelectElement).value as LanguageCode;
-    this.transSvc.changeLang(lang);
+  readonly headerService = inject(HeaderService);
+  ngOnInit(): void {
+    this.headerService.setYearFilterVisibility(true);
   }
-  readonly years = computed(() => this.svc.getYears());
-  selected = this.svc.selectedYear();
 
-  onYearChange(year: string): void {
-    this.svc.selectedYear.set(year);
+  ngOnDestroy(): void {
+    this.headerService.setYearFilterVisibility(false);
   }
 }

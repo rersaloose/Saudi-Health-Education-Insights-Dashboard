@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LanguageCode, TranslationService } from './core/services/TranslationService';
+import { HeaderComponent } from './shared/components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -17,6 +17,12 @@
     "jeddah": "Jeddah",
     "alAhasa": "Al-Ahsa"
   },
+  "CAMPUSES": {
+    "RIYADH": "RIYADH",
+    "JEDDAH": "JEDDAH",
+    "AHA": "AHA"
+  },
+
   "kpi": {
     "totalStudents": "Total Students",
     "growthRate": "Growth Rate",

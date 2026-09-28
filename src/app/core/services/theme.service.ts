@@ -10,10 +10,10 @@ export class ThemeService {
 
   constructor() {
     effect(() => {
-      const t = this.theme();
-      document.documentElement.setAttribute('data-theme', t);
+      const themeMode = this.theme();
+      document.documentElement.setAttribute('data-theme', themeMode);
       try {
-        localStorage.setItem(this.storageKey, t);
+        localStorage.setItem(this.storageKey, themeMode);
       } catch {}
     });
   }

@@ -131,15 +131,55 @@ export class StudentTrends implements AfterViewInit {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+          padding: {
+            bottom: 20,
+          },
+        },
         plugins: {
           legend: { display: false },
           tooltip: { mode: 'index', intersect: false },
         },
         scales: {
-          x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+          x: {
+            grid: { display: false },
+            ticks: { font: { size: 10 }, maxRotation: 0, minRotation: 0, autoSkip: true },
+          },
           y: { grid: { color: '#f0f0f0' }, ticks: { font: { size: 10 } } },
         },
       },
+      // options: {
+      //   responsive: true,
+      //   maintainAspectRatio: false,
+      //   layout: {
+      //     padding: {
+      //       bottom: 20,
+      //     },
+      //   },
+      //   plugins: {
+      //     legend: { display: false },
+      //     tooltip: { mode: 'index', intersect: false },
+      //   },
+      //   scales: {
+      //     x: {
+      //       grid: { display: false },
+      //       ticks: {
+      //         font: { size: 10 },
+      //         maxRotation: 0,
+      //         minRotation: 0,
+      //         autoSkip: true,
+      //         callback: function (val) {
+      //           const label = this.getLabelForValue(val as number);
+      //           return label.replace(/20(\d{2})\/20(\d{2})/, "'$1/'$2");
+      //         },
+      //       },
+      //     },
+      //     y: {
+      //       grid: { color: 'rgba(255, 255, 255, 0.08)' },
+      //       ticks: { font: { size: 10 } },
+      //     },
+      //   },
+      // },
     });
   }
 }
