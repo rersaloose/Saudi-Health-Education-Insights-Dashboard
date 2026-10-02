@@ -3,7 +3,7 @@
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <div class="trends-charts">
       <div class="trend-total">
-        <canvas #totalCanvas></canvas>
+        <canvas #totalCanvas appAutoResize (resized)="onResize()"></canvas>
       </div>
       <div class="trend-gender">
         <div class="legend-row">
@@ -11,7 +11,7 @@
           <span class="legend-dot male-dot ml"></span> {{ 'TRENDS.MALE' | translate }}
           <span class="legend-dot female-dot ml"></span> {{ 'TRENDS.FEMALE' | translate }}
         </div>
-        <canvas #genderCanvas></canvas>
+        <canvas #genderCanvas appAutoResize (resized)="onResize()"></canvas>
       </div>
     </div>
   </app-card-state>

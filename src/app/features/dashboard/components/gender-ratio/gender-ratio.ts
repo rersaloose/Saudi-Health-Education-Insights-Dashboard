@@ -14,12 +14,13 @@ import { StudentDataService } from '../../../../core/services/student-service';
 import { CardState } from '../../../../shared/components/card-state/card-state';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { TranslationService } from '../../../../core/services/TranslationService';
+import { AutoResizeDirective } from '../../../../core/services/resize';
 
 Chart.register(...registerables);
 
 @Component({
   selector: 'app-gender-ratio',
-  imports: [CommonModule, CardState, TranslatePipe],
+  imports: [CommonModule, CardState, AutoResizeDirective, TranslatePipe],
   templateUrl: './gender-ratio.html',
   styleUrl: './gender-ratio.css',
 })
@@ -104,5 +105,8 @@ export class GenderRatio implements AfterViewInit {
         },
       },
     });
+  }
+  onResize(): void {
+    this.chart?.resize();
   }
 }

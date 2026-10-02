@@ -105,7 +105,9 @@ export class DrillDown implements AfterViewInit {
       { injector: this.injector },
     );
   }
-
+  onResize(): void {
+    this.chart?.resize();
+  }
   private renderChart(
     data: { college: string; collegeName: string; value: number; key: string }[],
   ): void {

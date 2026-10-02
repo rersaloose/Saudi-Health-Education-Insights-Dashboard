@@ -20,7 +20,7 @@
   </div>
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <div class="drill-chart-wrap">
-      <canvas #drillCanvas></canvas>
+      <canvas #drillCanvas appAutoResize (resized)="onResize()"></canvas>
     </div>
     <div class="drill-table-wrap">
       <table class="drill-table">

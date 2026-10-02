@@ -14,9 +14,10 @@ import { StudentDataService } from '../../../../core/services/student-service';
 import { CardState } from '../../../../shared/components/card-state/card-state';
 import { TranslationService } from '../../../../core/services/TranslationService';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { AutoResizeDirective } from '../../../../core/services/resize';
 @Component({
   selector: 'app-student-trends',
-  imports: [CommonModule, CardState, TranslatePipe],
+  imports: [CommonModule, CardState, AutoResizeDirective, TranslatePipe],
   templateUrl: './student-trends.html',
   styleUrl: './student-trends.css',
 })
@@ -148,5 +149,9 @@ export class StudentTrends implements AfterViewInit {
         },
       },
     });
+  }
+  onResize(): void {
+    this.genderChart?.resize();
+    this.totalChart?.resize();
   }
 }

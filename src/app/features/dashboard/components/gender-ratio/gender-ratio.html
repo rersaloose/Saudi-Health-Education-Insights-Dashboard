@@ -5,7 +5,7 @@
       {{ 'DISTRIBUTION.BY_COLLEGE' | translate: { year: svc.selectedYear() } }}
     </p>
     <div class="gender-chart-wrap">
-      <canvas #donutCanvas></canvas>
+      <canvas #donutCanvas appAutoResize (resized)="onResize()"></canvas>
     </div>
     <div class="gender-legend">
       @for (item of distribution(); track item.key) {
