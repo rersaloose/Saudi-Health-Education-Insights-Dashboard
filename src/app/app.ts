@@ -10,10 +10,10 @@ import { HeaderComponent } from './shared/components/header/header';
   styleUrl: './app.css',
 })
 export class App {
-  readonly transSvc = inject(TranslationService);
+  readonly transServices = inject(TranslationService);
   protected readonly title = signal('ksauhs-dashboard');
   onLangChange(event: Event) {
     const lang = (event.target as HTMLSelectElement).value as LanguageCode;
-    this.transSvc.changeLang(lang);
+    this.transServices.changeLang(lang);
   }
 }

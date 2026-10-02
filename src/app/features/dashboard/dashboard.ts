@@ -35,9 +35,8 @@ import { HeaderService } from '../../core/services/header.services';
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-  private svc = inject(StudentDataService);
-  readonly themeSvc = inject(ThemeService);
-  readonly transSvc = inject(TranslationService);
+  readonly themeServices = inject(ThemeService);
+  readonly transServices = inject(TranslationService);
   readonly headerService = inject(HeaderService);
   ngOnInit(): void {
     this.headerService.setYearFilterVisibility(true);

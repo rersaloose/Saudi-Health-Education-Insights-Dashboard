@@ -25,25 +25,25 @@ export class StudentTrends implements AfterViewInit {
   @ViewChild('totalCanvas') totalCanvas!: ElementRef<HTMLCanvasElement>;
   @ViewChild('genderCanvas') genderCanvas!: ElementRef<HTMLCanvasElement>;
 
-  private svc = inject(StudentDataService);
-  private transSvc = inject(TranslationService);
+  private studentComponentServices = inject(StudentDataService);
+  private transServices = inject(TranslationService);
   private translate = inject(TranslateService);
   private injector = inject(Injector);
 
   private totalChart: Chart | null = null;
   private genderChart: Chart | null = null;
 
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
-  readonly series = computed(() => this.svc.getTrendSeries());
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
+  readonly series = computed(() => this.studentComponentServices.getTrendSeries());
 
   readonly hasData = () => this.series() !== null && (this.series()?.labels.length ?? 0) > 0;
 
   ngAfterViewInit(): void {
     effect(
       () => {
-        this.transSvc.currentLang();
-        const series = this.svc.getTrendSeries();
+        this.transServices.currentLang();
+        const series = this.studentComponentServices.getTrendSeries();
 
         if (series.labels.length && this.totalCanvas && this.genderCanvas) {
           this.renderTotalChart(series);

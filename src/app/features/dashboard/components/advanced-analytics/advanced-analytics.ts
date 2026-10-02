@@ -34,13 +34,13 @@ const COLLEGE_KEY_MAP: Record<string, string> = {
   styleUrl: './advanced-analytics.css',
 })
 export class AdvancedAnalytics {
-  readonly svc = inject(StudentDataService);
-  private transSvc = inject(TranslationService);
+  readonly studentComponentServices = inject(StudentDataService);
+  private transServices = inject(TranslationService);
   private translate = inject(TranslateService);
 
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
-  readonly hasData = this.svc.hasData;
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
+  readonly hasData = this.studentComponentServices.hasData;
   readonly selectedCampus = signal<CampusKey | 'all'>('all');
 
   readonly campusOptions = [
@@ -50,7 +50,7 @@ export class AdvancedAnalytics {
     { key: 'alAhasa' as CampusKey, label: 'CAMPUSES.AHA' },
   ];
 
-  readonly heatYears = computed(() => this.svc.getYears());
+  readonly heatYears = computed(() => this.studentComponentServices.getYears());
 
   private getTranslatedCollegeName(rawName: string, key?: string): string {
     const lookupKey = (key || rawName || '').toLowerCase().trim();
@@ -61,11 +61,11 @@ export class AdvancedAnalytics {
   }
 
   readonly topColleges = computed(() => {
-    this.transSvc.currentLang();
+    this.transServices.currentLang();
 
-    const list = this.svc.getTopCollegesForCampus(
+    const list = this.studentComponentServices.getTopCollegesForCampus(
       this.selectedCampus(),
-      this.svc.selectedYear(),
+      this.studentComponentServices.selectedYear(),
       5,
     );
     const max = list.length > 0 ? Math.max(...list.map((l) => l.value)) : 1;
@@ -78,9 +78,9 @@ export class AdvancedAnalytics {
   });
 
   readonly heatmapRows = computed(() => {
-    this.transSvc.currentLang();
+    this.transServices.currentLang();
 
-    const raw = this.svc.getCollegeHeatmapMatrix(this.selectedCampus());
+    const raw = this.studentComponentServices.getCollegeHeatmapMatrix(this.selectedCampus());
 
     return raw.map((row) => ({
       ...row,

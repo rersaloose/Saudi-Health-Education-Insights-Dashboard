@@ -27,18 +27,20 @@ Chart.register(...registerables);
 export class GenderRatio implements AfterViewInit {
   @ViewChild('donutCanvas') donutCanvas!: ElementRef<HTMLCanvasElement>;
 
-  readonly svc = inject(StudentDataService);
-  private transSvc = inject(TranslationService);
+  readonly studentComponentServices = inject(StudentDataService);
+  private transServices = inject(TranslationService);
   private translate = inject(TranslateService);
   private injector = inject(Injector);
   private chart: Chart | null = null;
 
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
 
   readonly distribution = computed(() => {
-    const lang = this.transSvc.currentLang();
-    const rawData = this.svc.getEnrollmentByCollege(this.svc.selectedYear());
+    const lang = this.transServices.currentLang();
+    const rawData = this.studentComponentServices.getEnrollmentByCollege(
+      this.studentComponentServices.selectedYear(),
+    );
 
     return rawData.map((item) => {
       const key = (item.key || item.college || '').toUpperCase();
@@ -57,7 +59,7 @@ export class GenderRatio implements AfterViewInit {
   ngAfterViewInit(): void {
     effect(
       () => {
-        this.transSvc.currentLang();
+        this.transServices.currentLang();
         const data = this.distribution();
 
         if (data.length && this.donutCanvas) {

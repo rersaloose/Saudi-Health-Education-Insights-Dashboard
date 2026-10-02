@@ -19,7 +19,7 @@ interface Insight {
 })
 export class InsightsComponent {
   private studentDataService = inject(StudentDataService);
-  private transSvc = inject(TranslationService);
+  private transServices = inject(TranslationService);
   private translate = inject(TranslateService);
 
   readonly loading = this.studentDataService.loading;
@@ -27,7 +27,7 @@ export class InsightsComponent {
   hasData = () => this.studentDataService.data() !== null;
 
   readonly insights = computed<Insight[]>(() => {
-    const lang = this.transSvc.currentLang();
+    const lang = this.transServices.currentLang();
 
     const kpis = this.studentDataService.getKpis();
     if (!kpis) return [];

@@ -56,14 +56,14 @@ const COLLEGE_KEY_MAP: Record<string, string> = {
 export class DrillDown implements AfterViewInit {
   @ViewChild('drillCanvas') drillCanvas!: ElementRef<HTMLCanvasElement>;
 
-  readonly svc = inject(StudentDataService);
+  readonly studentComponentServices = inject(StudentDataService);
   private translate = inject(TranslateService);
   private injector = inject(Injector);
   private chart: Chart | null = null;
 
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
-  readonly hasData = this.svc.hasData;
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
+  readonly hasData = this.studentComponentServices.hasData;
   readonly selectedCampus = signal<CampusKey>('riyadh');
 
   readonly campusOptions = [
@@ -74,9 +74,9 @@ export class DrillDown implements AfterViewInit {
 
   readonly drillData = computed(() => {
     const currentLang = this.translate.currentLang;
-    const year = this.svc.selectedYear();
+    const year = this.studentComponentServices.selectedYear();
     const campus = this.selectedCampus();
-    const raw = this.svc.getDrillDownData(campus, year);
+    const raw = this.studentComponentServices.getDrillDownData(campus, year);
     const total = raw.reduce((s, r) => s + r.value, 0);
 
     return raw.map((r) => {

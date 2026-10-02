@@ -30,14 +30,14 @@ Chart.register(...registerables);
 export class CampusEnrollment implements AfterViewInit {
   @ViewChild('campusCanvas') campusCanvas!: ElementRef<HTMLCanvasElement>;
 
-  readonly svc = inject(StudentDataService);
+  readonly studentComponentServices = inject(StudentDataService);
   private readonly translate = inject(TranslateService); // حقن خدمة الترجمة
   private injector = inject(Injector);
   private chart: Chart | null = null;
 
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
-  readonly hasData = this.svc.hasData;
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
+  readonly hasData = this.studentComponentServices.hasData;
   readonly selectedCampus = signal<CampusKey>('riyadh');
 
   readonly campusOptions = [
@@ -47,7 +47,9 @@ export class CampusEnrollment implements AfterViewInit {
   ];
 
   readonly campusList = computed(() => {
-    const totals = this.svc.getCampusTotals(this.svc.selectedYear());
+    const totals = this.studentComponentServices.getCampusTotals(
+      this.studentComponentServices.selectedYear(),
+    );
     const max = Math.max(...Object.values(totals));
     return this.campusOptions.map((c) => ({
       key: c.key,
@@ -59,7 +61,7 @@ export class CampusEnrollment implements AfterViewInit {
 
   readonly campusTrend = computed(() => {
     const campus = this.selectedCampus();
-    return this.svc.getCampusEnrollmentOverTime(campus);
+    return this.studentComponentServices.getCampusEnrollmentOverTime(campus);
   });
 
   ngAfterViewInit(): void {
@@ -79,8 +81,8 @@ export class CampusEnrollment implements AfterViewInit {
 
   private renderChart(series: { labels: string[]; total: number[] }): void {
     this.chart?.destroy();
-    const ctx = this.campusCanvas.nativeElement.getContext('2d')!;
-    const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+    const Campuscanvas = this.campusCanvas.nativeElement.getContext('2d')!;
+    const gradient = Campuscanvas.createLinearGradient(0, 0, 0, 200);
     gradient.addColorStop(0, 'rgba(0, 107, 107, 0.25)');
     gradient.addColorStop(1, 'rgba(0, 107, 107, 0.02)');
 

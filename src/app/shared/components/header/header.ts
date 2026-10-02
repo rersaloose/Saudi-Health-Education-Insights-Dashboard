@@ -17,23 +17,23 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrls: ['./header.css'],
 })
 export class HeaderComponent {
-  private svc = inject(StudentDataService);
+  private studentComponentServices = inject(StudentDataService);
   readonly headerSvc = inject(HeaderService);
-  readonly themeSvc = inject(ThemeService);
-  readonly transSvc = inject(TranslationService);
+  readonly themeServices = inject(ThemeService);
+  readonly transServices = inject(TranslationService);
 
-  readonly years = computed(() => this.svc.getYears());
+  readonly years = computed(() => this.studentComponentServices.getYears());
 
   get selectedYear(): string {
-    return this.svc.selectedYear();
+    return this.studentComponentServices.selectedYear();
   }
 
   onLangChange(event: Event): void {
     const lang = (event.target as HTMLSelectElement).value as LanguageCode;
-    this.transSvc.changeLang(lang);
+    this.transServices.changeLang(lang);
   }
 
   onYearChange(year: string): void {
-    this.svc.selectedYear.set(year);
+    this.studentComponentServices.selectedYear.set(year);
   }
 }

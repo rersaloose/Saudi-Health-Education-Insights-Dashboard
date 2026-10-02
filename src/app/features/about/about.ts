@@ -18,8 +18,8 @@ interface Feature {
   styleUrl: './about.css',
 })
 export class About {
-  readonly themeSvc = inject(ThemeService);
-  readonly transSvc = inject(TranslationService);
+  readonly themeServices = inject(ThemeService);
+  readonly transServices = inject(TranslationService);
   private readonly translate = inject(TranslateService);
 
   readonly featureKeys: Feature[] = [
@@ -66,7 +66,7 @@ export class About {
   ];
 
   readonly features = computed(() => {
-    this.transSvc.currentLang();
+    this.transServices.currentLang();
 
     return this.featureKeys.map((item) => ({
       icon: item.icon,
