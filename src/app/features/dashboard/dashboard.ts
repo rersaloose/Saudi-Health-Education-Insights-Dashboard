@@ -19,7 +19,7 @@ import { HeaderService } from '../../core/services/header.services';
   imports: [
     CommonModule,
     FormsModule,
-    RouterLink,
+
     KpiCards,
     StudentTrends,
     AdvancedAnalytics,
@@ -30,7 +30,6 @@ import { HeaderService } from '../../core/services/header.services';
     KpiCards,
     TranslatePipe,
     GenderRatio,
-    DrillDown,
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',

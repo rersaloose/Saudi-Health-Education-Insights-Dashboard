@@ -50,7 +50,7 @@
       </button>
       <select
         class="lang-selector"
-        [value]="transSvc.currentLang()"
+        [ngModel]="transSvc.currentLang()"
         (change)="onLangChange($event)"
       >
         @for (lang of transSvc.availableLangs; track lang.code) {
@@ -59,7 +59,7 @@
           </option>
         }
       </select>
-      <a routerLink="/about" class="nav-link">About</a>
+      <a routerLink="/about" class="nav-link">{{ 'HEADER.ABOUT' | translate }}</a>
       @if (headerSvc.showYearFilter()) {
         <div class="year-selector">
           <select [ngModel]="selectedYear" (ngModelChange)="onYearChange($event)">

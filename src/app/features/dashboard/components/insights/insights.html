@@ -2,7 +2,7 @@
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <div class="card-header-row">
       @if (hasData()) {
-        <h2 class="section-title">Insights &amp; Highlights</h2>
+        <h2 class="section-title">{{ 'INSIGHTS.TITLE' | translate }}</h2>
         <span class="insights-count">{{ insights().length }}</span>
       }
     </div>

@@ -1,6 +1,6 @@
 <section class="card campus-card">
   <div class="card-header-row">
-    <h2 class="section-title">Campus Enrollment Breakdown</h2>
+    <h2 class="section-title">{{ 'CARD.campusEnrollment' | translate }}</h2>
     @if (hasData()) {
       <div class="year-badge">{{ svc.selectedYear() }}</div>
     }
@@ -9,14 +9,14 @@
     <div class="campus-layout">
       <div class="campus-bars">
         <div class="campus-selector-row">
-          <span class="field-label">Campus</span>
+          <span class="field-label">{{ 'CAMPUSES.LABEL' | translate }}</span>
           <select
             class="select-sm"
             [ngModel]="selectedCampus()"
             (ngModelChange)="selectedCampus.set($event)"
           >
             @for (entry of campusOptions; track entry.key) {
-              <option [value]="entry.key">{{ entry.label }}</option>
+              <option [value]="entry.key">{{ entry.label | translate }}</option>
             }
           </select>
         </div>
@@ -24,7 +24,7 @@
         @for (campus of campusList(); track campus.key) {
           <div class="campus-bar-row">
             <span class="campus-bar-label" [class.active]="campus.key === selectedCampus()">{{
-              campus.label
+              campus.label | translate
             }}</span>
             <div class="bar-track">
               <div

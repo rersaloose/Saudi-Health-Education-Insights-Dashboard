@@ -1,4 +1,5 @@
 import { inject, Injectable, signal } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 
 export type LanguageCode = 'en' | 'ar' | 'de';
@@ -8,7 +9,7 @@ export type LanguageCode = 'en' | 'ar' | 'de';
 })
 export class TranslationService {
   private readonly translate = inject(TranslateService);
-
+  private titleService = inject(Title);
   readonly currentLang = signal<LanguageCode>('en');
 
   readonly availableLangs = [
@@ -19,6 +20,9 @@ export class TranslationService {
 
   constructor() {
     this.translate.addLangs(['en', 'ar', 'de']);
+    this.translate.onLangChange.subscribe(() => {
+      this.updatePageTitle();
+    });
 
     const savedLang = (localStorage.getItem('app_lang') as LanguageCode) || 'en';
     this.changeLang(savedLang);
@@ -32,5 +36,11 @@ export class TranslationService {
     const dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.dir = dir;
     document.documentElement.lang = lang;
+    this.updatePageTitle();
+  }
+  private updatePageTitle() {
+    this.translate.get('PAGE_TITLE.DASHBOARD').subscribe((translatedTitle: string) => {
+      this.titleService.setTitle(translatedTitle);
+    });
   }
 }

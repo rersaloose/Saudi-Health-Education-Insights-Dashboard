@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-kpi-cards',
-  imports: [CommonModule, NumberFormatPipe, CardState],
+  imports: [CommonModule, CardState],
   templateUrl: './kpi-cards.html',
   styleUrl: './kpi-cards.css',
 })

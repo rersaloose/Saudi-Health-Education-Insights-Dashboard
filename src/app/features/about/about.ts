@@ -18,59 +18,9 @@ interface Feature {
   styleUrl: './about.css',
 })
 export class About {
-  // readonly themeSvc = inject(ThemeService);
-  // readonly transSvc = inject(TranslationService);
-  // private currentLang = toSignal(this.transSvc.currentLang);
-  // readonly features = computed<Feature[]>(() => {
-  //   this.currentLang();
-
-  //   return [
-  //     {
-  //       icon: 'kpi',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.KPI_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.KPI_DESC'),
-  //     },
-  //     {
-  //       icon: 'trends',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.TRENDS_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.TRENDS_DESC'),
-  //     },
-  //     {
-  //       icon: 'campus',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.CAMPUS_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.CAMPUS_DESC'),
-  //     },
-  //     {
-  //       icon: 'drill',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.DRILL_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.DRILL_DESC'),
-  //     },
-  //     {
-  //       icon: 'heat',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.HEAT_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.HEAT_DESC'),
-  //     },
-  //     {
-  //       icon: 'distribution',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.DIST_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.DIST_DESC'),
-  //     },
-  //     {
-  //       icon: 'insights',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.INSIGHTS_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.INSIGHTS_DESC'),
-  //     },
-  //     {
-  //       icon: 'filters',
-  //       title: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.FILTERS_TITLE'),
-  //       desc: this.transSvc.instant('ABOUT_PAGE.CAPABILITIES.FILTERS_DESC'),
-  //     },
-  //   ];
-  // });
   readonly themeSvc = inject(ThemeService);
   readonly transSvc = inject(TranslationService);
   private readonly translate = inject(TranslateService);
-
 
   readonly featureKeys: Feature[] = [
     {
@@ -115,9 +65,7 @@ export class About {
     },
   ];
 
-  // 2. computed signal بيسمع لـ currentLang() أوتوماتيكياً ويرجع القيم المترجمة
   readonly features = computed(() => {
-    // قراءة الـ signal تجبر الـ computed تتنفذ مع كل تغيير في اللغة
     this.transSvc.currentLang();
 
     return this.featureKeys.map((item) => ({

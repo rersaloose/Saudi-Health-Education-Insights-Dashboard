@@ -28,7 +28,7 @@
     "share": "Anteil",
     "awaitingData": "Daten werden geladen"
   },
-  "card": {
+  "CARD": {
     "studentTrends": "Studententrends im Zeitverlauf",
     "trends": {
       "total": "Studierende gesamt",
@@ -54,6 +54,9 @@
     "noCollegeData": "Keine Fakultätsdaten verfügbar",
     "noHeatmapData": "Keine Heatmap-Daten verfügbar"
   },
+  "PAGE_TITLE": {
+    "DASHBOARD": "Dashboard"
+  },
   "state": {
     "loading": "Daten werden geladen...",
     "error": "Daten konnten nicht geladen werden",
@@ -69,6 +72,34 @@
     "jeddah": "Der <strong>Campus Dschidda</strong> zeigt das <strong>höchste Wachstum</strong> in den letzten 3 Jahren mit <strong>{{val}}%</strong>.",
     "female": "<strong>Studentinnen</strong> machen nun <strong>{{val}}%</strong> der Gesamtzahl aus, gegenüber <strong>{{prev}}%</strong> im Jahr {{year}}.",
     "postgrad": "Die <strong>Postgraduierten-Einschreibung</strong> ist auf <strong>{{val}}</strong> Studierende in diesem Jahr gestiegen."
+  },
+  "ADVANCED": {
+    "TITLE": "Erweiterte Analysen",
+    "TOP_COLLEGES": "Top-Fakultäten nach Einschreibungen — {{ year }}",
+    "HEATMAP_TITLE": "Einschreibungs-Heatmap — Fakultäten × Jahre",
+    "NO_DATA_COLLEGES": "Keine Daten zu den Fakultäten verfügbar",
+    "NO_DATA_HEATMAP": "Keine Heatmap-Daten verfügbar"
+  },
+  "COLLEGES": {
+    "COM": "Hochschule für Medizin",
+    "COD": "Hochschule für Zahnmedizin",
+    "COP": "Hochschule für Pharmazie",
+    "CON": "Hochschule für Pflegewissenschaften",
+    "CPHHI": "Öffentliche Gesundheit & Gesundheitsinformatik",
+    "CAMS": "Angewandte Medizinische Wissenschaften",
+    "COSHP": "Hochschule für Natur- & Gesundheitswissenschaften",
+    "PME": "Postgraduierte Medizinische Ausbildung"
+  },
+  "KPI": {
+    "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
+    "AWAITING_DATA": "Warten auf Daten",
+    "GROWTH_RATE": "Wachstumsrate",
+    "VS_LAST_YEAR": "im Vergleich zum Vorjahr",
+    "FEMALE": "Studentinnen",
+    "FEMALE_SUB": "Weibliche Studierende",
+    "POSTGRADUATE": "Postgraduierte",
+    "LARGEST_CAMPUS": "Größter Standort",
+    "SHARE": "Anteil"
   },
   "about": {
     "title": "Über dieses Dashboard",
@@ -153,6 +184,7 @@
     "THEME_LIGHT": "Heller Modus",
     "THEME_DARK": "Dunkler Modus"
   },
+
   "KPIS": {
     "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
     "MALE_STUDENTS": "Männliche Studierende",
@@ -250,18 +282,13 @@
       "MOD_4": "Wichtige Erkenntnisse direkt ablesen",
       "MOD_5": "Schnelle und fundierte Entscheidungen treffen"
     },
-    "KPI": {
-      "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
-      "AWAITING_DATA": "Warten auf Daten",
-      "GROWTH_RATE": "Wachstumsrate",
-      "VS_LAST_YEAR": "im Vergleich zum Vorjahr",
-      "FEMALE": "Studentinnen",
-      "FEMALE_SUB": "Weibliche Studierende",
-      "POSTGRADUATE": "Postgraduierte",
-      "LARGEST_CAMPUS": "Größter Standort",
-      "SHARE": "Anteil"
+    "CAMPUSES": {
+      "LABEL": "Campus",
+      "ALL": "Alle Standorte",
+      "RIYADH": "Riad",
+      "JEDDAH": "Dschidda",
+      "AHA": "Al-Ahsa"
     },
-
     "CAPABILITIES": {
       "TITLE": "Funktionen des Dashboards",
       "SUB": "Jede Funktion ist darauf ausgelegt, spezifische analytische Fragen direkt zu beantworten.",
@@ -337,5 +364,8 @@
     "JEDDAH_GROWTH": "Der <strong>Campus Jeddah</strong> verzeichnete mit <strong>{{value}}%</strong> das <strong>höchste Wachstum</strong> in den letzten 3 Jahren.",
     "FEMALE_RATIO": "<strong>Studentinnen</strong> machen nun <strong>{{current}}%</strong> der Gesamtzahl aus, verglichen mit <strong>{{first}}%</strong> im Jahr {{year}}.",
     "POSTGRAD_INCREASE": "Die Einschreibungen für <strong>Postgraduierte Studiengänge</strong> sind in diesem Jahr auf <strong>{{total}}</strong> Studierende gestiegen."
+  },
+  "COMMON": {
+    "VS": "VS"
   }
 }

@@ -176,7 +176,6 @@ export class StudentDataService {
     };
   }
 
-  /** Returns campus totals for two years (for grouped bar chart in drill-down) */
   getCampusComparisonData(
     yearA: string,
     yearB: string,
@@ -198,7 +197,6 @@ export class StudentDataService {
     return { campuses: labels, valuesA, valuesB, growthPct };
   }
 
-  /** Year-over-year growth for each campus across all years – for the growth heatmap */
   getCampusGrowthByYear(): {
     years: string[];
     riyadh: number[];
@@ -234,7 +232,6 @@ export class StudentDataService {
       .sort((a, b) => b.value - a.value);
   }
 
-  /** Top N colleges by enrollment, optionally filtered by campus */
   getTopCollegesForCampus(
     campus: CampusKey | 'all',
     year: string,
@@ -267,7 +264,6 @@ export class StudentDataService {
       }));
   }
 
-  /** Heatmap matrix: colleges × years → enrollment value (filtered by campus) */
   getCollegeHeatmapMatrix(campus: CampusKey | 'all'): {
     collegeKey: string;
     college: string;
@@ -297,7 +293,6 @@ export class StudentDataService {
       }));
   }
 
-  /** Per-college enrollment share for donut chart */
   getEnrollmentByCollege(
     year: string,
   ): { college: string; key: string; value: number; pct: number; color: string }[] {

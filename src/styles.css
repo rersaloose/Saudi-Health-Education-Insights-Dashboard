@@ -275,13 +275,13 @@
      BRAND (Vibrant Teal & Sky)
      ================================ */
 
-  --primary: #2dd4bf; /* Teal مشرق وواضح على الخلفيات الداكنة */
+  --primary: #2dd4bf;
   --primary-hover: #5eead4;
   --primary-light: rgba(45, 212, 191, 0.12);
   --light: #ffffff;
   --primary-soft: rgba(45, 212, 191, 0.08);
 
-  --secondary: #38bdf8; /* Blue/Cyan للتدرج والتنوع */
+  --secondary: #38bdf8;
   --secondary-hover: #7dd3fc;
   --secondary-light: rgba(56, 189, 248, 0.12);
 
@@ -321,17 +321,17 @@
      LAYOUT (Clean Dark Surfaces)
      ================================ */
 
-  --bg: #0b0f17; /* خلفية داكنة حيادية عميقة */
+  --bg: #0b0f17;
   --bg-secondary: #111827;
 
-  --card-bg: #151e2e; /* كروت بدرجة Slate أنيقة بتباين ممتاز */
+  --card-bg: #151e2e;
   --card-bg-hover: #1b273d;
 
-  --text: #f8fafc; /* نصوص واضحة ومريحة للعين */
+  --text: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
 
-  --border: rgba(255, 255, 255, 0.08); /* حدود ناعمة وعصرية */
+  --border: rgba(255, 255, 255, 0.08);
   --border-light: rgba(255, 255, 255, 0.04);
   --border-strong: rgba(255, 255, 255, 0.15);
 
@@ -397,7 +397,7 @@
 }
 .kpi-icon {
   background-color: var(--kpi-icon-graduation);
-  color: var(--primary); /* يضمن أن الأيقونة نفسها مشرقة */
+  color: var(--primary);
 }
 * {
   box-sizing: border-box;
@@ -451,10 +451,10 @@ body {
   background: var(--primary);
   color: #fff;
   font-weight: 700;
-  font-size: 13px;
-  padding: 10px 12px;
+  font-size: 17px;
+  padding: 10px;
   border-radius: 10px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 .header-titles h1 {
@@ -621,7 +621,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  /* background: var(--primary-light); */
+
   background: var(--light);
   position: relative;
 }
@@ -1236,8 +1236,6 @@ body {
   object-fit: contain;
 }
 
-/* Larger map icon */
-
 .kpi-icon-location {
   width: 52px;
   height: 52px;
@@ -1278,7 +1276,6 @@ body {
   border-top: 1px solid var(--border);
 }
 
-/* ===== Card States (Loading / Empty / Error) ===== */
 .card-state {
   display: flex;
   flex-direction: column;
@@ -1354,7 +1351,6 @@ body {
   text-align: center;
 }
 
-/* ===== Navigation ===== */
 .nav-link {
   font-size: 13px;
   font-weight: 600;
@@ -1373,9 +1369,7 @@ body {
   color: #fff;
 }
 
-/* ===== About Page ===== */
 .about-page {
-  /* max-width: 1100px; */
   margin: 0 auto;
   padding: 24px;
   display: flex;
@@ -1593,7 +1587,43 @@ body {
   width: 20px;
   height: 20px;
 }
+.kpi-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 
+.kpi-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.kpi-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+:host-context([dir='rtl']) .kpi-card,
+html[dir='rtl'] .kpi-card {
+  flex-direction: row-reverse;
+
+  .kpi-content {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+:host-context([dir='ltr']) .kpi-card,
+html[dir='ltr'] .kpi-card {
+  flex-direction: row;
+
+  .kpi-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
 @media (max-width: 768px) {
   .header-titles {
     display: flex;
@@ -1607,7 +1637,7 @@ body {
   }
   .header-right {
     display: flex;
-    align-items: end;
+    align-items: center;
     gap: 20px;
     width: 100%;
     justify-content: right;
@@ -1714,7 +1744,7 @@ body {
   border: 1px solid var(--border, #007a78);
   border-radius: 8px;
 
-  padding: 8px 32px 8px 12px;
+  padding: 5px 15px;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -1723,7 +1753,7 @@ body {
 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23007a78' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center;
+  background-position: right 4px center;
 }
 
 .lang-selector:hover {
@@ -1736,7 +1766,7 @@ body {
 }
 
 [dir='rtl'] .lang-selector {
-  padding: 8px 12px 8px 32px;
+  padding: 5px 15px;
   background-position: left 10px center;
 }
 :root[lang='ar'],

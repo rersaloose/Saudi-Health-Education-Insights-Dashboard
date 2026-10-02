@@ -17,10 +17,13 @@
     "jeddah": "Jeddah",
     "alAhasa": "Al-Ahsa"
   },
+
   "CAMPUSES": {
-    "RIYADH": "RIYADH",
-    "JEDDAH": "JEDDAH",
-    "AHA": "AHA"
+    "LABEL": "Campus",
+    "ALL": "All Campuses",
+    "RIYADH": "Riyadh",
+    "JEDDAH": "Jeddah",
+    "AHA": "Al-Ahsa"
   },
 
   "kpi": {
@@ -34,7 +37,7 @@
     "share": "share",
     "awaitingData": "Awaiting data"
   },
-  "card": {
+  "CARD": {
     "studentTrends": "Student Trends Over Time",
     "trends": {
       "total": "Total Students",
@@ -59,6 +62,13 @@
     "heatmap": "Enrollment Heatmap — Colleges × Years",
     "noCollegeData": "No college data available",
     "noHeatmapData": "No heatmap data available"
+  },
+  "PAGE_TITLE": {
+    "DASHBOARD": "Dashboard"
+  },
+
+  "COMMON": {
+    "VS": "VS"
   },
   "state": {
     "loading": "Loading data...",
@@ -178,6 +188,17 @@
     "SOURCE": "Data source: KSAU-HS Official Student Enrollment Statistics",
     "YEARS": "Academic Years 2016/2017 - 2023/2024"
   },
+  "KPI": {
+    "TOTAL_STUDENTS": "Total Students",
+    "AWAITING_DATA": "Awaiting data",
+    "GROWTH_RATE": "Growth Rate",
+    "VS_LAST_YEAR": "vs last year",
+    "FEMALE": "Female",
+    "FEMALE_SUB": "Female Students",
+    "POSTGRADUATE": "Postgraduate",
+    "LARGEST_CAMPUS": "Largest Campus",
+    "SHARE": "share"
+  },
   "ABOUT_PAGE": {
     "HERO": {
       "TITLE": "From Data to Decisions",
@@ -276,17 +297,6 @@
       "FILTERS_TITLE": "Interactive Filters",
       "FILTERS_DESC": "Academic year selector in the header and campus selectors in individual cards — all reactive with Angular signals for instant updates."
     },
-    "KPI": {
-      "TOTAL_STUDENTS": "Total Students",
-      "AWAITING_DATA": "Awaiting data",
-      "GROWTH_RATE": "Growth Rate",
-      "VS_LAST_YEAR": "vs last year",
-      "FEMALE": "Female",
-      "FEMALE_SUB": "Female Students",
-      "POSTGRADUATE": "Postgraduate",
-      "LARGEST_CAMPUS": "Largest Campus",
-      "SHARE": "share"
-    },
 
     "COVERAGE": {
       "TITLE": "Data Coverage",
@@ -302,15 +312,22 @@
       "COLLEGES": "Colleges",
       "COLLEGES_VAL": "Enrollment breakdown across available colleges"
     },
+    "ADVANCED": {
+      "TITLE": "Advanced Analytics",
+      "TOP_COLLEGES": "Top Colleges by Enrollment — {{ year }}",
+      "HEATMAP_TITLE": "Enrollment Heatmap — Colleges × Years",
+      "NO_DATA_COLLEGES": "No college data available",
+      "NO_DATA_HEATMAP": "No heatmap data available"
+    },
     "COLLEGES": {
-      "COSHP": "College of Science & Health Professions",
-      "PME": "Preparatory Year",
       "COM": "College of Medicine",
-      "cams": "College of Applied Medical Sciences",
-      "CON": "College of Nursing",
       "COD": "College of Dentistry",
       "COP": "College of Pharmacy",
-      "CPHHI": "College of Public Health & Health Informatics"
+      "CON": "College of Nursing",
+      "CPHHI": "College of Public Health & Health Informatics",
+      "CAMS": "College of Applied Medical Sciences",
+      "COSHP": "College of Science & Health Professions",
+      "PME": "Postgraduate Medical Education"
     },
     "CAMPUSES_DETAILS": {
       "TITLE": "Campuses & Colleges",

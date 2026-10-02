@@ -148,10 +148,9 @@
    ========================================================= */
 
 .logo-mark {
-  width: 50px;
-  height: 50px;
-
-  flex: 0 0 50px;
+  width: 100px;
+  height: 100px;
+  flex: 0 0 100px;
 
   display: flex;
 
@@ -213,30 +212,18 @@
 
 .back-link {
   flex-shrink: 0;
-
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 7px;
-
   padding: 9px 14px;
-
   color: var(--navy);
-
   text-decoration: none;
-
   font-size: 12px;
-
   font-weight: 600;
-
   border: 1px solid var(--border);
-
   border-radius: 9px;
-
   background: var(--white);
-
   transition:
     transform 0.2s ease,
     background 0.2s ease,
@@ -244,24 +231,43 @@
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 
-  &::before {
+  /* استخدمنا ::after عشان يبقى بعد النص (على الشمال في العربي) */
+  &::after {
     content: '←';
-
     font-size: 14px;
-
     color: var(--teal);
+    display: inline-block;
   }
 
   &:hover {
     color: var(--teal-dark);
-
     border-color: color-mix(in srgb, var(--teal) 35%, var(--border));
-
     background: var(--mint-soft);
-
-    transform: translateX(-3px);
-
     box-shadow: var(--shadow-xs);
+    transform: translateX(-3px);
+  }
+}
+
+/* --- للغة الإنجليزية (LTR) --- */
+:host-context([dir='ltr']) .back-link,
+html[dir='ltr'] .back-link {
+  &::after {
+    /* نعكس السهم عشان يشير لليمين في الانجليزي */
+    transform: scaleX(-1);
+  }
+
+  &:hover {
+    transform: translateX(3px);
+  }
+}
+:host-context([dir='ltr']) .back-link,
+html[dir='ltr'] .back-link {
+  &::before {
+    transform: scaleX(-1);
+  }
+
+  &:hover {
+    transform: translateX(3px);
   }
 }
 
