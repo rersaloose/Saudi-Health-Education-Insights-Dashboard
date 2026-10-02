@@ -27,7 +27,9 @@
         <thead>
           <tr>
             <th>{{ 'DRILL.COLLEGE' | translate }}</th>
-            <th class="num-col">{{ 'DRILL.STUDENTS' | translate }} ({{ svc.selectedYear() }})</th>
+            <th class="num-col">
+              {{ 'DRILL.STUDENTS' | translate }} ({{ studentComponentServices.selectedYear() }})
+            </th>
             <th class="num-col">{{ 'DRILL.SHARE' | translate }}</th>
           </tr>
         </thead>

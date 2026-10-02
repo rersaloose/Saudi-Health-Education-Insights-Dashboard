@@ -2,7 +2,7 @@
   <div class="card-header-row">
     <h2 class="section-title">{{ 'CARD.campusEnrollment' | translate }}</h2>
     @if (hasData()) {
-      <div class="year-badge">{{ svc.selectedYear() }}</div>
+      <div class="year-badge">{{ studentComponentServices.selectedYear() }}</div>
     }
   </div>
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">

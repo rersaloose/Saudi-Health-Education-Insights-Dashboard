@@ -2,7 +2,7 @@
   <h2 class="section-title">{{ 'DISTRIBUTION.TITLE' | translate }}</h2>
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <p class="section-subtitle">
-      {{ 'DISTRIBUTION.BY_COLLEGE' | translate: { year: svc.selectedYear() } }}
+      {{ 'DISTRIBUTION.BY_COLLEGE' | translate: { year: studentComponentServices.selectedYear() } }}
     </p>
     <div class="gender-chart-wrap">
       <canvas #donutCanvas appAutoResize (resized)="onResize()"></canvas>

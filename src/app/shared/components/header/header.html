@@ -11,12 +11,12 @@
     <div class="header-right">
       <button
         class="theme-toggle"
-        (click)="themeSvc.toggle()"
+        (click)="themeServices.toggle()"
         [attr.aria-label]="
-          themeSvc.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+          themeServices.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
         "
       >
-        @if (themeSvc.theme() === 'dark') {
+        @if (themeServices.theme() === 'dark') {
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -50,10 +50,10 @@
       </button>
       <select
         class="lang-selector"
-        [ngModel]="transSvc.currentLang()"
+        [ngModel]="transServices.currentLang()"
         (change)="onLangChange($event)"
       >
-        @for (lang of transSvc.availableLangs; track lang.code) {
+        @for (lang of transServices.availableLangs; track lang.code) {
           <option [value]="lang.code" [ngClass]="{ plex_font: lang.code === 'ar' }">
             {{ lang.label }}
           </option>

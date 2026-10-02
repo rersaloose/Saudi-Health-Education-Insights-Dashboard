@@ -19,7 +19,7 @@
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <div class="adv-section">
       <h3 class="block-title">
-        {{ 'ADVANCED.TOP_COLLEGES' | translate: { year: svc.selectedYear() } }}
+        {{ 'ADVANCED.TOP_COLLEGES' | translate: { year: studentComponentServices.selectedYear() } }}
       </h3>
       <div class="top-colleges-list">
         @for (c of topColleges(); track c.key) {
