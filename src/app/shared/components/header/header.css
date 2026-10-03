@@ -1,0 +1,24 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-fluid {
+    padding: 20px;
+  }
+  .header-left {
+    flex: 1;
+  }
+  .dashboard-header {
+    gap: 0;
+  }
+  .logo-mark {
+    max-width: 25%;
+    flex: 0 0 25%;
+    text-align: center;
+  }
+  .header-titles {
+    max-width: 75%;
+    flex: 0 0 75%;
+    text-align: center;
+  }
+  .header-right {
+    justify-content: center;
+  }
+}

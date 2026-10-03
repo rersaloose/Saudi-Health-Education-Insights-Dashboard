@@ -12,9 +12,12 @@ import { CommonModule } from '@angular/common';
 import { Chart, registerables } from 'chart.js';
 import { StudentDataService } from '../../../../core/services/student-service';
 import { CardState } from '../../../../shared/components/card-state/card-state';
+import { TranslationService } from '../../../../core/services/TranslationService';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { AutoResizeDirective } from '../../../../core/services/resize';
 @Component({
   selector: 'app-student-trends',
-  imports: [CommonModule, CardState],
+  imports: [CommonModule, CardState, AutoResizeDirective, TranslatePipe],
   templateUrl: './student-trends.html',
   styleUrl: './student-trends.css',
 })
@@ -22,19 +25,26 @@ export class StudentTrends implements AfterViewInit {
   @ViewChild('totalCanvas') totalCanvas!: ElementRef<HTMLCanvasElement>;
   @ViewChild('genderCanvas') genderCanvas!: ElementRef<HTMLCanvasElement>;
 
-  private svc = inject(StudentDataService);
+  private studentComponentServices = inject(StudentDataService);
+  private transServices = inject(TranslationService);
+  private translate = inject(TranslateService);
   private injector = inject(Injector);
+
   private totalChart: Chart | null = null;
   private genderChart: Chart | null = null;
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
-  readonly series = computed(() => this.svc.getTrendSeries());
+
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
+  readonly series = computed(() => this.studentComponentServices.getTrendSeries());
 
   readonly hasData = () => this.series() !== null && (this.series()?.labels.length ?? 0) > 0;
+
   ngAfterViewInit(): void {
     effect(
       () => {
-        const series = this.svc.getTrendSeries();
+        this.transServices.currentLang();
+        const series = this.studentComponentServices.getTrendSeries();
+
         if (series.labels.length && this.totalCanvas && this.genderCanvas) {
           this.renderTotalChart(series);
           this.renderGenderChart(series);
@@ -55,13 +65,14 @@ export class StudentTrends implements AfterViewInit {
     const gradient = ctx.createLinearGradient(0, 0, 0, 200);
     gradient.addColorStop(0, 'rgba(0, 107, 107, 0.3)');
     gradient.addColorStop(1, 'rgba(0, 107, 107, 0.02)');
+
     this.totalChart = new Chart(this.totalCanvas.nativeElement, {
       type: 'line',
       data: {
         labels: series.labels,
         datasets: [
           {
-            label: 'Total',
+            label: this.translate.instant('TRENDS.TOTAL_STUDENTS'),
             data: series.total,
             borderColor: '#006B6B',
             backgroundColor: gradient,
@@ -100,7 +111,7 @@ export class StudentTrends implements AfterViewInit {
         labels: series.labels,
         datasets: [
           {
-            label: 'Male',
+            label: this.translate.instant('TRENDS.MALE'),
             data: series.male,
             borderColor: '#2B7A9E',
             backgroundColor: 'transparent',
@@ -108,7 +119,7 @@ export class StudentTrends implements AfterViewInit {
             pointRadius: 3,
           },
           {
-            label: 'Female',
+            label: this.translate.instant('TRENDS.FEMALE'),
             data: series.female,
             borderColor: '#E8916A',
             backgroundColor: 'transparent',
@@ -120,15 +131,27 @@ export class StudentTrends implements AfterViewInit {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+          padding: {
+            bottom: 20,
+          },
+        },
         plugins: {
           legend: { display: false },
           tooltip: { mode: 'index', intersect: false },
         },
         scales: {
-          x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+          x: {
+            grid: { display: false },
+            ticks: { font: { size: 10 }, maxRotation: 0, minRotation: 0, autoSkip: true },
+          },
           y: { grid: { color: '#f0f0f0' }, ticks: { font: { size: 10 } } },
         },
       },
     });
+  }
+  onResize(): void {
+    this.genderChart?.resize();
+    this.totalChart?.resize();
   }
 }

@@ -16,34 +16,40 @@ import { Chart, registerables } from 'chart.js';
 import { StudentDataService } from '../../../../core/services/student-service';
 import { NumberFormatPipe } from '../../../../shared/pipes/number-formate.pipe';
 import { CardState } from '../../../../shared/components/card-state/card-state';
+import { TranslateLoader, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 Chart.register(...registerables);
 
 @Component({
   selector: 'app-campus-enrollment',
-  imports: [CommonModule, FormsModule, NumberFormatPipe, CardState],
+  standalone: true,
+  imports: [CommonModule, FormsModule, NumberFormatPipe, CardState, TranslatePipe],
   templateUrl: './campus-enrollment.html',
   styleUrl: './campus-enrollment.css',
 })
-export class CampusEnrollment {
+export class CampusEnrollment implements AfterViewInit {
   @ViewChild('campusCanvas') campusCanvas!: ElementRef<HTMLCanvasElement>;
 
-  readonly svc = inject(StudentDataService);
+  readonly studentComponentServices = inject(StudentDataService);
+  private readonly translate = inject(TranslateService); // حقن خدمة الترجمة
   private injector = inject(Injector);
   private chart: Chart | null = null;
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
-  readonly hasData = this.svc.hasData;
+
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
+  readonly hasData = this.studentComponentServices.hasData;
   readonly selectedCampus = signal<CampusKey>('riyadh');
 
   readonly campusOptions = [
-    { key: 'riyadh' as CampusKey, label: 'Riyadh' },
-    { key: 'jeddah' as CampusKey, label: 'Jeddah' },
-    { key: 'alAhasa' as CampusKey, label: 'Al-Ahsa' },
+    { key: 'riyadh' as CampusKey, label: 'CAMPUSES.RIYADH' },
+    { key: 'jeddah' as CampusKey, label: 'CAMPUSES.JEDDAH' },
+    { key: 'alAhasa' as CampusKey, label: 'CAMPUSES.AHA' },
   ];
 
   readonly campusList = computed(() => {
-    const totals = this.svc.getCampusTotals(this.svc.selectedYear());
+    const totals = this.studentComponentServices.getCampusTotals(
+      this.studentComponentServices.selectedYear(),
+    );
     const max = Math.max(...Object.values(totals));
     return this.campusOptions.map((c) => ({
       key: c.key,
@@ -55,13 +61,16 @@ export class CampusEnrollment {
 
   readonly campusTrend = computed(() => {
     const campus = this.selectedCampus();
-    return this.svc.getCampusEnrollmentOverTime(campus);
+    return this.studentComponentServices.getCampusEnrollmentOverTime(campus);
   });
 
   ngAfterViewInit(): void {
     effect(
       () => {
         const series = this.campusTrend();
+
+        const lang = this.translate.currentLang;
+
         if (series.labels.length && this.campusCanvas) {
           this.renderChart(series);
         }
@@ -72,17 +81,21 @@ export class CampusEnrollment {
 
   private renderChart(series: { labels: string[]; total: number[] }): void {
     this.chart?.destroy();
-    const ctx = this.campusCanvas.nativeElement.getContext('2d')!;
-    const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+    const Campuscanvas = this.campusCanvas.nativeElement.getContext('2d')!;
+    const gradient = Campuscanvas.createLinearGradient(0, 0, 0, 200);
     gradient.addColorStop(0, 'rgba(0, 107, 107, 0.25)');
     gradient.addColorStop(1, 'rgba(0, 107, 107, 0.02)');
+
+    const campusKey = this.selectedCampus().toUpperCase();
+    const campusLabel = this.translate.instant(`CAMPUSES.${campusKey}`);
+
     this.chart = new Chart(this.campusCanvas.nativeElement, {
       type: 'line',
       data: {
         labels: series.labels,
         datasets: [
           {
-            label: this.selectedCampus().charAt(0).toUpperCase() + this.selectedCampus().slice(1),
+            label: campusLabel,
             data: series.total,
             borderColor: '#006B6B',
             backgroundColor: gradient,

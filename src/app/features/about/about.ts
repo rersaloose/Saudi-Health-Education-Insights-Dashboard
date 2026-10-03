@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ThemeService } from '../../core/services/theme.service';
+import { TranslationService } from '../../core/services/TranslationService';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 interface Feature {
   icon: 'kpi' | 'trends' | 'campus' | 'drill' | 'heat' | 'distribution' | 'insights' | 'filters';
@@ -9,51 +13,65 @@ interface Feature {
 }
 @Component({
   selector: 'app-about',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslatePipe],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
 export class About {
-  readonly features: Feature[] = [
+  readonly themeServices = inject(ThemeService);
+  readonly transServices = inject(TranslationService);
+  private readonly translate = inject(TranslateService);
+
+  readonly featureKeys: Feature[] = [
     {
       icon: 'kpi',
-      title: 'KPI Cards',
-      desc: 'Key performance indicators showing total students, growth rate, female percentage, postgraduate count, and largest campus — all updating in real time with the selected academic year.',
+      title: 'ABOUT_PAGE.CAPABILITIES.KPI_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.KPI_DESC',
     },
     {
       icon: 'trends',
-      title: 'Student Trends',
-      desc: 'Line charts visualizing total enrollment and gender breakdown over 8 academic years, with gradient fills and interactive tooltips.',
+      title: 'ABOUT_PAGE.CAPABILITIES.TRENDS_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.TRENDS_DESC',
     },
     {
       icon: 'campus',
-      title: 'Campus Enrollment',
-      desc: 'Horizontal bar comparison of all three campuses plus a trend chart for the selected campus, with a campus selector filter.',
+      title: 'ABOUT_PAGE.CAPABILITIES.CAMPUS_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.CAMPUS_DESC',
     },
     {
       icon: 'drill',
-      title: 'Drill-Down Analysis',
-      desc: 'Horizontal bar chart and detailed table showing per-college enrollment for a selected campus, with percentage share calculations.',
+      title: 'ABOUT_PAGE.CAPABILITIES.DRILL_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.DRILL_DESC',
     },
     {
       icon: 'heat',
-      title: 'Advanced Analytics',
-      desc: 'Top colleges ranking with mini bar charts and a color-coded enrollment heatmap across colleges and academic years, filterable by campus.',
+      title: 'ABOUT_PAGE.CAPABILITIES.HEAT_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.HEAT_DESC',
     },
     {
       icon: 'distribution',
-      title: 'Enrollment Distribution',
-      desc: 'Donut chart showing the proportional share of each college in total university enrollment, with a color-coded legend.',
+      title: 'ABOUT_PAGE.CAPABILITIES.DIST_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.DIST_DESC',
     },
     {
       icon: 'insights',
-      title: 'Insights & Highlights',
-      desc: 'Automatically generated textual insights highlighting growth trends, gender ratio changes, and postgraduate enrollment milestones.',
+      title: 'ABOUT_PAGE.CAPABILITIES.INSIGHTS_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.INSIGHTS_DESC',
     },
     {
       icon: 'filters',
-      title: 'Interactive Filters',
-      desc: 'Academic year selector in the header and campus selectors in individual cards — all reactive with Angular signals for instant updates.',
+      title: 'ABOUT_PAGE.CAPABILITIES.FILTERS_TITLE',
+      desc: 'ABOUT_PAGE.CAPABILITIES.FILTERS_DESC',
     },
   ];
+
+  readonly features = computed(() => {
+    this.transServices.currentLang();
+
+    return this.featureKeys.map((item) => ({
+      icon: item.icon,
+      title: this.translate.instant(item.title),
+      desc: this.translate.instant(item.desc),
+    }));
+  });
 }

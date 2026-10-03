@@ -1,0 +1,22 @@
+.kpi-icon {
+  --icon-glow: rgba(45, 212, 191, 0.25);
+
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--kpi-icon-graduation);
+  color: var(--primary);
+
+  filter: drop-shadow(0 4px 6px var(--icon-glow)) brightness(1);
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+  }
+}
+
+[data-theme='dark'] .kpi-icon {
+  --icon-glow: rgba(45, 212, 191, 0.4);
+  filter: drop-shadow(0 0 10px var(--icon-glow)) brightness(1.1);
+}

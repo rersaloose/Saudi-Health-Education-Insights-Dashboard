@@ -1,16 +1,16 @@
 <section class="card advanced-card">
   <div class="card-header-row">
-    <h2 class="section-title">Advanced Analytics</h2>
+    <h2 class="section-title">{{ 'ADVANCED.TITLE' | translate }}</h2>
     @if (hasData()) {
       <div class="filter-group">
-        <label class="filter-label">Campus</label>
+        <label class="filter-label">{{ 'CAMPUSES.LABEL' | translate }}</label>
         <select
           class="select-sm"
           [ngModel]="selectedCampus()"
           (ngModelChange)="selectedCampus.set($event)"
         >
           @for (entry of campusOptions; track entry.key) {
-            <option [value]="entry.key">{{ entry.label }}</option>
+            <option [value]="entry.key">{{ entry.label | translate }}</option>
           }
         </select>
       </div>
@@ -18,26 +18,28 @@
   </div>
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <div class="adv-section">
-      <h3 class="block-title">Top Colleges by Enrollment — {{ svc.selectedYear() }}</h3>
+      <h3 class="block-title">
+        {{ 'ADVANCED.TOP_COLLEGES' | translate: { year: studentComponentServices.selectedYear() } }}
+      </h3>
       <div class="top-colleges-list">
         @for (c of topColleges(); track c.key) {
           <div class="top-college-row">
             <span class="tc-rank">{{ $index + 1 }}</span>
             <span class="tc-dot" [style.background]="c.color"></span>
-            <span class="tc-name">{{ c.college }}</span>
+            <span class="tc-name">{{ c.collegeName }}</span>
             <div class="tc-bar-track">
               <div class="tc-bar-fill" [style.width.%]="c.pct" [style.background]="c.color"></div>
             </div>
             <span class="tc-value">{{ c.value | numberFormat }}</span>
           </div>
         } @empty {
-          <p class="empty-inline">No college data available</p>
+          <p class="empty-inline">{{ 'ADVANCED.NO_DATA_COLLEGES' | translate }}</p>
         }
       </div>
     </div>
 
     <div class="adv-section">
-      <h3 class="block-title">Enrollment Heatmap — Colleges × Years</h3>
+      <h3 class="block-title">{{ 'ADVANCED.HEATMAP_TITLE' | translate }}</h3>
       @if (heatmapRows().length > 0) {
         <div
           class="heatmap-grid"
@@ -48,7 +50,7 @@
             <div class="hm-year">{{ year.split('/')[0] }}</div>
           }
           @for (row of heatmapRows(); track row.collegeKey) {
-            <div class="hm-label">{{ row.college }}</div>
+            <div class="hm-label">{{ row.collegeName }}</div>
             @for (val of row.values; track $index) {
               <div
                 class="hm-cell"
@@ -61,7 +63,7 @@
           }
         </div>
       } @else {
-        <p class="empty-inline">No heatmap data available</p>
+        <p class="empty-inline">{{ 'ADVANCED.NO_DATA_HEATMAP' | translate }}</p>
       }
     </div>
   </app-card-state>
