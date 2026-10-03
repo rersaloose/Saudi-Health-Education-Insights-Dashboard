@@ -69,7 +69,7 @@ export class DrillDown implements AfterViewInit {
   readonly campusOptions = [
     { key: 'riyadh' as CampusKey, label: 'CAMPUSES.RIYADH' },
     { key: 'jeddah' as CampusKey, label: 'CAMPUSES.JEDDAH' },
-    { key: 'alAhasa' as CampusKey, label: 'CAMPUSES.ALAHASA' },
+    { key: 'alAhasa' as CampusKey, label: 'CAMPUSES.AHA' },
   ];
 
   readonly drillData = computed(() => {
