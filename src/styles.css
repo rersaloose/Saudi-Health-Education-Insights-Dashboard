@@ -899,7 +899,7 @@ body {
 .drill-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
 }
 .drill-controls {

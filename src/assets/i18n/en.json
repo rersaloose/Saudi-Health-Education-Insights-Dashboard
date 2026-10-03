@@ -199,6 +199,13 @@
     "LARGEST_CAMPUS": "Largest Campus",
     "SHARE": "share"
   },
+  "ADVANCED": {
+    "TITLE": "Advanced Analytics",
+    "TOP_COLLEGES": "Top Colleges by Enrollment — {{ year }}",
+    "HEATMAP_TITLE": "Enrollment Heatmap — Colleges × Years",
+    "NO_DATA_COLLEGES": "No college data available",
+    "NO_DATA_HEATMAP": "No heatmap data available"
+  },
   "ABOUT_PAGE": {
     "HERO": {
       "TITLE": "From Data to Decisions",
@@ -312,13 +319,7 @@
       "COLLEGES": "Colleges",
       "COLLEGES_VAL": "Enrollment breakdown across available colleges"
     },
-    "ADVANCED": {
-      "TITLE": "Advanced Analytics",
-      "TOP_COLLEGES": "Top Colleges by Enrollment — {{ year }}",
-      "HEATMAP_TITLE": "Enrollment Heatmap — Colleges × Years",
-      "NO_DATA_COLLEGES": "No college data available",
-      "NO_DATA_HEATMAP": "No heatmap data available"
-    },
+
     "COLLEGES": {
       "COM": "College of Medicine",
       "COD": "College of Dentistry",

@@ -67,6 +67,7 @@ export class DrillDown implements AfterViewInit {
   readonly selectedCampus = signal<CampusKey>('riyadh');
 
   readonly campusOptions = [
+    { key: 'all' as const, label: 'CAMPUSES.ALL' },
     { key: 'riyadh' as CampusKey, label: 'CAMPUSES.RIYADH' },
     { key: 'jeddah' as CampusKey, label: 'CAMPUSES.JEDDAH' },
     { key: 'alAhasa' as CampusKey, label: 'CAMPUSES.AHA' },
