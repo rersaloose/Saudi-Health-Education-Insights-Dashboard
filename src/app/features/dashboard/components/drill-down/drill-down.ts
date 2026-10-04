@@ -16,42 +16,83 @@ import { Chart, registerables } from 'chart.js';
 import { NumberFormatPipe } from '../../../../shared/pipes/number-formate.pipe';
 import { StudentDataService } from '../../../../core/services/student-service';
 import { CardState } from '../../../../shared/components/card-state/card-state';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 Chart.register(...registerables);
+const COLLEGE_KEY_MAP: Record<string, string> = {
+  com: 'COM',
+  cod: 'COD',
+  cop: 'COP',
+  con: 'CON',
+  cphhi: 'CPHHI',
+  cams: 'CAMS',
+  coshp: 'COSHP',
+  pme: 'PME',
+
+  medicine: 'COM',
+  dentistry: 'COD',
+  pharmacy: 'COP',
+  nursing: 'CON',
+  'public health': 'CPHHI',
+  'applied sciences': 'CAMS',
+  'science & health': 'COSHP',
+  'postgrad medical': 'PME',
+  'college of medicine': 'COM',
+  'college of dentistry': 'COD',
+  'college of pharmacy': 'COP',
+  'college of nursing': 'CON',
+  'public health & health informatics': 'CPHHI',
+  'applied medical sciences': 'CAMS',
+  'college of science & health professions': 'COSHP',
+  'postgraduate medical education': 'PME',
+};
 
 @Component({
   selector: 'app-drill-down',
-  imports: [CommonModule, FormsModule, NumberFormatPipe, CardState],
+  imports: [CommonModule, FormsModule, NumberFormatPipe, CardState, TranslatePipe],
   templateUrl: './drill-down.html',
   styleUrl: './drill-down.css',
 })
-export class DrillDown {
+export class DrillDown implements AfterViewInit {
   @ViewChild('drillCanvas') drillCanvas!: ElementRef<HTMLCanvasElement>;
 
-  readonly svc = inject(StudentDataService);
+  readonly studentComponentServices = inject(StudentDataService);
+  private translate = inject(TranslateService);
   private injector = inject(Injector);
   private chart: Chart | null = null;
 
-  readonly loading = this.svc.loading;
-  readonly hasError = () => this.svc.error() !== null;
-  readonly hasData = this.svc.hasData;
+  readonly loading = this.studentComponentServices.loading;
+  readonly hasError = () => this.studentComponentServices.error() !== null;
+  readonly hasData = this.studentComponentServices.hasData;
   readonly selectedCampus = signal<CampusKey>('riyadh');
 
   readonly campusOptions = [
-    { key: 'riyadh' as CampusKey, label: 'Riyadh' },
-    { key: 'jeddah' as CampusKey, label: 'Jeddah' },
-    { key: 'alAhasa' as CampusKey, label: 'Al-Ahsa' },
+    { key: 'all' as const, label: 'CAMPUSES.ALL' },
+    { key: 'riyadh' as CampusKey, label: 'CAMPUSES.RIYADH' },
+    { key: 'jeddah' as CampusKey, label: 'CAMPUSES.JEDDAH' },
+    { key: 'alAhasa' as CampusKey, label: 'CAMPUSES.AHA' },
   ];
 
   readonly drillData = computed(() => {
-    const year = this.svc.selectedYear();
+    const currentLang = this.translate.currentLang;
+    const year = this.studentComponentServices.selectedYear();
     const campus = this.selectedCampus();
-    const raw = this.svc.getDrillDownData(campus, year);
+    const raw = this.studentComponentServices.getDrillDownData(campus, year);
     const total = raw.reduce((s, r) => s + r.value, 0);
-    return raw.map((r) => ({
-      ...r,
-      pct: total > 0 ? +((r.value / total) * 100).toFixed(1) : 0,
-    }));
+
+    return raw.map((r) => {
+      const rawKey = (r.key || r.college || '').toLowerCase().trim();
+      const normalizedKey = COLLEGE_KEY_MAP[rawKey] || rawKey.toUpperCase();
+
+      const translationKey = `COLLEGES.${normalizedKey}`;
+      const translated = this.translate.instant(translationKey);
+
+      return {
+        ...r,
+        collegeName: translated !== translationKey ? translated : r.college,
+        pct: total > 0 ? +((r.value / total) * 100).toFixed(1) : 0,
+      };
+    });
   });
 
   ngAfterViewInit(): void {
@@ -65,8 +106,12 @@ export class DrillDown {
       { injector: this.injector },
     );
   }
-
-  private renderChart(data: { college: string; value: number; key: string }[]): void {
+  onResize(): void {
+    this.chart?.resize();
+  }
+  private renderChart(
+    data: { college: string; collegeName: string; value: number; key: string }[],
+  ): void {
     this.chart?.destroy();
     const colors = [
       '#006B6B',
@@ -81,7 +126,7 @@ export class DrillDown {
     this.chart = new Chart(this.drillCanvas.nativeElement, {
       type: 'bar',
       data: {
-        labels: data.map((d) => d.college),
+        labels: data.map((d) => d.collegeName),
         datasets: [
           {
             data: data.map((d) => d.value),

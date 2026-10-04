@@ -10,13 +10,16 @@ import { DrillDown } from './components/drill-down/drill-down';
 import { InsightsComponent } from './components/insights/insights';
 import { CampusEnrollment } from './components/campus-enrollment/campus-enrollment';
 import { AdvancedAnalytics } from './components/advanced-analytics/advanced-analytics';
-
+import { ThemeService } from '../../core/services/theme.service';
+import { LanguageCode, TranslationService } from '../../core/services/TranslationService';
+import { TranslatePipe } from '@ngx-translate/core';
+import { HeaderService } from '../../core/services/header.services';
 @Component({
   selector: 'app-dashboard',
   imports: [
     CommonModule,
     FormsModule,
-    RouterLink,
+
     KpiCards,
     StudentTrends,
     AdvancedAnalytics,
@@ -25,18 +28,21 @@ import { AdvancedAnalytics } from './components/advanced-analytics/advanced-anal
     CampusEnrollment,
     GenderRatio,
     KpiCards,
+    TranslatePipe,
     GenderRatio,
-    DrillDown,
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-  private svc = inject(StudentDataService);
-  readonly years = computed(() => this.svc.getYears());
-  selected = this.svc.selectedYear();
+  readonly themeServices = inject(ThemeService);
+  readonly transServices = inject(TranslationService);
+  readonly headerService = inject(HeaderService);
+  ngOnInit(): void {
+    this.headerService.setYearFilterVisibility(true);
+  }
 
-  onYearChange(year: string): void {
-    this.svc.selectedYear.set(year);
+  ngOnDestroy(): void {
+    this.headerService.setYearFilterVisibility(false);
   }
 }

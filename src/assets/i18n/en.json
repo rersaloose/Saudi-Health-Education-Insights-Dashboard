@@ -1,0 +1,227 @@
+{
+  "CAMPUSES": {
+    "LABEL": "Campus",
+    "ALL": "All Campuses",
+    "RIYADH": "Riyadh",
+    "JEDDAH": "Jeddah",
+    "AHA": "Al-Ahsa"
+  },
+  "DRILL": {
+    "COLLEGE": "College",
+    "STUDENTS": "Students",
+    "SHARE": "% Share",
+    "NO_DATA": "No data for this campus/year"
+  },
+  "PAGE_TITLE": {
+    "DASHBOARD": "Dashboard"
+  },
+  "COMMON": {
+    "VS": "VS"
+  },
+  "COLLEGES": {
+    "COM": "College of Medicine",
+    "COD": "College of Dentistry",
+    "COP": "College of Pharmacy",
+    "CON": "College of Nursing",
+    "CPHHI": "College of Public Health & Health Informatics",
+    "CAMS": "College of Applied Medical Sciences",
+    "COSHP": "College of Science & Health Professions",
+    "PME": "Postgraduate Medical Education"
+  },
+  "HEADER": {
+    "TITLE": "Student Analytics Dashboard",
+    "SUBTITLE": "King Saud bin Abdulaziz University for Health Sciences",
+    "ABOUT": "About",
+    "ACADEMIC_YEAR": "Academic Year",
+    "THEME_LIGHT": "Light Mode",
+    "THEME_DARK": "Dark Mode"
+  },
+  "KPIS": {
+    "TOTAL_STUDENTS": "Total Enrolled Students",
+    "MALE_STUDENTS": "Male Students",
+    "FEMALE_STUDENTS": "Female Students",
+    "GROWTH_RATE": "Annual Growth Rate",
+    "CAMPUSES_COUNT": "Active Campuses"
+  },
+  "CHARTS": {
+    "STUDENT_TRENDS": "Enrollment Trends",
+    "INSIGHTS": "Key Insights",
+    "CAMPUS_ENROLLMENT": "Enrollment by Campus",
+    "GENDER_RATIO": "Gender Distribution",
+    "DRILL_DOWN": "Drill-Down Analysis",
+    "ADVANCED_ANALYTICS": "Advanced Analytics"
+  },
+  "FOOTER": {
+    "SOURCE": "Data source: KSAU-HS Official Student Enrollment Statistics",
+    "YEARS": "Academic Years 2016/2017 - 2023/2024"
+  },
+  "KPI": {
+    "TOTAL_STUDENTS": "Total Students",
+    "AWAITING_DATA": "Awaiting data",
+    "GROWTH_RATE": "Growth Rate",
+    "VS_LAST_YEAR": "vs last year",
+    "FEMALE": "Female",
+    "FEMALE_SUB": "Female Students",
+    "POSTGRADUATE": "Postgraduate",
+    "LARGEST_CAMPUS": "Largest Campus",
+    "SHARE": "share"
+  },
+  "ADVANCED": {
+    "TITLE": "Advanced Analytics",
+    "TOP_COLLEGES": "Top Colleges by Enrollment — {{ year }}",
+    "HEATMAP_TITLE": "Enrollment Heatmap — Colleges × Years",
+    "NO_DATA_COLLEGES": "No college data available",
+    "NO_DATA_HEATMAP": "No heatmap data available"
+  },
+  "ABOUT_PAGE": {
+    "HERO": {
+      "TITLE": "From Data to Decisions",
+      "SUBTITLE": "Student Analytics Dashboard — Turning complex enrollment data into clear, actionable insights for better decision-making.",
+      "BACK_BTN": "Back to Dashboard"
+    },
+    "VALUE": {
+      "TITLE": "Evidence-Based Decisions",
+      "P1": "This platform transforms student enrollment data into an interactive analytics experience that helps decision-makers understand what is happening, where growth is occurring, and where opportunities may exist.",
+      "P2": "Instead of spending hours searching through reports, spreadsheets, historical records, and manually comparing numbers, users can explore the most important information from a single dashboard."
+    },
+    "CHALLENGE": {
+      "TITLE": "The Challenge",
+      "P1": "Educational and investment decisions often require analyzing large amounts of historical and demographic data. Finding meaningful patterns manually can require multiple reports, calculations, comparisons, and repeated research.",
+      "STEP1_TITLE": "Search",
+      "STEP1_DESC": "Find information across different reports and datasets.",
+      "STEP2_TITLE": "Collect",
+      "STEP2_DESC": "Gather the relevant numbers and historical records.",
+      "STEP3_TITLE": "Calculate",
+      "STEP3_DESC": "Manually calculate growth rates, percentages, and comparisons.",
+      "STEP4_TITLE": "Analyze",
+      "STEP4_DESC": "Compare campuses, colleges, demographics, and trends."
+    },
+    "SOLUTION": {
+      "TITLE": "The Solution",
+      "P1": "The dashboard brings these analytical steps together in one place. It automatically organizes the available data, calculates key indicators, visualizes historical trends, and highlights important patterns.",
+      "STEP1_TITLE": "One Platform",
+      "STEP1_DESC": "All relevant enrollment data in one place.",
+      "STEP2_TITLE": "Explore",
+      "STEP2_DESC": "Filter and drill down into the data.",
+      "STEP3_TITLE": "Discover",
+      "STEP3_DESC": "Identify trends, differences, and opportunities.",
+      "STEP4_TITLE": "Decide",
+      "STEP4_DESC": "Use the insights to support better decisions."
+    },
+    "WHY_MATTERS": {
+      "TITLE": "Why It Matters",
+      "P1": "The value of the platform is not simply displaying numbers. It reduces the effort required to understand those numbers and turns raw data into information that can support strategic decisions.",
+      "CARD1_TITLE": "Save Research Time",
+      "CARD1_DESC": "Reduce the need to search through multiple reports and manually collect information.",
+      "CARD2_TITLE": "Identify Growth",
+      "CARD2_DESC": "Quickly discover which campuses, colleges, or areas are experiencing the strongest growth.",
+      "CARD3_TITLE": "Compare Opportunities",
+      "CARD3_DESC": "Compare campuses, colleges, academic years, and student groups from one interface.",
+      "CARD4_TITLE": "Support Decisions",
+      "CARD4_DESC": "Turn complex historical data into clear insights that are easier to understand and act upon."
+    },
+    "DISCOVER": {
+      "TITLE": "What Can You Discover?",
+      "Q1_TITLE": "Where is demand concentrated?",
+      "Q1_DESC": "Understand which campuses and colleges have the largest student populations.",
+      "Q2_TITLE": "Where is growth happening?",
+      "Q2_DESC": "Track historical enrollment trends and identify campuses with stronger growth.",
+      "Q3_TITLE": "Which colleges lead enrollment?",
+      "Q3_DESC": "Compare college-level enrollment and identify where student demand is concentrated.",
+      "Q4_TITLE": "How is the student population changing?",
+      "Q4_DESC": "Explore gender distribution, postgraduate participation, and changes across academic years.",
+      "Q5_TITLE": "How do campuses compare?",
+      "Q5_DESC": "Compare Riyadh, Jeddah, and Al-Ahsa using consistent metrics and historical data.",
+      "Q6_TITLE": "What patterns deserve attention?",
+      "Q6_DESC": "Use visual analytics and generated highlights to quickly identify important changes in the data."
+    },
+    "RESEARCH_VS": {
+      "TITLE": "Less Research. Faster Insights.",
+      "P1": "Traditional analysis can require several steps before a useful insight is found. This dashboard compresses that process into a single interactive experience.",
+      "TRADITIONAL": "Traditional Research",
+      "TRAD_1": "Search multiple reports",
+      "TRAD_2": "Collect historical data",
+      "TRAD_3": "Calculate percentages and growth",
+      "TRAD_4": "Build comparisons and charts",
+      "TRAD_5": "Interpret the results",
+      "MODERN": "With This Dashboard",
+      "MOD_1": "Open the dashboard",
+      "MOD_2": "Select the required filters",
+      "MOD_3": "Explore trends and comparisons",
+      "MOD_4": "Discover highlighted insights",
+      "MOD_5": "Make informed decisions"
+    },
+    "CAPABILITIES": {
+      "TITLE": "Dashboard Capabilities",
+      "SUB": "Each capability is designed to answer a specific analytical question and reduce the effort required to extract meaningful information from the data.",
+      "KPI_TITLE": "KPI Cards",
+      "KPI_DESC": "Key performance indicators showing total students, growth rate, female percentage, postgraduate count, and largest campus — all updating in real time with the selected academic year.",
+      "TRENDS_TITLE": "Student Trends",
+      "TRENDS_DESC": "Line charts visualizing total enrollment and gender breakdown over 8 academic years, with gradient fills and interactive tooltips.",
+      "CAMPUS_TITLE": "Campus Enrollment",
+      "CAMPUS_DESC": "Horizontal bar comparison of all three campuses plus a trend chart for the selected campus, with a campus selector filter.",
+      "DRILL_TITLE": "Drill-Down Analysis",
+      "DRILL_DESC": "Horizontal bar chart and detailed table showing per-college enrollment for a selected campus, with percentage share calculations.",
+      "HEAT_TITLE": "Advanced Analytics",
+      "HEAT_DESC": "Top colleges ranking with mini bar charts and a color-coded enrollment heatmap across colleges and academic years, filterable by campus.",
+      "DIST_TITLE": "Enrollment Distribution",
+      "DIST_DESC": "Donut chart showing the proportional share of each college in total university enrollment, with a color-coded legend.",
+      "INSIGHTS_TITLE": "Insights & Highlights",
+      "INSIGHTS_DESC": "Automatically generated textual insights highlighting growth trends, gender ratio changes, and postgraduate enrollment milestones.",
+      "FILTERS_TITLE": "Interactive Filters",
+      "FILTERS_DESC": "Academic year selector in the header and campus selectors in individual cards — all reactive with Angular signals for instant updates."
+    },
+    "COVERAGE": {
+      "TITLE": "Data Coverage",
+      "P1": "The dashboard analyzes publicly available KSAU-HS student enrollment data across multiple academic years, campuses, colleges, academic degrees, and demographic categories.",
+      "YEARS": "Academic Years",
+      "YEARS_VAL": "2016/2017 through 2023/2024",
+      "CAMPUSES": "Campuses",
+      "CAMPUSES_VAL": "Riyadh, Jeddah, and Al-Ahsa",
+      "GENDER": "Gender",
+      "GENDER_VAL": "Male and female enrollment",
+      "DEGREE": "Academic Degree",
+      "DEGREE_VAL": "Bachelor's and postgraduate enrollment",
+      "COLLEGES": "Colleges",
+      "COLLEGES_VAL": "Enrollment breakdown across available colleges"
+    },
+    "CAMPUSES_DETAILS": {
+      "TITLE": "Campuses & Colleges",
+      "RIYADH_DESC": "8 colleges including Medicine, Dentistry, Pharmacy, Nursing, Public Health & Health Informatics, Applied Medical Sciences, Science & Health Professions, and Postgraduate Medical Education.",
+      "JEDDAH_DESC": "5 colleges including Medicine, Nursing, Applied Medical Sciences, Science & Health Professions, and Postgraduate Medical Education.",
+      "AHA_DESC": "4 colleges including Nursing, Applied Medical Sciences, Science & Health Professions, and Postgraduate Medical Education."
+    },
+    "TECH": {
+      "TITLE": "Technical Overview",
+      "FRAMEWORK": "Framework",
+      "ARCH": "Architecture",
+      "CHARTS": "Charts",
+      "STATE": "State Management",
+      "STYLING": "Styling",
+      "DATA": "Data Format"
+    }
+  },
+  "DISTRIBUTION": {
+    "TITLE": "Enrollment Distribution",
+    "BY_COLLEGE": "By college — {{year}}"
+  },
+  "TRENDS": {
+    "TITLE": "Student Trends Over Time",
+    "TOTAL_STUDENTS": "Total Students",
+    "MALE": "Male",
+    "FEMALE": "Female"
+  },
+  "INSIGHTS": {
+    "TITLE": "Insights & Highlights",
+    "JEDDAH_GROWTH": "<strong>Jeddah Campus</strong> shows the <strong>highest growth</strong> over the last 3 years at <strong>{{value}}%</strong>.",
+    "FEMALE_RATIO": "<strong>Female Students</strong> now make up <strong>{{current}}%</strong> of the total, up from <strong>{{first}}%</strong> in {{year}}.",
+    "POSTGRAD_INCREASE": "<strong>Postgraduate Enrollment</strong> has increased to reach <strong>{{total}}</strong> students this year."
+  },
+  "STATE": {
+    "LOADING": "Loading data...",
+    "ERROR": "Unable to load data",
+    "ERROR_SUB": "Please try again later",
+    "EMPTY": "No data available",
+    "EMPTY_SUB": "No records found for the selected filters"
+  }
+}

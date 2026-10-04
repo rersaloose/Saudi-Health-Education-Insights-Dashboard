@@ -1,44 +1,23 @@
- <div class="dashboard">
-   <header class="dashboard-header">
-        <div class="header-left">
-          <div class="logo-mark">KSAU-HS</div>
-          <div class="header-titles">
-            <h1>Student Analytics Dashboard</h1>
-            <p>King Saud bin Abdulaziz University for Health Sciences</p>
-          </div>
-        </div>
-        <div class="header-right">
-          <a routerLink="/about" class="nav-link">About</a>
-          <div class="year-selector">
-            <label>Academic Year</label>
-            <select [(ngModel)]="selected" (ngModelChange)="onYearChange($event)">
-              @for (year of years(); track year) {
-                <option [value]="year">{{ year }}</option>
-              }
-            </select>
-          </div>
-        </div>
-      </header>
+<div class="dashboard">
+  <app-kpi-cards></app-kpi-cards>
 
-      <app-kpi-cards></app-kpi-cards>
+  <div class="row row-trends">
+    <app-student-trends></app-student-trends>
+    <app-insights></app-insights>
+  </div>
 
-      <div class="row row-trends">
-        <app-student-trends></app-student-trends>
-        <app-insights></app-insights>
-      </div>
+  <div class="row row-campus">
+    <app-campus-enrollment></app-campus-enrollment>
+    <app-gender-ratio></app-gender-ratio>
+  </div>
 
-      <div class="row row-campus">
-        <app-campus-enrollment></app-campus-enrollment>
-        <app-gender-ratio></app-gender-ratio>
-      </div>
+  <div class="row row-bottom">
+    <app-drill-down></app-drill-down>
+    <app-advanced-analytics></app-advanced-analytics>
+  </div>
 
-      <div class="row row-bottom">
-        <app-drill-down></app-drill-down>
-        <app-advanced-analytics></app-advanced-analytics>
-      </div>
-
-      <footer class="dashboard-footer">
-        <span>Data source: KSAU-HS Public Student Enrollment Statistics</span>
-        <span>Academic Years 2016/2017 - 2023/2024</span>
-      </footer>
-    </div>
+  <footer class="dashboard-footer">
+    <span>{{ 'FOOTER.SOURCE' | translate }}</span>
+    <span>{{ 'FOOTER.YEARS' | translate }}</span>
+  </footer>
+</div>

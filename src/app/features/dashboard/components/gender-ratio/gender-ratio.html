@@ -1,15 +1,17 @@
 <section class="card gender-card">
-  <h2 class="section-title">Enrollment Distribution</h2>
+  <h2 class="section-title">{{ 'DISTRIBUTION.TITLE' | translate }}</h2>
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
-    <p class="section-subtitle">By college — {{ svc.selectedYear() }}</p>
+    <p class="section-subtitle">
+      {{ 'DISTRIBUTION.BY_COLLEGE' | translate: { year: studentComponentServices.selectedYear() } }}
+    </p>
     <div class="gender-chart-wrap">
-      <canvas #donutCanvas></canvas>
+      <canvas #donutCanvas appAutoResize (resized)="onResize()"></canvas>
     </div>
     <div class="gender-legend">
       @for (item of distribution(); track item.key) {
         <div class="gl-item">
           <span class="gl-dot" [style.background]="item.color"></span>
-          <span class="gl-name">{{ item.college }}</span>
+          <span class="gl-name">{{ item.translatedCollege }}</span>
           <span class="gl-pct">{{ item.pct }}%</span>
         </div>
       }

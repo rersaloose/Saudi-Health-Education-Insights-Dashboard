@@ -1,17 +1,17 @@
 <section class="card drill-card">
   <div class="card-header-row">
-    <h2 class="section-title">Drill-Down Analysis</h2>
+    <h2 class="section-title">{{ 'CHARTS.DRILL_DOWN' | translate }}</h2>
     @if (hasData()) {
       <div class="drill-controls">
         <div class="filter-group">
-          <label class="filter-label">Campus</label>
+          <label class="filter-label">{{ 'CAMPUSES.LABEL' | translate }}</label>
           <select
             class="select-sm"
             [ngModel]="selectedCampus()"
             (ngModelChange)="selectedCampus.set($event)"
           >
             @for (entry of campusOptions; track entry.key) {
-              <option [value]="entry.key">{{ entry.label }}</option>
+              <option [value]="entry.key">{{ entry.label | translate }}</option>
             }
           </select>
         </div>
@@ -20,27 +20,29 @@
   </div>
   <app-card-state [loading]="loading()" [hasData]="hasData()" [hasError]="hasError()">
     <div class="drill-chart-wrap">
-      <canvas #drillCanvas></canvas>
+      <canvas #drillCanvas appAutoResize (resized)="onResize()"></canvas>
     </div>
     <div class="drill-table-wrap">
       <table class="drill-table">
         <thead>
           <tr>
-            <th>College</th>
-            <th class="num-col">Students ({{ svc.selectedYear() }})</th>
-            <th class="num-col">% Share</th>
+            <th>{{ 'DRILL.COLLEGE' | translate }}</th>
+            <th class="num-col">
+              {{ 'DRILL.STUDENTS' | translate }} ({{ studentComponentServices.selectedYear() }})
+            </th>
+            <th class="num-col">{{ 'DRILL.SHARE' | translate }}</th>
           </tr>
         </thead>
         <tbody>
           @for (row of drillData(); track row.key) {
             <tr>
-              <td>{{ row.college }}</td>
+              <td>{{ row.collegeName }}</td>
               <td class="num-col">{{ row.value | numberFormat }}</td>
               <td class="num-col">{{ row.pct }}%</td>
             </tr>
           } @empty {
             <tr>
-              <td colspan="3" class="empty-row">No data for this campus/year</td>
+              <td colspan="3" class="empty-row">{{ 'DRILL.NO_DATA' | translate }}</td>
             </tr>
           }
         </tbody>
