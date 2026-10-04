@@ -1,77 +1,19 @@
 {
-  "app": {
-    "title": "Studenten-Analyse-Dashboard",
-    "subtitle": "König Saud bin Abdulaziz Universität für Gesundheitswissenschaften"
+  "CAMPUSES": {
+    "LABEL": "Campus",
+    "ALL": "Alle Standorte",
+    "RIYADH": "Riad",
+    "JEDDAH": "Dschidda",
+    "AHA": "Al-Ahsa"
   },
-  "nav": {
-    "about": "Über",
-    "back": "Zurück zum Dashboard"
-  },
-  "filter": {
-    "academicYear": "Studienjahr",
-    "campus": "Campus"
-  },
-  "campus": {
-    "all": "Alle Campus",
-    "riyadh": "Riad",
-    "jeddah": "Dschidda",
-    "alAhasa": "Al-Ahsa"
-  },
-  "kpi": {
-    "totalStudents": "Studierende gesamt",
-    "growthRate": "Wachstumsrate",
-    "female": "Weiblich",
-    "postgraduate": "Postgraduiert",
-    "largestCampus": "Größter Campus",
-    "vsLastYear": "im Vgl. zum Vorjahr",
-    "femaleStudents": "Studentinnen",
-    "share": "Anteil",
-    "awaitingData": "Daten werden geladen"
-  },
-  "CARD": {
-    "studentTrends": "Studententrends im Zeitverlauf",
-    "trends": {
-      "total": "Studierende gesamt",
-      "male": "Männlich",
-      "female": "Weiblich"
-    },
-    "insights": "Erkenntnisse & Highlights",
-    "campusEnrollment": "Campus-Einschreibung Aufschlüsselung",
-    "drillDown": "Detailanalyse",
-    "advancedAnalytics": "Erweiterte Analysen",
-    "enrollmentDistribution": "Einschreibungsverteilung",
-    "byCollege": "Nach Fakultät"
-  },
-  "drill": {
-    "college": "Fakultät",
-    "students": "Studierende",
-    "share": "% Anteil",
-    "noData": "Keine Daten für diesen Campus/dieses Jahr"
-  },
-  "adv": {
-    "topColleges": "Top-Fakultäten nach Einschreibung",
-    "heatmap": "Einschreibungs-Heatmap — Fakultäten × Jahre",
-    "noCollegeData": "Keine Fakultätsdaten verfügbar",
-    "noHeatmapData": "Keine Heatmap-Daten verfügbar"
+  "DRILL": {
+    "COLLEGE": "Fakultät",
+    "STUDENTS": "Studierende",
+    "SHARE": "% Anteil",
+    "NO_DATA": "Keine Daten für diesen Campus/dieses Jahr"
   },
   "PAGE_TITLE": {
     "DASHBOARD": "Dashboard"
-  },
-  "state": {
-    "loading": "Daten werden geladen...",
-    "error": "Daten konnten nicht geladen werden",
-    "errorSub": "Bitte versuchen Sie es später erneut",
-    "empty": "Keine Daten verfügbar",
-    "emptySub": "Keine Einträge für die ausgewählten Filter"
-  },
-  "footer": {
-    "dataSource": "Datenquelle: KSAU-HS öffentliche Studenteneinschreibungsstatistik",
-    "years": "Studienjahre 2016/2017 - 2023/2024"
-  },
-  "insight": {
-    "jeddah": "Der <strong>Campus Dschidda</strong> zeigt das <strong>höchste Wachstum</strong> in den letzten 3 Jahren mit <strong>{{val}}%</strong>.",
-    "female": "<strong>Studentinnen</strong> machen nun <strong>{{val}}%</strong> der Gesamtzahl aus, gegenüber <strong>{{prev}}%</strong> im Jahr {{year}}.",
-    "postgrad": "Die <strong>Postgraduierten-Einschreibung</strong> ist auf <strong>{{val}}</strong> Studierende in diesem Jahr gestiegen."
   },
   "ADVANCED": {
     "TITLE": "Erweiterte Analysen",
@@ -81,14 +23,14 @@
     "NO_DATA_HEATMAP": "Keine Heatmap-Daten verfügbar"
   },
   "COLLEGES": {
-    "COM": "Hochschule für Medizin",
-    "COD": "Hochschule für Zahnmedizin",
-    "COP": "Hochschule für Pharmazie",
-    "CON": "Hochschule für Pflegewissenschaften",
-    "CPHHI": "Öffentliche Gesundheit & Gesundheitsinformatik",
-    "CAMS": "Angewandte Medizinische Wissenschaften",
-    "COSHP": "Hochschule für Natur- & Gesundheitswissenschaften",
-    "PME": "Postgraduierte Medizinische Ausbildung"
+    "COM": "Fakultät für Medizin",
+    "COD": "Fakultät für Zahnmedizin",
+    "COP": "Fakultät für Pharmazie",
+    "CON": "Fakultät für Pflegewissenschaften",
+    "CPHHI": "Fakultät für Öffentliche Gesundheit und Gesundheitsinformatik",
+    "CAMS": "Fakultät für Angewandte Medizinische Wissenschaften",
+    "COSHP": "Fakultät für Natur- und Gesundheitswissenschaften",
+    "PME": "Postgraduale Medizinische Ausbildung"
   },
   "KPI": {
     "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
@@ -101,90 +43,14 @@
     "LARGEST_CAMPUS": "Größter Standort",
     "SHARE": "Anteil"
   },
-  "about": {
-    "title": "Über dieses Dashboard",
-    "subtitle": "Studenten-Analyse-Dashboard — König Saud bin Abdulaziz Universität für Gesundheitswissenschaften",
-    "overview": "Übersicht",
-    "overviewText": "Dieses Dashboard bietet einen umfassenden Überblick über die Studenteneinschreibungsstatistik der König Saud bin Abdulaziz Universität für Gesundheitswissenschaften (KSAU-HS) über alle Campus, Fakultäten und Studienjahre von 2016/2017 bis 2023/2024. Es ermöglicht Administratoren und Interessengruppen, Trends zu erkunden, Campus zu vergleichen, Fakultätsdaten zu analysieren und handlungsrelevante Erkenntnisse durch interaktive Visualisierungen zu gewinnen.",
-    "dataSource": "Datenquelle",
-    "dataSourceText": "Alle angezeigten Daten stammen aus dem öffentlich verfügbaren KSAU-HS-Datensatz zur Studenteneinschreibung",
-    "dataSourceSuffix": "Der Datensatz umfasst drei Hauptkategorien:",
-    "catGender": "Geschlecht — Männliche und weibliche Einschreibung pro Studienjahr",
-    "catDegree": "Akademischer Grad — Bachelor- und Postgraduierten-Einschreibung pro Jahr",
-    "catBranch": "Zweig & Fakultät — Einschreibung aufgeschlüsselt nach Campus (Riad, Dschidda, Al-Ahsa) und Fakultät",
-    "features": "Dashboard-Funktionen",
-    "techStack": "Technologie-Stack",
-    "campusesColleges": "Campus & Fakultäten",
-    "loadingError": "Laden & Fehlerbehandlung",
-    "loadingErrorIntro": "Jede Karte behandelt unabhängig drei Zustände:",
-    "loadingDesc": "Laden — Ein Spinner mit \"Daten werden geladen...\" erscheint während des Ladens",
-    "errorDesc": "Fehler — Wenn Daten nicht geladen werden können, wird eine Fehlermeldung statt Nullen angezeigt",
-    "emptyDesc": "Leer — Wenn keine Daten für die ausgewählten Filter vorhanden sind, wird \"Keine Daten verfügbar\" statt Nullen angezeigt",
-    "feat": {
-      "kpi": {
-        "title": "KPI-Karten",
-        "desc": "Key Performance Indicators showing total students, growth rate, female percentage, postgraduate count, and largest campus — all updating in real time with the selected academic year."
-      },
-      "trends": {
-        "title": "Studententrends",
-        "desc": "Liniendiagramme visualisieren die Gesamteinschreibung und Geschlechteraufteilung über 8 Studienjahre mit Verläufen und interaktiven Tooltips."
-      },
-      "campus": {
-        "title": "Campus-Einschreibung",
-        "desc": "Horizontaler Balkenvergleich aller drei Campus sowie ein Trenddiagramm für den ausgewählten Campus, mit Campus-Auswahlfilter."
-      },
-      "drill": {
-        "title": "Detailanalyse",
-        "desc": "Horizontales Balkendiagramm und detaillierte Tabelle zeigen die Einschreibung pro Fakultät für einen ausgewählten Campus, mit prozentualen Anteilsberechnungen."
-      },
-      "heat": {
-        "title": "Erweiterte Analysen",
-        "desc": "Top-Fakultäten-Ranking mit Mini-Balkendiagrammen und einer farbcodierten Einschreibungs-Heatmap über Fakultäten und Studienjahre, nach Campus filterbar."
-      },
-      "dist": {
-        "title": "Einschreibungsverteilung",
-        "desc": "Donut-Diagramm zeigt den proportionalen Anteil jeder Fakultät an der gesamten Universitätseinschreibung, mit einer farbcodierten Legende."
-      },
-      "insights": {
-        "title": "Erkenntnisse & Highlights",
-        "desc": "Automatisch generierte textuelle Erkenntnisse, die Wachstumstrends, Geschlechterveränderungen und Postgraduierten-Meilensteine hervorheben."
-      },
-      "filters": {
-        "title": "Interaktive Filter",
-        "desc": "Studienjahresauswahl im Header und Campus-Auswahlen in einzelnen Karten — alle reaktiv mit Angular Signals für sofortige Aktualisierungen."
-      }
-    },
-    "tech": {
-      "framework": "Framework",
-      "architecture": "Architektur",
-      "charts": "Diagramme",
-      "state": "Zustandsverwaltung",
-      "styling": "Styling",
-      "data": "Datenformat"
-    },
-    "riyadhDesc": "8 Fakultäten: Medizin, Zahnmedizin, Pharmazie, Pflege, Öffentliche Gesundheit & Gesundheitsinformatik, Angewandte Medizinische Wissenschaften, Gesundheitsberufe, Postgraduierte Medizinische Ausbildung",
-    "jeddahDesc": "5 Fakultäten: Medizin, Pflege, Angewandte Medizinische Wissenschaften, Gesundheitsberufe, Postgraduierte Medizinische Ausbildung",
-    "alAhsaDesc": "4 Fakultäten: Pflege, Angewandte Medizinische Wissenschaften, Gesundheitsberufe, Postgraduierte Medizinische Ausbildung"
-  },
-  "college": {
-    "com": "Medizin",
-    "cod": "Zahnmedizin",
-    "cop": "Pharmazie",
-    "con": "Pflege",
-    "cphhi": "Öffentliche Gesundheit",
-    "cams": "Angewandte Wissenschaften",
-    "coshp": "Gesundheitswissenschaften",
-    "pme": "Postgraduierte Medizin"
-  },
   "HEADER": {
     "TITLE": "Studierenden-Analyse-Dashboard",
-    "SUBTITLE": "King Saud bin Abdulaziz Universität für Gesundheitswissenschaften",
+    "SUBTITLE": "König Saud bin Abdulaziz Universität für Gesundheitswissenschaften",
     "ABOUT": "Über uns",
     "ACADEMIC_YEAR": "Studienjahr",
     "THEME_LIGHT": "Heller Modus",
     "THEME_DARK": "Dunkler Modus"
   },
-
   "KPIS": {
     "TOTAL_STUDENTS": "Gesamtzahl der Studierenden",
     "MALE_STUDENTS": "Männliche Studierende",
@@ -207,7 +73,7 @@
   "ABOUT_PAGE": {
     "HERO": {
       "TITLE": "Von Daten zu Entscheidungen",
-      "SUBTITLE": "Studenten-Analyse-Dashboard — Komplexe Einschreibungsdaten in klare, handlungsorientierte Erkenntnisse für bessere Entscheidungen verwandeln.",
+      "SUBTITLE": "Studierenden-Analyse-Dashboard — Komplexe Einschreibungsdaten in klare, handlungsorientierte Erkenntnisse für bessere Entscheidungen verwandeln.",
       "BACK_BTN": "Zurück zum Dashboard"
     },
     "VALUE": {
@@ -263,7 +129,7 @@
       "Q4_DESC": "Verteilung nach Geschlecht, Postgraduiertenstudien und Veränderung über die Jahre analysieren.",
       "Q5_TITLE": "Wie schneiden die Standorte im Vergleich ab?",
       "Q5_DESC": "Vergleich von Riad, Dschidda und Al-Ahsa anhand einheitlicher Kennzahlen.",
-      "Q6_TITLE": "Welche Muster erfordern Aufmerksamkeiten?",
+      "Q6_TITLE": "Welche Muster erfordern Aufmerksamkeit?",
       "Q6_DESC": "Visuelle Analysen nutzen, um wesentliche Veränderungen in den Daten schnell zu erfassen."
     },
     "RESEARCH_VS": {
@@ -281,13 +147,6 @@
       "MOD_3": "Trends und Vergleiche sofort visualisieren",
       "MOD_4": "Wichtige Erkenntnisse direkt ablesen",
       "MOD_5": "Schnelle und fundierte Entscheidungen treffen"
-    },
-    "CAMPUSES": {
-      "LABEL": "Campus",
-      "ALL": "Alle Standorte",
-      "RIYADH": "Riad",
-      "JEDDAH": "Dschidda",
-      "AHA": "Al-Ahsa"
     },
     "CAPABILITIES": {
       "TITLE": "Funktionen des Dashboards",
@@ -323,16 +182,6 @@
       "COLLEGES": "Fakultäten",
       "COLLEGES_VAL": "Einschreibungsverteilung über alle verfügbaren Fakultäten"
     },
-    "COLLEGES": {
-      "COSHP": "Fakultät für Natur- und Gesundheitswissenschaften",
-      "PME": "Vorbereitungsjahr",
-      "COM": "Medizinische Fakultät",
-      "cams": "Fakultät für Angewandte Medizinische Wissenschaften",
-      "CON": "Fakultät für Pflegewissenschaften",
-      "COD": "Zahnmedizinische Fakultät",
-      "COP": "Pharmazeutische Fakultät",
-      "CPHHI": "Fakultät für Öffentliche Gesundheit und Gesundheitsinformatik"
-    },
     "CAMPUSES_DETAILS": {
       "TITLE": "Standorte & Fakultäten",
       "RIYADH_DESC": "8 Fakultäten: Medizin, Zahnmedizin, Pharmazie, Pflegewissenschaften, Public Health & Gesundheitsinformatik, Angewandte Medizinische Wissenschaften, Naturwissenschaften & Gesundheitsberufe sowie Postgraduale Medizinische Ausbildung.",
@@ -361,11 +210,18 @@
   },
   "INSIGHTS": {
     "TITLE": "Erkenntnisse & Highlights",
-    "JEDDAH_GROWTH": "Der <strong>Campus Jeddah</strong> verzeichnete mit <strong>{{value}}%</strong> das <strong>höchste Wachstum</strong> in den letzten 3 Jahren.",
+    "JEDDAH_GROWTH": "Der <strong>Campus Dschidda</strong> verzeichnete mit <strong>{{value}}%</strong> das <strong>höchste Wachstum</strong> in den letzten 3 Jahren.",
     "FEMALE_RATIO": "<strong>Studentinnen</strong> machen nun <strong>{{current}}%</strong> der Gesamtzahl aus, verglichen mit <strong>{{first}}%</strong> im Jahr {{year}}.",
     "POSTGRAD_INCREASE": "Die Einschreibungen für <strong>Postgraduierte Studiengänge</strong> sind in diesem Jahr auf <strong>{{total}}</strong> Studierende gestiegen."
   },
   "COMMON": {
     "VS": "VS"
+  },
+  "STATE": {
+    "LOADING": "Daten werden geladen...",
+    "ERROR": "Daten konnten nicht geladen werden",
+    "ERROR_SUB": "Bitte versuchen Sie es später erneut",
+    "EMPTY": "Keine Daten verfügbar",
+    "EMPTY_SUB": "Keine Einträge für die ausgewählten Filter"
   }
 }

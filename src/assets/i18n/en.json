@@ -1,23 +1,4 @@
 {
-  "app": {
-    "title": "Student Analytics Dashboard",
-    "subtitle": "King Saud bin Abdulaziz University for Health Sciences"
-  },
-  "nav": {
-    "about": "About",
-    "back": "Back to Dashboard"
-  },
-  "filter": {
-    "academicYear": "Academic Year",
-    "campus": "Campus"
-  },
-  "campus": {
-    "all": "All Campuses",
-    "riyadh": "Riyadh",
-    "jeddah": "Jeddah",
-    "alAhasa": "Al-Ahsa"
-  },
-
   "CAMPUSES": {
     "LABEL": "Campus",
     "ALL": "All Campuses",
@@ -25,141 +6,27 @@
     "JEDDAH": "Jeddah",
     "AHA": "Al-Ahsa"
   },
-
-  "kpi": {
-    "totalStudents": "Total Students",
-    "growthRate": "Growth Rate",
-    "female": "Female",
-    "postgraduate": "Postgraduate",
-    "largestCampus": "Largest Campus",
-    "vsLastYear": "vs last year",
-    "femaleStudents": "Female Students",
-    "share": "share",
-    "awaitingData": "Awaiting data"
-  },
-  "CARD": {
-    "studentTrends": "Student Trends Over Time",
-    "trends": {
-      "total": "Total Students",
-      "male": "Male",
-      "female": "Female"
-    },
-    "insights": "Insights & Highlights",
-    "campusEnrollment": "Campus Enrollment Breakdown",
-    "drillDown": "Drill-Down Analysis",
-    "advancedAnalytics": "Advanced Analytics",
-    "enrollmentDistribution": "Enrollment Distribution",
-    "byCollege": "By college"
-  },
-  "drill": {
-    "college": "College",
-    "students": "Students",
-    "share": "% Share",
-    "noData": "No data for this campus/year"
-  },
-  "adv": {
-    "topColleges": "Top Colleges by Enrollment",
-    "heatmap": "Enrollment Heatmap — Colleges × Years",
-    "noCollegeData": "No college data available",
-    "noHeatmapData": "No heatmap data available"
+  "DRILL": {
+    "COLLEGE": "College",
+    "STUDENTS": "Students",
+    "SHARE": "% Share",
+    "NO_DATA": "No data for this campus/year"
   },
   "PAGE_TITLE": {
     "DASHBOARD": "Dashboard"
   },
-
   "COMMON": {
     "VS": "VS"
   },
-  "state": {
-    "loading": "Loading data...",
-    "error": "Unable to load data",
-    "errorSub": "Please try again later",
-    "empty": "No data available",
-    "emptySub": "No records found for the selected filters"
-  },
-  "footer": {
-    "dataSource": "Data source: KSAU-HS Public Student Enrollment Statistics",
-    "years": "Academic Years 2016/2017 - 2023/2024"
-  },
-  "insight": {
-    "jeddah": "<strong>Jeddah Campus</strong> shows the <strong>highest growth</strong> over the last 3 years at <strong>{{val}}%</strong>.",
-    "female": "<strong>Female Students</strong> now make up <strong>{{val}}%</strong> of the total, up from <strong>{{prev}}%</strong> in {{year}}.",
-    "postgrad": "<strong>Postgraduate Enrollment</strong> has increased to reach <strong>{{val}}</strong> students this year."
-  },
-  "about": {
-    "title": "About This Dashboard",
-    "subtitle": "Student Analytics Dashboard — King Saud bin Abdulaziz University for Health Sciences",
-    "overview": "Overview",
-    "overviewText": "This dashboard provides a comprehensive view of student enrollment statistics at King Saud bin Abdulaziz University for Health Sciences (KSAU-HS) across all campuses, colleges, and academic years from 2016/2017 to 2023/2024. It enables administrators and stakeholders to explore trends, compare campuses, drill into college-level data, and gain actionable insights through interactive visualizations.",
-    "dataSource": "Data Source",
-    "dataSourceText": "All data displayed is sourced from the publicly available KSAU-HS student enrollment dataset",
-    "dataSourceSuffix": "The dataset covers three main categories:",
-    "catGender": "Gender — Male and female enrollment per academic year",
-    "catDegree": "Academic Degree — Bachelor's and postgraduate enrollment per year",
-    "catBranch": "Branch & College — Enrollment broken down by campus (Riyadh, Jeddah, Al-Ahsa) and college",
-    "features": "Dashboard Features",
-    "techStack": "Technology Stack",
-    "campusesColleges": "Campuses & Colleges",
-    "loadingError": "Loading & Error Handling",
-    "loadingErrorIntro": "Each card independently handles three states:",
-    "loadingDesc": "Loading — A spinner with \"Loading data...\" appears while data is being fetched",
-    "errorDesc": "Error — If data fails to load, an error message is shown instead of zeros",
-    "emptyDesc": "Empty — If no data exists for the selected filters, a \"No data available\" message is displayed rather than showing zeros",
-    "feat": {
-      "kpi": {
-        "title": "KPI Cards",
-        "desc": "Key performance indicators showing total students, growth rate, female percentage, postgraduate count, and largest campus — all updating in real time with the selected academic year."
-      },
-      "trends": {
-        "title": "Student Trends",
-        "desc": "Line charts visualizing total enrollment and gender breakdown over 8 academic years, with gradient fills and interactive tooltips."
-      },
-      "campus": {
-        "title": "Campus Enrollment",
-        "desc": "Horizontal bar comparison of all three campuses plus a trend chart for the selected campus, with a campus selector filter."
-      },
-      "drill": {
-        "title": "Drill-Down Analysis",
-        "desc": "Horizontal bar chart and detailed table showing per-college enrollment for a selected campus, with percentage share calculations."
-      },
-      "heat": {
-        "title": "Advanced Analytics",
-        "desc": "Top colleges ranking with mini bar charts and a color-coded enrollment heatmap across colleges and academic years, filterable by campus."
-      },
-      "dist": {
-        "title": "Enrollment Distribution",
-        "desc": "Donut chart showing the proportional share of each college in total university enrollment, with a color-coded legend."
-      },
-      "insights": {
-        "title": "Insights & Highlights",
-        "desc": "Automatically generated textual insights highlighting growth trends, gender ratio changes, and postgraduate enrollment milestones."
-      },
-      "filters": {
-        "title": "Interactive Filters",
-        "desc": "Academic year selector in the header and campus selectors in individual cards — all reactive with Angular signals for instant updates."
-      }
-    },
-    "tech": {
-      "framework": "Framework",
-      "architecture": "Architecture",
-      "charts": "Charts",
-      "state": "State Management",
-      "styling": "Styling",
-      "data": "Data Format"
-    },
-    "riyadhDesc": "8 colleges: Medicine, Dentistry, Pharmacy, Nursing, Public Health & Health Informatics, Applied Medical Sciences, Science & Health Professions, Postgraduate Medical Education",
-    "jeddahDesc": "5 colleges: Medicine, Nursing, Applied Medical Sciences, Science & Health Professions, Postgraduate Medical Education",
-    "alAhsaDesc": "4 colleges: Nursing, Applied Medical Sciences, Science & Health Professions, Postgraduate Medical Education"
-  },
-  "college": {
-    "com": "Medicine",
-    "cod": "Dentistry",
-    "cop": "Pharmacy",
-    "con": "Nursing",
-    "cphhi": "Public Health",
-    "cams": "Applied Sciences",
-    "coshp": "Science & Health",
-    "pme": "Postgrad Medical"
+  "COLLEGES": {
+    "COM": "College of Medicine",
+    "COD": "College of Dentistry",
+    "COP": "College of Pharmacy",
+    "CON": "College of Nursing",
+    "CPHHI": "College of Public Health & Health Informatics",
+    "CAMS": "College of Applied Medical Sciences",
+    "COSHP": "College of Science & Health Professions",
+    "PME": "Postgraduate Medical Education"
   },
   "HEADER": {
     "TITLE": "Student Analytics Dashboard",
@@ -213,7 +80,7 @@
       "BACK_BTN": "Back to Dashboard"
     },
     "VALUE": {
-      "TITLE": "From Data to Decisions",
+      "TITLE": "Evidence-Based Decisions",
       "P1": "This platform transforms student enrollment data into an interactive analytics experience that helps decision-makers understand what is happening, where growth is occurring, and where opportunities may exist.",
       "P2": "Instead of spending hours searching through reports, spreadsheets, historical records, and manually comparing numbers, users can explore the most important information from a single dashboard."
     },
@@ -304,7 +171,6 @@
       "FILTERS_TITLE": "Interactive Filters",
       "FILTERS_DESC": "Academic year selector in the header and campus selectors in individual cards — all reactive with Angular signals for instant updates."
     },
-
     "COVERAGE": {
       "TITLE": "Data Coverage",
       "P1": "The dashboard analyzes publicly available KSAU-HS student enrollment data across multiple academic years, campuses, colleges, academic degrees, and demographic categories.",
@@ -318,17 +184,6 @@
       "DEGREE_VAL": "Bachelor's and postgraduate enrollment",
       "COLLEGES": "Colleges",
       "COLLEGES_VAL": "Enrollment breakdown across available colleges"
-    },
-
-    "COLLEGES": {
-      "COM": "College of Medicine",
-      "COD": "College of Dentistry",
-      "COP": "College of Pharmacy",
-      "CON": "College of Nursing",
-      "CPHHI": "College of Public Health & Health Informatics",
-      "CAMS": "College of Applied Medical Sciences",
-      "COSHP": "College of Science & Health Professions",
-      "PME": "Postgraduate Medical Education"
     },
     "CAMPUSES_DETAILS": {
       "TITLE": "Campuses & Colleges",
@@ -361,5 +216,12 @@
     "JEDDAH_GROWTH": "<strong>Jeddah Campus</strong> shows the <strong>highest growth</strong> over the last 3 years at <strong>{{value}}%</strong>.",
     "FEMALE_RATIO": "<strong>Female Students</strong> now make up <strong>{{current}}%</strong> of the total, up from <strong>{{first}}%</strong> in {{year}}.",
     "POSTGRAD_INCREASE": "<strong>Postgraduate Enrollment</strong> has increased to reach <strong>{{total}}</strong> students this year."
+  },
+  "STATE": {
+    "LOADING": "Loading data...",
+    "ERROR": "Unable to load data",
+    "ERROR_SUB": "Please try again later",
+    "EMPTY": "No data available",
+    "EMPTY_SUB": "No records found for the selected filters"
   }
 }
